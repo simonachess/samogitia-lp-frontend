@@ -2,8 +2,12 @@ import ServicesContainer from "../../components/services-container";
 import { client, urlFor } from "../../lib/sanity";
 import groq from "groq";
 
+export const revalidate = 60;
+
 export const metadata = {
   title: "Atlikti darbai",
+  description:
+    "Mūsų atlikti žemės gerbūvio darbai, sklypų paruošimo ir aplinkos tvarkymo projektai Žemaitijoje ir kituose Lietuvos regionuose.",
 };
 
 export default async function WorksPage() {
@@ -15,7 +19,7 @@ export default async function WorksPage() {
       "slug": slug.current,
       mainImage,
       gallery
-    }`
+    }`,
   );
 
   const items = projects.map((p) => ({
@@ -26,7 +30,7 @@ export default async function WorksPage() {
     bg: p.mainImage
       ? `url("${urlFor(p.mainImage).width(800).height(500).url()}")`
       : `url("/card-1@3x.png")`, // fallback
-    href: p.slug ? `/works/${p.slug}` : "#",
+    href: p.slug ? `/projects/${p.slug}` : "#", // 👈 FIX: /projects, not /works
     gallery: p.gallery || [],
   }));
 

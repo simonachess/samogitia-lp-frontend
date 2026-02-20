@@ -25,17 +25,49 @@ export const metadata = {
     title: "Žemės gerbūvio darbai | Samogitia",
     description:
       "Žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Lietuvoje.",
-    // url: "https://samogitiagroup.lt", // uncomment & set when you have a domain
+    url: "https://samogitiagroup.lt",
   },
   alternates: {
-    // canonical: "https://samogitiagroup.lt", // set later
+    canonical: "https://samogitiagroup.lt",
   },
 };
 
 export default function RootLayout({ children }) {
+  const businessSchema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "Samogitia",
+    description:
+      "Žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Lietuvoje, ypač Žemaitijos regione.",
+    areaServed: [
+      "Telšiai",
+      "Plungė",
+      "Mažeikiai",
+      "Šiauliai",
+      "Klaipėda",
+      "Žemaitija",
+      "Lietuva",
+    ],
+    url: "https://samogitiagroup.lt",
+    // kai turėsi, galėsim pridėti:
+    telephone: "+37064768414",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Telšiai",
+      addressCountry: "LT",
+    },
+  };
+
   return (
     <html lang="lt">
       <body>
+        {/* 🔹 LocalBusiness structured data Google'ui */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(businessSchema),
+          }}
+        />
         <SiteLayout>{children}</SiteLayout>
       </body>
     </html>
