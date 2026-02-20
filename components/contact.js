@@ -31,9 +31,9 @@ const Contact = () => {
 
   return (
     <section className="w-full bg-primary-50 py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className=" max-w-[1200px] mx-auto px-4 flex flex-row flex-wrap items-start justify-center text-center text-21xl text-primary-800 font-body-regular-600">
-        <div className="flex-1 flex flex-col py-0 px-2.5 box-border items-center justify-start gap-[40px]">
-          <div className="w-[720px] flex flex-col items-center justify-start gap-[24px]">
+      <div className=" max-w-[1200px] w-full mx-auto px-4 flex flex-row flex-wrap items-start justify-center text-center text-21xl text-primary-800 font-body-regular-600">
+        <div className="flex flex-col py-0 px-2.5 box-border items-center justify-start gap-[40px] w-full">
+          <div className="max-w-[720px] flex flex-col items-center justify-start gap-[24px]">
             <h2 className="page-heading">Susisiekite</h2>
             <div className="page-subheading">
               Užpildykite formą ir mes su jumis susisieksime.
@@ -46,7 +46,7 @@ const Contact = () => {
             data-netlify="true"
             netlify-honeypot="bot-field"
             onSubmit={onSubmit}
-            className="rounded-xl bg-gray-white shadow-[0px_0px_24px_rgba(0,_0,_0,_0.03)] flex flex-col py-7 px-[30px] items-center justify-start gap-[17px] text-left text-5xl text-darkslategray body-regular-600"
+            className="w-full rounded-xl bg-gray-white shadow-[0px_0px_24px_rgba(0,_0,_0,_0.03)] flex flex-col py-7 px-[30px] items-center justify-start gap-[17px] text-left text-5xl text-darkslategray body-regular-600"
           >
             {/* required for Netlify */}
             <input type="hidden" name="form-name" value="contact" />
@@ -60,11 +60,11 @@ const Contact = () => {
               <b className="leading-[36px]">Užklausos forma</b>
             </div>
 
-            <div className="flex flex-col items-center justify-start gap-[10px]">
-              <div className="flex flex-row items-start justify-center gap-[10px] md:flex-col">
+            <div className="flex flex-col items-center justify-start gap-[10px] w-full">
+              <div className="flex flex-row items-start justify-center gap-[10px] md:flex-col w-full">
                 <input
                   name="firstName"
-                  className="body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray"
+                  className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray"
                   type="text"
                   placeholder="Vardas"
                   maxLength={100}
@@ -73,7 +73,7 @@ const Contact = () => {
                 />
                 <input
                   name="lastName"
-                  className="body-regular-600 text-base bg-[transparent] flex-1 rounded py-4 px-3 border-[1px] border-solid border-gray"
+                  className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray"
                   type="text"
                   placeholder="Pavardė"
                   maxLength={100}
@@ -84,7 +84,7 @@ const Contact = () => {
 
               <input
                 name="email"
-                className="body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray"
+                className="w-full body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray"
                 type="email"
                 placeholder="El. paštas"
                 required
@@ -92,7 +92,7 @@ const Contact = () => {
 
               <textarea
                 name="message"
-                className="bg-[transparent] h-[105px] body-regular-600 text-base rounded box-border p-3 border-[1px] border-solid border-gray"
+                className="w-full bg-[transparent] h-[105px] body-regular-600 text-base rounded box-border p-3 border-[1px] border-solid border-gray"
                 placeholder="Klausimas"
                 required
                 rows={10}
