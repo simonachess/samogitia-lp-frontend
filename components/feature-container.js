@@ -10,7 +10,7 @@ export default async function FeatureContainer() {
       "slug": slug.current,
       icon,
       description
-    }`
+    }`,
   );
 
   return (
@@ -23,7 +23,7 @@ export default async function FeatureContainer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-10 md:gap-6 ">
+        <div className="grid grid-cols-2 justify-center gap-10 md:gap-6 ">
           {services.length === 0 ? (
             <p className="text-lightslategray">
               Šiuo metu paslaugos dar nesukonfigūruotos.

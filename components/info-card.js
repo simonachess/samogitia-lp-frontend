@@ -4,7 +4,7 @@ export default function InfoCard({ icon, title, description, href }) {
   const Card = (
     <div
       className={`rounded bg-gray-white shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)]
-      flex flex-col p-[22px] min-w-[300px] max-w-[340px]
+      flex flex-col p-[22px]
       text-left text-gray-700 font-body-regular-600
       transition-shadow ${
         href

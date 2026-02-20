@@ -28,7 +28,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="w-max flex flex-col items-start justify-start gap-[32px]">
-          <div className="self-stretch h-max flex flex-col items-start justify-start gap-[16px] text-base text-gray-500">
+          <div className="h-max flex flex-col items-start justify-start gap-[16px] text-base text-gray-500">
             <div className="leading-[24px]">Kontaktai</div>
 
             <a
@@ -49,9 +49,15 @@ const Footer = () => {
         </div>
         <div className="w-max flex flex-col items-start justify-start gap-[32px]">
           <div className="h-max flex flex-col items-start justify-start gap-[16px] text-base text-gray-500">
-            <Link href="/services" className="leading-[24px] text-inherit">Paslaugos</Link>
-            <Link href="/projects" className="leading-[24px] text-inherit">Atlikti darbai</Link>
-            <Link href="/about" className="leading-[24px] text-inherit">Apie mus</Link>
+            <Link href="/services" className="leading-[24px] text-inherit">
+              Paslaugos
+            </Link>
+            <Link href="/projects" className="leading-[24px] text-inherit">
+              Atlikti darbai
+            </Link>
+            <Link href="/about" className="leading-[24px] text-inherit">
+              Apie mus
+            </Link>
           </div>
         </div>
       </footer>

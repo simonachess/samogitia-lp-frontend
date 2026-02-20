@@ -35,7 +35,7 @@ const Contact = () => {
         <div className="flex-1 flex flex-col py-0 px-2.5 box-border items-center justify-start gap-[40px]">
           <div className="w-[720px] flex flex-col items-center justify-start gap-[24px]">
             <h2 className="page-heading">Susisiekite</h2>
-            <div className="self-stretch relative page-subheading">
+            <div className="page-subheading">
               Užpildykite formą ir mes su jumis susisieksime.
             </div>
           </div>
@@ -46,7 +46,7 @@ const Contact = () => {
             data-netlify="true"
             netlify-honeypot="bot-field"
             onSubmit={onSubmit}
-            className="self-stretch rounded-xl bg-gray-white shadow-[0px_0px_24px_rgba(0,_0,_0,_0.03)] flex flex-col py-7 px-[30px] items-center justify-start gap-[17px] text-left text-5xl text-darkslategray body-regular-600"
+            className="rounded-xl bg-gray-white shadow-[0px_0px_24px_rgba(0,_0,_0,_0.03)] flex flex-col py-7 px-[30px] items-center justify-start gap-[17px] text-left text-5xl text-darkslategray body-regular-600"
           >
             {/* required for Netlify */}
             <input type="hidden" name="form-name" value="contact" />
@@ -56,17 +56,15 @@ const Contact = () => {
               </label>
             </p>
 
-            <div className="self-stretch flex flex-col items-center justify-start gap-[6px]">
-              <b className="self-stretch relative leading-[36px]">
-                Užklausos forma
-              </b>
+            <div className="flex flex-col items-center justify-start gap-[6px]">
+              <b className="leading-[36px]">Užklausos forma</b>
             </div>
 
-            <div className="self-stretch flex flex-col items-center justify-start gap-[10px]">
-              <div className="self-stretch flex flex-row items-start justify-center gap-[10px] md:flex-col">
+            <div className="flex flex-col items-center justify-start gap-[10px]">
+              <div className="flex flex-row items-start justify-center gap-[10px] md:flex-col">
                 <input
                   name="firstName"
-                  className="body-regular-600 text-base bg-[transparent] self-stretch flex-1 rounded py-4 px-3 border-[1px] border-solid border-gray"
+                  className="body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray"
                   type="text"
                   placeholder="Vardas"
                   maxLength={100}
@@ -75,7 +73,7 @@ const Contact = () => {
                 />
                 <input
                   name="lastName"
-                  className="body-regular-600 text-base bg-[transparent] self-stretch flex-1 rounded py-4 px-3 border-[1px] border-solid border-gray"
+                  className="body-regular-600 text-base bg-[transparent] flex-1 rounded py-4 px-3 border-[1px] border-solid border-gray"
                   type="text"
                   placeholder="Pavardė"
                   maxLength={100}
@@ -86,7 +84,7 @@ const Contact = () => {
 
               <input
                 name="email"
-                className="body-regular-600 text-base bg-[transparent] self-stretch rounded py-4 px-3 border-[1px] border-solid border-gray"
+                className="body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray"
                 type="email"
                 placeholder="El. paštas"
                 required
@@ -94,7 +92,7 @@ const Contact = () => {
 
               <textarea
                 name="message"
-                className="bg-[transparent] h-[105px] body-regular-600 text-base self-stretch rounded box-border p-3 border-[1px] border-solid border-gray"
+                className="bg-[transparent] h-[105px] body-regular-600 text-base rounded box-border p-3 border-[1px] border-solid border-gray"
                 placeholder="Klausimas"
                 required
                 rows={10}

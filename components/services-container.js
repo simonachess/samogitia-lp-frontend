@@ -17,16 +17,16 @@ const ServicesContainer = ({ items = [] }) => {
       <div className="max-w-[1200px] mx-auto px-4 w-full flex flex-col items-center justify-start gap-[45px] text-center text-21xl text-primary-800 font-body-regular-600">
         <div className="flex flex-col items-center gap-[24px]">
           <h2 className="page-heading">Atlikti darbai</h2>
-          <div className="self-stretch relative page-subheading">
+          <div className="page-subheading">
             Čia pateikiami mūsų atlikti žemės gerbūvio darbai ir įgyvendinti
             projektai. Kokybiški sprendimai sklypų paruošimui, komunikacijų
             kasimui ir aplinkos tvarkymui.
           </div>
         </div>
 
-        <div className="self-stretch flex-1 flex flex-row flex-wrap py-0 px-2.5 box-border items-start justify-center text-left text-5xl text-gray-white">
-          <div className="self-stretch flex-1 flex flex-col items-center justify-start gap-[24px]">
-            <div className="self-stretch grid grid-cols-3 gap-[26px] lg:grid-cols-2 md:grid-cols-1">
+        <div className="flex flex-wrap py-0 px-2.5 box-border items-start justify-center text-left text-5xl text-gray-white">
+          <div className="flex flex-col items-center justify-start gap-[24px]">
+            <div className="grid grid-cols-3 gap-[26px] lg:grid-cols-2 md:grid-cols-1">
               {shown.length === 0 ? (
                 <p className="text-lightslategray text-base col-span-full text-center">
                   Informacija ruošiama...
@@ -40,7 +40,7 @@ const ServicesContainer = ({ items = [] }) => {
                     propBackgroundImage={it.bg}
                     propPadding="unset"
                     propBoxSizing="unset"
-                    href={it.href || "/"}   // 👈 important fix
+                    href={it.href || "/"} // 👈 important fix
                   />
                 ))
               )}
