@@ -1,4 +1,6 @@
 // service-card.js
+"use client";
+
 import { useMemo } from "react";
 import Link from "next/link";
 
@@ -8,6 +10,7 @@ const ServiceCard = ({
   propBackgroundImage,
   propPadding,
   propBoxSizing,
+  href = "/",        // 👈 new
 }) => {
   const cardStyle = useMemo(() => {
     return {
@@ -19,12 +22,12 @@ const ServiceCard = ({
 
   return (
     <Link
+      href={href}
       className="cursor-pointer [text-decoration:none] flex-1 rounded-lg h-[241px] flex flex-row items-start justify-start relative bg-cover bg-no-repeat bg-[top] text-left text-5xl text-gray-white font-body-regular-600 md:flex-[unset] md:self-stretch"
-      href="/"
       style={cardStyle}
     >
       <div className="my-0 mx-[!important] absolute top-[16px] left-[16px] flex flex-col items-start justify-start gap-[11px] z-[0]">
-        <h2 className="relative leading-[32px] font-semibold">{title}</h2>
+        <h2 className="card-heading">{title}</h2>
         {description && (
           <p className="relative text-base leading-[24px]">{description}</p>
         )}

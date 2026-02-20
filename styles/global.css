@@ -1,0 +1,58 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    margin: 0;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  @apply leading-[normal] m-0;
+}
+*,
+::before,
+::after {
+  border-width: 0;
+}
+
+@layer components {
+  .page-heading {
+    font-family: 'Poppins', 'Public Sans', Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    color: #0f1720; /* fallback dark color similar to primary */
+    font-size: 28px;
+    line-height: 1.1;
+  }
+
+  @media (min-width: 961px) {
+    .page-heading {
+      font-size: 36px;
+    }
+  }
+
+  .card-heading {
+    font-family: 'Poppins', 'Public Sans', Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 20px;
+    line-height: 1.25;
+  }
+
+  .page-subheading {
+    font-family: Inter, 'Public Sans', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-weight: 400;
+    color: #889099; /* lightslategray */
+    font-size: 18px;
+    line-height: 28px;
+    max-width: 720px;
+  }
+}

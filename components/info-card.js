@@ -1,39 +1,35 @@
-import { useMemo } from "react";
+import Link from "next/link";
 
-const InfoCard = ({
-  featureId,
-  featureText,
-  featureDescription,
-  propWidth,
-}) => {
-  const featureCardStyle = useMemo(() => {
-    return {
-      width: propWidth,
-    };
-  }, [propWidth]);
-
-  return (
+export default function InfoCard({ icon, title, description, href }) {
+  const Card = (
     <div
-      className="rounded bg-gray-white shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)] flex flex-col p-[22px] box-border items-start justify-start min-w-[300px] max-w-[340px] text-center text-5xl text-gray-700 font-body-regular-600"
-      style={featureCardStyle}
+      className={`rounded bg-gray-white shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)]
+      flex flex-col p-[22px] min-w-[300px] max-w-[340px]
+      text-left text-gray-700 font-body-regular-600
+      transition-shadow ${
+        href
+          ? "cursor-pointer hover:shadow-[0px_30px_80px_rgba(59,_77,_129,_0.12)]"
+          : ""
+      }`}
     >
-      <div className="flex flex-col items-start justify-start gap-[24px]">
-        <img
-          className="relative w-[78px] h-[78px] overflow-hidden shrink-0"
-          alt=""
-          src={featureId}
-        />
-        <div className="flex flex-col items-start justify-start gap-[24px]">
-          <div className="relative leading-[32px] font-semibold">
-            {featureText}
-          </div>
-          <div className="relative text-base leading-[24px] text-lightslategray text-left flex items-end w-[268px]">
-            {featureDescription}
-          </div>
+      <div className="flex flex-col gap-6 items-center">
+        <div className="text-primary-500">{icon}</div>
+
+        <div className="flex flex-col gap-4">
+          <h3 className="card-heading">{title}</h3>
+          <p className="text-base leading-[24px] text-lightslategray">
+            {description}
+          </p>
         </div>
       </div>
     </div>
   );
-};
 
-export default InfoCard;
+  return href ? (
+    <Link href={href} className="no-underline">
+      {Card}
+    </Link>
+  ) : (
+    Card
+  );
+}
