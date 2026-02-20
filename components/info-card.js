@@ -17,7 +17,8 @@ export default function InfoCard({ icon, title, description, href }) {
         <div className="flex flex-col gap-4">
           <h3 className="card-heading">{title}</h3>
           <p className="text-base leading-[24px] text-lightslategray">
-            {description}
+            <span className="mr-3">{description}</span>
+            <span className="text-primary-500">Plačiau...</span>
           </p>
         </div>
       </div>

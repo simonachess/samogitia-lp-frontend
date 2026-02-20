@@ -15,7 +15,7 @@ export default async function FeatureContainer() {
 
   return (
     <section className="w-full bg-primary-50 py-[80px]  flex flex-col items-center text-center body-regular-600">
-      <div className="w-[1200px] px-4 max-w-full flex flex-col gap-20">
+      <div className="w-[1200px] items-center px-4 max-w-full flex flex-col gap-20">
         <div className="flex w-full flex-col gap-6 items-center">
           <h2 className="page-heading">Paslaugos</h2>
           <div className="page-subheading">
@@ -23,7 +23,7 @@ export default async function FeatureContainer() {
           </div>
         </div>
 
-        <div className="flex md:flex-col w-full gap-4 md:gap-6">
+        <div className="w-full max-w-[940px] flex md:flex-col w-full gap-10 md:gap-4">
           {services.length === 0 ? (
             <p className="text-lightslategray">Informacija ruošiama...</p>
           ) : (

@@ -14,7 +14,7 @@ const ServicesContainer = ({ items = [] }) => {
 
   return (
     <section className="w-full bg-primary-50 py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="max-w-[1200px] mx-auto px-4 w-full flex flex-col items-center justify-start gap-[45px] text-center text-21xl text-primary-800 font-body-regular-600">
+      <div className="max-w-[1200px] mx-auto px-4 w-full items-center flex flex-col items-center justify-start gap-[45px] text-center text-21xl text-primary-800 font-body-regular-600">
         <div className="flex flex-col items-center gap-[24px]">
           <h2 className="page-heading">Atlikti darbai</h2>
           <div className="page-subheading">

@@ -100,7 +100,7 @@ const Header = () => {
             <div className="flex justify-end">
               <button
                 type="button"
-                className="p-2"
+                className="p-2 bg-transparent [border:none] cursor-pointer"
                 aria-label="Close menu"
                 onClick={() => setOpen(false)}
               >
