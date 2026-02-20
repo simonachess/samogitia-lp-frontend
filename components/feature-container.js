@@ -20,6 +20,8 @@ export default async function FeatureContainer() {
           <h2 className="page-heading">Paslaugos</h2>
           <div className="page-subheading">
             Teikiame žemės gerbūvio darbus bei technikos ir įrankių nuomą.
+            Atliekame žemės darbus tiek privatiems, tiek verslo klientams visoje
+            Žemaitijoje.
           </div>
         </div>
 

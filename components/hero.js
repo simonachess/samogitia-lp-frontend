@@ -4,13 +4,18 @@ const Hero = () => {
       <div className="w-full flex flex-col items-center justify-center gap-[62px]">
         <div className="flex flex-col items-center gap-20 max-w-[720px]">
           <h1 className="relative font-semibold text-[52px] md:text-[42px]">
-            Žemės gerbūvio darbai
+            Žemės gerbūvio darbai Žemaitijoje
           </h1>
-          <div className="relative text-xl px-4 leading-[28px] font-body-regular-600 text-primary-50">
-            Teikiame žemės gerbūvio darbus, sklypų paruošimą, komunikacijų
-            tiesimo paslaugas, aplinkos tvarkymą, bei technikos ir įrankių
-            nuomą. <br />
-            Dirbame greitai, kokybiškai ir patikimai.
+          <div className="flex flex-col gap-4">
+            <div className="relative text-xl px-4 leading-[28px] font-body-regular-600 text-primary-50">
+              Teikiame žemės gerbūvio darbus, sklypų paruošimą, komunikacijų
+              tiesimo paslaugas, aplinkos tvarkymą, bei technikos ir įrankių
+              nuomą.
+            </div>
+            <div className="relative text-xl px-4 leading-[28px] font-body-regular-600 text-primary-50">
+              Dirbame greitai, kokybiškai ir patikimai, užtikrindami aukštą
+              darbų atlikimo standartą kiekviename projekte.
+            </div>
           </div>
         </div>
       </div>

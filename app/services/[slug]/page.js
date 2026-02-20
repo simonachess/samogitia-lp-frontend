@@ -3,12 +3,50 @@ import { notFound } from "next/navigation";
 import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";
 
+// Revalidate every 60 seconds to keep content fresh
+export const revalidate = 60;
+
 export async function generateStaticParams() {
   const services = await client.fetch(
     groq`*[_type == "service"]{ "slug": slug.current }`,
   );
 
-  return services.map((s) => ({ slug: s.slug }));
+  return services.filter((s) => s.slug).map((s) => ({ slug: s.slug }));
+}
+
+// 🔹 SEO metadata per service
+export async function generateMetadata({ params }) {
+  const service = await client.fetch(
+    groq`*[_type == "service" && slug.current == $slug][0]{
+      title,
+      description,
+      longDescription
+    }`,
+    { slug: params.slug },
+  );
+
+  if (!service) {
+    return {
+      title: "Paslauga nerasta",
+      description: "Ieškoma paslauga nerasta.",
+    };
+  }
+
+  const pageTitle = service.title || "Žemės gerbūvio paslauga";
+  const pageDescription =
+    service.longDescription ||
+    service.description ||
+    "Žemės gerbūvio ir aplinkos tvarkymo paslauga.";
+
+  return {
+    title: pageTitle,
+    description: pageDescription,
+    openGraph: {
+      title: pageTitle,
+      description: pageDescription,
+      type: "article",
+    },
+  };
 }
 
 export default async function ServiceDetailPage({ params }) {
