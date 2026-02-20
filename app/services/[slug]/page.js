@@ -31,7 +31,7 @@ export default async function ServiceDetailPage({ params }) {
                 className="w-[56px] h-[56px]"
               />
             )}
-            <h1 className="page-heading">{service.title}</h1>
+            <h2 className="page-heading">{service.title}</h2>
           </div>
 
           <div className="page-subheading">
