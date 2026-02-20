@@ -9,6 +9,7 @@
 @layer base {
   * {
     margin: 0;
+    box-sizing: border-box;
   }
 }
 
@@ -26,7 +27,17 @@ body {
 
 @layer components {
   .page-heading {
-    font-family: 'Poppins', 'Public Sans', Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family:
+      "Poppins",
+      "Public Sans",
+      Inter,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
     font-weight: 600;
     color: #0f1720; /* fallback dark color similar to primary */
     font-size: 28px;
@@ -40,7 +51,17 @@ body {
   }
 
   .card-heading {
-    font-family: 'Poppins', 'Public Sans', Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family:
+      "Poppins",
+      "Public Sans",
+      Inter,
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
     font-weight: 600;
     color: #1f2937;
     font-size: 20px;
@@ -48,7 +69,15 @@ body {
   }
 
   .page-subheading {
-    font-family: Inter, 'Public Sans', system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family:
+      Inter,
+      "Public Sans",
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      Arial,
+      sans-serif;
     font-weight: 400;
     color: #889099; /* lightslategray */
     font-size: 18px;
