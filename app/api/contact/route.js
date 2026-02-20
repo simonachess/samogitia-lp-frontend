@@ -9,6 +9,7 @@ export async function POST(req) {
     const body = await req.json();
     const { firstName, lastName, email, message, botField } = body;
 
+    // simple bot honeypot
     if (botField) {
       return NextResponse.json({ ok: true });
     }
@@ -22,7 +23,6 @@ export async function POST(req) {
 
     const toEmail = process.env.CONTACT_TO_EMAIL;
     if (!toEmail) {
-      console.error("CONTACT_TO_EMAIL is not set");
       return NextResponse.json(
         { ok: false, error: "Server is not configured" },
         { status: 500 },
@@ -31,8 +31,9 @@ export async function POST(req) {
 
     const fullName = [firstName, lastName].filter(Boolean).join(" ");
 
-    await resend.emails.send({
-      from: "Samogitia Contact Form <no-reply@samogitiagroup.lt>",
+    const { data, error } = await resend.emails.send({
+      // FOR NOW: Resend test sender
+      from: "Acme <onboarding@resend.dev>",
       to: toEmail,
       reply_to: email,
       subject: `Nauja užklausa iš svetainės: ${fullName || email}`,
@@ -47,6 +48,15 @@ ${message}
       `.trim(),
     });
 
+    if (error) {
+      console.error("Resend error:", error);
+      return NextResponse.json(
+        { ok: false, error: "Failed to send message" },
+        { status: 500 },
+      );
+    }
+
+    console.log("Email sent:", data?.id);
     return NextResponse.json({ ok: true });
   } catch (err) {
     console.error("Contact form error:", err);
