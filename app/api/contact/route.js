@@ -33,7 +33,7 @@ export async function POST(req) {
 
     const { data, error } = await resend.emails.send({
       // FOR NOW: Resend test sender
-      from: "Acme <onboarding@resend.dev>",
+      from: "Samogitia Group <onboarding@resend.dev>",
       to: toEmail,
       reply_to: email,
       subject: `Nauja užklausa iš svetainės: ${fullName || email}`,
