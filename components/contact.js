@@ -33,7 +33,7 @@ const Contact = () => {
     <section className="w-full bg-primary-50 py-[80px] flex flex-col items-center text-center body-regular-600">
       <div className=" max-w-[1200px] mx-auto px-4 flex flex-row flex-wrap items-start justify-center text-center text-21xl text-primary-800 font-body-regular-600">
         <div className="flex-1 flex flex-col py-0 px-2.5 box-border items-center justify-start gap-[40px]">
-          <div className="w-[720px] flex flex-col items-center justify-start gap-[24px] md:self-stretch md:w-auto">
+          <div className="w-[720px] flex flex-col items-center justify-start gap-[24px]">
             <h2 className="page-heading">Susisiekite</h2>
             <div className="self-stretch relative page-subheading">
               Užpildykite formą ir mes su jumis susisieksime.
