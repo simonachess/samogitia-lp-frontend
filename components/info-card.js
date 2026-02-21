@@ -11,7 +11,7 @@ export default function InfoCard({ icon, title, description, href }) {
         {icon && <div className="text-primary-500">{icon}</div>}
 
         <div className="flex flex-col gap-4">
-          <h3 className="card-heading">{title}</h3>
+          <h3 className="card-heading-sm">{title}</h3>
           {description && (
             <p className="text-base leading-[24px] text-lightslategray">
               {description}

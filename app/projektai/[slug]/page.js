@@ -65,7 +65,9 @@ export default async function ProjectDetailPage({ params }) {
         {/* Title + main image */}
         <div className="flex flex-col gap-6 items-center">
           <h1 className="page-heading">{project.title}</h1>
-
+          {project.description && (
+            <p className="page-subheading">{project.description}</p>
+          )}
           {project.mainImage && (
             <div className="w-full max-w-[900px]">
               <img
@@ -74,10 +76,6 @@ export default async function ProjectDetailPage({ params }) {
                 className="w-full h-auto rounded-xl object-cover"
               />
             </div>
-          )}
-
-          {project.description && (
-            <p className="page-subheading">{project.description}</p>
           )}
         </div>
 

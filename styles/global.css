@@ -76,8 +76,24 @@ body {
       sans-serif;
     font-weight: 600;
     color: #1f2937;
-    font-size: 20px;
-    line-height: 1.25;
+    font-size: 22px;
+    line-height: 120%;
+  }
+
+  .card-heading-sm {
+    font-family:
+      var(--font-inter),
+      var(--font-public-sans),
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 18px;
+    line-height: 120%;
   }
 
   .page-subheading {

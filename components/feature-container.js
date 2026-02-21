@@ -21,9 +21,9 @@ export default function FeatureContainer() {
                 flex flex-col p-6 text-left text-gray-700 font-body-regular-400
                 transition-shadow`}
             >
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-8">
                 {/* {icon && <div className="text-primary-500">{icon}</div>} */}
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-6">
                   <h3 className="card-heading">Žemės gerbūvio paslaugos</h3>
                   <p className="text-base leading-[24px] text-lightslategray">
                     Aplinka, sklypo paruošimas, žemės lyginimas ir kiti žemės
@@ -43,9 +43,9 @@ export default function FeatureContainer() {
                 flex flex-col p-6 text-left text-gray-700 font-body-regular-400
                 transition-shadow `}
             >
-              <div className="flex flex-col gap-6">
+              <div className="flex flex-col gap-8">
                 {/* {icon && <div className="text-primary-500">{icon}</div>} */}
-                <div className="flex flex-col gap-4">
+                <div className="flex flex-col gap-6">
                   <h3 className="card-heading">Technikos ir įrankių nuoma</h3>
                   <p className="text-base leading-[24px] text-lightslategray">
                     Technika ir įrankiai skirti sklypo, kiemo ir aplinkos
