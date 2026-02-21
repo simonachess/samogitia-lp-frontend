@@ -29,7 +29,7 @@ export default async function RentPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] w-full flex md:flex-col gap-10 md:gap-4">
+        <div className="w-full max-w-[940px] flex md:flex-col gap-10 md:gap-4">
           {items.length === 0 ? (
             <p className="text-lightslategray">Informacija ruošiama...</p>
           ) : (
