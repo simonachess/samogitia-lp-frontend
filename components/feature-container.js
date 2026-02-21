@@ -1,5 +1,5 @@
 // app/components/feature-container.js
-import InfoCard from "./info-card";
+import Link from "next/link";
 
 export default function FeatureContainer() {
   return (
@@ -15,20 +15,57 @@ export default function FeatureContainer() {
         </div>
 
         <div className="w-full max-w-[940px] flex md:flex-col gap-10 md:gap-4">
-          <InfoCard
-            // icon={...} // optional: you can pass a static icon URL here if you want
-            icon={null}
-            title="Žemės gerbūvio paslaugos"
-            description="Aplinka, sklypo paruošimas, žemės lyginimas ir kiti žemės tvarkymo darbai."
-            href="/paslaugos"
-          />
+          <Link href="/paslaugos" className="no-underline flex w-full">
+            <div
+              className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)]
+                flex flex-col p-6 text-left text-gray-700 font-body-regular-400
+                transition-shadow`}
+            >
+              <div className="flex flex-col gap-6">
+                {/* {icon && <div className="text-primary-500">{icon}</div>} */}
 
-          <InfoCard
-            icon={null}
-            title="Technikos ir įrankių nuoma"
-            description="Technika ir įrankiai skirti sklypo, kiemo ir aplinkos tvarkymo darbams."
-            href="/nuoma"
-          />
+                <div className="flex flex-col gap-4">
+                  <h3 className="card-heading">Žemės gerbūvio paslaugos</h3>
+
+                  <p className="text-base leading-[24px] text-lightslategray">
+                    <span className="mr-3">
+                      Aplinka, sklypo paruošimas, žemės lyginimas ir kiti žemės
+                      tvarkymo darbai.
+                    </span>
+                  </p>
+                </div>
+                <div className="underline text-primary-500">
+                  Visos paslaugos
+                </div>
+              </div>
+            </div>
+          </Link>
+
+          <Link href="/nuoma" className="no-underline flex w-full">
+            <div
+              className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)]
+                flex flex-col p-6 text-left text-gray-700 font-body-regular-400
+                transition-shadow `}
+            >
+              <div className="flex flex-col gap-6">
+                {/* {icon && <div className="text-primary-500">{icon}</div>} */}
+
+                <div className="flex flex-col gap-4">
+                  <h3 className="card-heading">Technikos ir įrankių nuoma</h3>
+
+                  <p className="text-base leading-[24px] text-lightslategray">
+                    <span className="mr-3">
+                      Technika ir įrankiai skirti sklypo, kiemo ir aplinkos
+                      tvarkymo darbams.
+                    </span>
+                  </p>
+                </div>
+                <div className="underline text-primary-500">
+                  Nuomojami įrankiai ir technika
+                </div>
+              </div>
+            </div>
+          </Link>
         </div>
       </div>
     </section>
