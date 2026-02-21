@@ -6,6 +6,7 @@ export default function FeatureContainer() {
     <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
       <div className="w-[1200px] items-center px-4 max-w-full flex flex-col md:gap-10 gap-20">
         <div className="flex w-full flex-col gap-6 items-center">
+          <h2 className="page-heading">Paslaugos</h2>
           <div className="page-subheading">
             Teikiame žemės gerbūvio darbus, sklypų paruošimą, komunikacijų
             tiesimo paslaugas, aplinkos tvarkymą, bei technikos ir įrankių
