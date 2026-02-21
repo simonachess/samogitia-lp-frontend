@@ -54,6 +54,8 @@ const Header = () => {
             className="relative w-auto md:h-[60px] h-20"
             alt="logo"
             src="/logo.svg"
+            width={204}
+            height={80}
           />
         </Link>
 

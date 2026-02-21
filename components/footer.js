@@ -6,7 +6,13 @@ const Footer = () => {
       <footer className=" max-w-[1200px] w-full px-4 mx-auto flex flex-row items-start justify-between text-left text-5xl text-gray-black font-body-regular-400 md:flex-col md:gap-[50px] sm:flex-col sm:gap-[50px]">
         <div className="w-max flex flex-col items-start justify-start gap-[20px] text-center text-primary-500 font-body-regular-400">
           <div className="flex flex-row items-center justify-center gap-[8px]">
-            <img className="w-auto md:h-[60px] h-20" alt="" src="/logo.svg" />
+            <img
+              className="w-auto md:h-[60px] h-20"
+              alt=""
+              src="/logo.svg"
+              width={204}
+              height={80}
+            />
           </div>
           <div className="flex flex-col items-start justify-start gap-[13px] text-left text-base text-gray-500 font-body-regular-400">
             <div className="w-max gap-2 flex flex-row items-center justify-between">
