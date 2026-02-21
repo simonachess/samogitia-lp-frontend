@@ -39,7 +39,6 @@ export default async function ServicesPage() {
                     : null
                 }
                 title={service.title}
-                description={service.description}
                 href={`/paslaugos/${service.slug}`}
               />
             ))

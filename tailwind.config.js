@@ -28,9 +28,7 @@ module.exports = {
         "primary-700": "#2c3a61",
         "primary-400": "#6e80b4",
       },
-      fontFamily: {
-        "body-regular-400": "Inter",
-      },
+      fontFamily: {},
       borderRadius: {
         "10xs": "3px",
         "3xs": "10px",

@@ -1,5 +1,18 @@
 import "../styles/global.css";
 import SiteLayout from "../components/layout/layout";
+import { Inter, Public_Sans } from "next/font/google";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-inter",
+});
+
+const publicSans = Public_Sans({
+  subsets: ["latin"],
+  weight: ["400", "600"],
+  variable: "--font-public-sans",
+});
 
 export const metadata = {
   // set this to your real domain when you have it
@@ -64,7 +77,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="lt">
+    <html lang="lt" className={`${inter.variable} ${publicSans.variable}`}>
       <body>
         {/* 🔹 LocalBusiness structured data Google'ui */}
         <script

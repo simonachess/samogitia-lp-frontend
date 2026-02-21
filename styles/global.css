@@ -1,38 +1,4 @@
-/* Local font files for better performance */
-@font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter-400.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter-500.ttf") format("truetype");
-  font-weight: 500;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter-600.ttf") format("truetype");
-  font-weight: 600;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Public Sans";
-  src: url("/fonts/PublicSans-400.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Public Sans";
-  src: url("/fonts/PublicSans-600.ttf") format("truetype");
-  font-weight: 600;
-  font-display: swap;
-}
+/* Fonts loaded via next/font in layout.js */
 
 @tailwind base;
 @tailwind components;
@@ -43,8 +9,8 @@
     margin: 0;
     box-sizing: border-box;
     font-family:
-      Inter,
-      "Public Sans",
+      var(--font-inter),
+      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -60,8 +26,8 @@ html {
 body {
   @apply leading-[normal] m-0;
   font-family:
-    Inter,
-    "Public Sans",
+    var(--font-inter),
+    var(--font-public-sans),
     system-ui,
     -apple-system,
     "Segoe UI",
@@ -78,8 +44,8 @@ body {
 @layer components {
   .page-heading {
     font-family:
-      Inter,
-      "Public Sans",
+      var(--font-inter),
+      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -100,8 +66,8 @@ body {
 
   .card-heading {
     font-family:
-      Inter,
-      "Public Sans",
+      var(--font-inter),
+      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -116,8 +82,8 @@ body {
 
   .page-subheading {
     font-family:
-      Inter,
-      "Public Sans",
+      var(--font-inter),
+      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -132,8 +98,8 @@ body {
 
   .font-body-regular-400 {
     font-family:
-      Inter,
-      "Public Sans",
+      var(--font-inter),
+      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",

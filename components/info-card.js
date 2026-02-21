@@ -12,14 +12,15 @@ export default function InfoCard({ icon, title, description, href }) {
       }`}
     >
       <div className="flex flex-col gap-6">
-        <div className="text-primary-500">{icon}</div>
+        {icon && <div className="text-primary-500">{icon}</div>}
 
         <div className="flex flex-col gap-4">
           <h3 className="card-heading">{title}</h3>
-          <p className="text-base leading-[24px] text-lightslategray">
-            <span className="mr-3">{description}</span>
-            <span className="text-primary-500">Plačiau...</span>
-          </p>
+          {description && (
+            <p className="text-base leading-[24px] text-lightslategray">
+              <span className="mr-3">{description}</span>
+            </p>
+          )}
         </div>
       </div>
     </div>
