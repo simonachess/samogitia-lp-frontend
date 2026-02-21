@@ -23,7 +23,7 @@ module.exports = {
         gray: "rgba(0, 0, 0, 0.5)",
         slategray: "#576074",
         darkslategray: "#434343",
-        lightslategray: "#889099",
+        lightslategray: "#6e7377",
         "primary-800": "#1e2640",
         "primary-700": "#2c3a61",
         "primary-400": "#6e80b4",

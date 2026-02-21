@@ -23,15 +23,11 @@ export default function FeatureContainer() {
             >
               <div className="flex flex-col gap-6">
                 {/* {icon && <div className="text-primary-500">{icon}</div>} */}
-
                 <div className="flex flex-col gap-4">
                   <h3 className="card-heading">Žemės gerbūvio paslaugos</h3>
-
                   <p className="text-base leading-[24px] text-lightslategray">
-                    <span className="mr-3">
-                      Aplinka, sklypo paruošimas, žemės lyginimas ir kiti žemės
-                      tvarkymo darbai.
-                    </span>
+                    Aplinka, sklypo paruošimas, žemės lyginimas ir kiti žemės
+                    tvarkymo darbai.
                   </p>
                 </div>
                 <div className="underline text-primary-500">
@@ -49,15 +45,11 @@ export default function FeatureContainer() {
             >
               <div className="flex flex-col gap-6">
                 {/* {icon && <div className="text-primary-500">{icon}</div>} */}
-
                 <div className="flex flex-col gap-4">
                   <h3 className="card-heading">Technikos ir įrankių nuoma</h3>
-
                   <p className="text-base leading-[24px] text-lightslategray">
-                    <span className="mr-3">
-                      Technika ir įrankiai skirti sklypo, kiemo ir aplinkos
-                      tvarkymo darbams.
-                    </span>
+                    Technika ir įrankiai skirti sklypo, kiemo ir aplinkos
+                    tvarkymo darbams.
                   </p>
                 </div>
                 <div className="underline text-primary-500">
