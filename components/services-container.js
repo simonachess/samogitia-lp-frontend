@@ -13,7 +13,7 @@ const ServicesContainer = ({ items = [] }) => {
 
   return (
     <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="max-w-[1200px] mx-auto px-4 w-full items-center flex flex-col items-center justify-start md:gap-10 gap-20 text-center text-21xl text-primary-800 font-body-regular-600">
+      <div className="max-w-[1200px] mx-auto px-4 w-full items-center flex flex-col items-center justify-start md:gap-10 gap-20 text-center text-21xl text-primary-800 font-body-regular-400">
         <div className="flex flex-col items-center gap-[24px]">
           <h2 className="page-heading">Atlikti darbai</h2>
           <div className="page-subheading">
@@ -55,7 +55,7 @@ const ServicesContainer = ({ items = [] }) => {
             }
             className="cursor-pointer [border:none] py-3 px-6 bg-primary-500 rounded flex flex-row items-start justify-start"
           >
-            <div className="relative text-base leading-[24px] font-medium font-body-regular-600 text-gray-white text-center">
+            <div className="relative text-base leading-[24px] font-medium font-body-regular-400 text-gray-white text-center">
               Užkrauti daugiau
             </div>
           </button>

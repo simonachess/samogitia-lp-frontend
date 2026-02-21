@@ -40,7 +40,7 @@ export default function ContactPage() {
 
   return (
     <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-row flex-wrap items-start justify-center text-center text-21xl text-primary-800 font-body-regular-600">
+      <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-row flex-wrap items-start justify-center text-center text-21xl text-primary-800 font-body-regular-400">
         <div className="flex flex-col py-0 px-2.5 box-border items-center justify-start md:gap-10 gap-20 w-full">
           <div className="max-w-[720px] flex flex-col items-center justify-start gap-[24px]">
             <h2 className="page-heading">Susisiekite</h2>

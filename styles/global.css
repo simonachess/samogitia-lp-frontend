@@ -1,7 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap");
+/* Local font files for better performance */
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-400.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-500.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("/fonts/Inter-600.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  src: url("/fonts/PublicSans-400.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Public Sans";
+  src: url("/fonts/PublicSans-600.ttf") format("truetype");
+  font-weight: 600;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +42,15 @@
   * {
     margin: 0;
     box-sizing: border-box;
+    font-family:
+      Inter,
+      "Public Sans",
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
   }
 }
 
@@ -18,6 +59,15 @@ html {
 }
 body {
   @apply leading-[normal] m-0;
+  font-family:
+    Inter,
+    "Public Sans",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
 }
 *,
 ::before,
@@ -28,13 +78,11 @@ body {
 @layer components {
   .page-heading {
     font-family:
-      "Poppins",
-      "Public Sans",
       Inter,
+      "Public Sans",
       system-ui,
       -apple-system,
       "Segoe UI",
-      Roboto,
       "Helvetica Neue",
       Arial,
       sans-serif;
@@ -52,13 +100,11 @@ body {
 
   .card-heading {
     font-family:
-      "Poppins",
-      "Public Sans",
       Inter,
+      "Public Sans",
       system-ui,
       -apple-system,
       "Segoe UI",
-      Roboto,
       "Helvetica Neue",
       Arial,
       sans-serif;
@@ -75,7 +121,6 @@ body {
       system-ui,
       -apple-system,
       "Segoe UI",
-      Roboto,
       Arial,
       sans-serif;
     font-weight: 400;
@@ -83,5 +128,17 @@ body {
     font-size: 18px;
     line-height: 28px;
     max-width: 720px;
+  }
+
+  .font-body-regular-400 {
+    font-family:
+      Inter,
+      "Public Sans",
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      "Helvetica Neue",
+      Arial,
+      sans-serif;
   }
 }

@@ -29,10 +29,7 @@ module.exports = {
         "primary-400": "#6e80b4",
       },
       fontFamily: {
-        "body-regular-400": "'Public Sans'",
-        "body-regular-600": "Inter",
-        roboto: "Roboto",
-        poppins: "Poppins",
+        "body-regular-400": "Inter",
       },
       borderRadius: {
         "10xs": "3px",
