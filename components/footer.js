@@ -49,13 +49,16 @@ const Footer = () => {
         </div>
         <div className="w-max flex flex-col items-start justify-start gap-[32px]">
           <div className="h-max flex flex-col items-start justify-start gap-[16px] text-base text-gray-500">
-            <Link href="/services" className="leading-[24px] text-inherit">
+            <Link href="/paslaugos" className="leading-[24px] text-inherit">
               Paslaugos
             </Link>
-            <Link href="/projects" className="leading-[24px] text-inherit">
+            <Link href="/nuoma" className="leading-[24px] text-inherit">
+              Nuoma
+            </Link>
+            <Link href="/projektai" className="leading-[24px] text-inherit">
               Atlikti darbai
             </Link>
-            <Link href="/about" className="leading-[24px] text-inherit">
+            <Link href="/apie" className="leading-[24px] text-inherit">
               Apie mus
             </Link>
           </div>

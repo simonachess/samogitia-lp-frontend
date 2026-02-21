@@ -1,3 +1,4 @@
+// app/services/[slug]/page.js
 import { notFound } from "next/navigation";
 import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";

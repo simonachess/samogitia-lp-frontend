@@ -8,7 +8,7 @@ export default async function sitemap() {
   const baseUrl = "https://samogitiagroup.lt";
 
   // Vienu metu parsitraukiam paslaugas ir projektus iš Sanity
-  const [services, projects] = await Promise.all([
+  const [services, projects, rent] = await Promise.all([
     client.fetch(
       groq`*[_type == "service" && defined(slug.current)]{
         "slug": slug.current,
@@ -21,14 +21,21 @@ export default async function sitemap() {
         _updatedAt
       }`,
     ),
+    client.fetch(
+      groq`*[_type == "rent" && defined(slug.current)]{
+        "slug": slug.current,
+        _updatedAt
+      }`,
+    ),
   ]);
 
   // Statiniai puslapiai (jei turi /contact, irgi pridėk)
   const staticPages = [
     "",
-    "/services",
-    "/projects",
-    // "/contact",
+    "/paslaugos",
+    "/nuoma",
+    "/projektai",
+    "/kontaktai",
   ].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
@@ -36,15 +43,21 @@ export default async function sitemap() {
 
   const serviceUrls =
     services?.map((s) => ({
-      url: `${baseUrl}/services/${s.slug}`,
+      url: `${baseUrl}/paslaugos/${s.slug}`,
       lastModified: s._updatedAt ? new Date(s._updatedAt) : new Date(),
     })) ?? [];
 
   const projectUrls =
     projects?.map((p) => ({
-      url: `${baseUrl}/projects/${p.slug}`,
+      url: `${baseUrl}/projektai/${p.slug}`,
       lastModified: p._updatedAt ? new Date(p._updatedAt) : new Date(),
     })) ?? [];
 
-  return [...staticPages, ...serviceUrls, ...projectUrls];
+  const rentUrls =
+    rent?.map((r) => ({
+      url: `${baseUrl}/nuoma/${r.slug}`,
+      lastModified: r._updatedAt ? new Date(r._updatedAt) : new Date(),
+    })) ?? [];
+
+  return [...staticPages, ...serviceUrls, ...projectUrls, ...rentUrls];
 }

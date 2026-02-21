@@ -30,7 +30,7 @@ export default async function WorksPage() {
     bg: p.mainImage
       ? `url("${urlFor(p.mainImage).width(800).height(500).url()}")`
       : `url("/card-1@3x.png")`, // fallback
-    href: p.slug ? `/projects/${p.slug}` : "#", // 👈 FIX: /projects, not /works
+    href: p.slug ? `/projektai/${p.slug}` : "#", // 👈 FIX: /projects, not /works
     gallery: p.gallery || [],
   }));
 

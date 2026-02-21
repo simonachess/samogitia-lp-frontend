@@ -12,8 +12,8 @@ const Header = () => {
   const pathname = usePathname();
 
   const isActive = (href) => {
-    if (href === "/services")
-      return pathname === "/services" || pathname.startsWith("/services/");
+    if (href === "/paslaugos")
+      return pathname === "/paslaugos" || pathname.startsWith("/paslaugos/");
     return pathname === href;
   };
 
@@ -56,16 +56,19 @@ const Header = () => {
         {/* Desktop nav */}
         <div className="flex flex-row items-center justify-end gap-[36px] text-sm text-primary-900">
           <div className="flex flex-row items-start justify-start gap-[30px] lg:hidden">
-            <Link href="/services" className={linkClass("/services")}>
+            <Link href="/paslaugos" className={linkClass("/paslaugos")}>
               PASLAUGOS
             </Link>
-            <Link href="/projects" className={linkClass("/projects")}>
+            <Link href="/nuoma" className={linkClass("/nuoma")}>
+              NUOMA
+            </Link>
+            <Link href="/projektai" className={linkClass("/projektai")}>
               ATLIKTI DARBAI
             </Link>
-            <Link href="/about" className={linkClass("/about")}>
+            <Link href="/apie" className={linkClass("/apie")}>
               APIE MUS
             </Link>
-            <Link href="/contact" className={linkClass("/contact")}>
+            <Link href="/kontaktai" className={linkClass("/kontaktai")}>
               KONTAKTAI
             </Link>
           </div>
@@ -122,29 +125,36 @@ const Header = () => {
             </div>
 
             <Link
-              href="/services"
-              className={linkClass("/services")}
+              href="/paslaugos"
+              className={linkClass("/paslaugos")}
               onClick={() => setOpen(false)}
             >
               PASLAUGOS
             </Link>
             <Link
-              href="/projects"
-              className={linkClass("/projects")}
+              href="/nuoma"
+              className={linkClass("/nuoma")}
+              onClick={() => setOpen(false)}
+            >
+              NUOMA
+            </Link>
+            <Link
+              href="/projektai"
+              className={linkClass("/projektai")}
               onClick={() => setOpen(false)}
             >
               ATLIKTI DARBAI
             </Link>
             <Link
-              href="/about"
-              className={linkClass("/about")}
+              href="/apie"
+              className={linkClass("/apie")}
               onClick={() => setOpen(false)}
             >
               APIE MUS
             </Link>
             <Link
-              href="/contact"
-              className={linkClass("/contact")}
+              href="/kontaktai"
+              className={linkClass("/kontaktai")}
               onClick={() => setOpen(false)}
             >
               KONTAKTAI

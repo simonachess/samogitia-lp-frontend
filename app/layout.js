@@ -18,6 +18,8 @@ export const metadata = {
     "aplinkos tvarkymas",
     "gerbūvio darbai",
     "mini ekskavatorius nuoma",
+    "technikos nuoma",
+    "įrankių nuoma",
   ],
   openGraph: {
     type: "website",
