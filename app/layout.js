@@ -17,8 +17,8 @@ const publicSans = Public_Sans({
 export const metadata = {
   metadataBase: new URL("https://samogitia-lp-frontend.vercel.app"),
   title: {
-    default: "Žemės gerbūvio darbai | Samogitia",
-    template: "%s | Samogitia",
+    default: "Žemės gerbūvio darbai | Samogitia Group",
+    template: "%s | Samogitia Group",
   },
   description:
     "Profesionalūs žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Lietuvoje.",
@@ -36,7 +36,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     locale: "lt_LT",
-    title: "Žemės gerbūvio darbai | Samogitia",
+    title: "Žemės gerbūvio darbai | Samogitia Group",
     description:
       "Žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Lietuvoje.",
     url: "https://samogitia-lp-frontend.vercel.app",
@@ -61,7 +61,7 @@ export default function RootLayout({ children }) {
   const businessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    name: "Samogitia",
+    name: "Samogitia Group",
     description:
       "Žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Lietuvoje, ypač Žemaitijos regione.",
     areaServed: [

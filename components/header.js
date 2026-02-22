@@ -61,7 +61,7 @@ const Header = () => {
         >
           <Image
             src="/logo.svg"
-            alt="Samogitia – žemės gerbūvio darbai"
+            alt="Samogitia Group – žemės gerbūvio darbai"
             width={204}
             height={80}
             className="w-auto md:h-[60px] h-20"

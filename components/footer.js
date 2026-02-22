@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="flex flex-row items-center justify-center gap-[8px]">
             <Image
               src="/logo.svg"
-              alt="Samogitia"
+              alt="Samogitia Group"
               width={204}
               height={80}
               className="w-auto md:h-[60px] h-20"
