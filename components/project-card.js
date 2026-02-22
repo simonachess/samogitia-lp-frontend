@@ -12,7 +12,9 @@ export default function ProjectCard({
   imageWidth = 1200,
   imageHeight = 800,
 }) {
-  const aspectW = imageWidth;
+  const isVertical = imageHeight > imageWidth;
+  // Vertical: 50% of natural height so the card isn’t too tall; image fills with cover (full image on click-through)
+  const aspectW = isVertical ? 2 * imageWidth : imageWidth;
   const aspectH = imageHeight;
 
   return (
@@ -28,7 +30,9 @@ export default function ProjectCard({
           src={imageUrl}
           alt={imageAlt}
           fill
-          className="object-contain"
+          className={
+            isVertical ? "object-cover object-center" : "object-contain"
+          }
           sizes="(max-width: 420px) 100vw, (max-width: 960px) 50vw, 400px"
           quality={90}
         />
