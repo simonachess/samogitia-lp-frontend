@@ -57,7 +57,7 @@ const ServicesContainer = ({ items = [] }) => {
             onClick={() =>
               setVisible((v) => Math.min(v + PAGE_SIZE, items.length))
             }
-            className="cursor-pointer [border:none] py-3 px-6 bg-primary-500 rounded flex flex-row items-start justify-start focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
+            className="cursor-pointer [border:none] py-3 px-6 bg-primary-500 rounded flex flex-row items-start justify-start focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
           >
             <div className="relative text-base leading-[24px] font-medium font-body-regular-400 text-gray-white text-center">
               Užkrauti daugiau

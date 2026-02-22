@@ -18,7 +18,7 @@ const Header = () => {
   };
 
   const linkClass = (href) =>
-    `relative leading-[22px] text-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded ${
+    `relative leading-[22px] py-1 px-3 text-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded ${
       isActive(href) ? "text-primary-500 underline" : "no-underline"
     }`;
 
@@ -56,7 +56,7 @@ const Header = () => {
       <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-row items-center justify-between w-full">
         <Link
           href="/"
-          className="flex flex-row items-center justify-center gap-[8px] focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
+          className="flex flex-row items-center justify-center gap-[8px] focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
         >
           <img
             className="relative w-auto md:h-[60px] h-20"
@@ -69,7 +69,7 @@ const Header = () => {
 
         {/* Desktop nav */}
         <div className="flex flex-row items-center justify-end gap-[36px] text-sm text-primary-900">
-          <div className="flex flex-row items-start justify-start gap-[30px] lg:hidden">
+          <div className="flex flex-row items-start justify-start gap-1 lg:hidden">
             {navLinks.map(({ href, label }) => (
               <Link key={href} href={href} className={linkClass(href)}>
                 {label}
@@ -80,7 +80,7 @@ const Header = () => {
           {/* Mobile burger – animated */}
           <button
             type="button"
-            className="cursor-pointer [border:none] p-3 -m-1 bg-transparent hidden lg:flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
+            className="cursor-pointer [border:none] p-3 -m-1 bg-transparent hidden lg:flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
             aria-label={open ? "Uždaryti meniu" : "Atidaryti meniu"}
             aria-expanded={open}
             onClick={() => setOpen(!open)}
@@ -116,7 +116,7 @@ const Header = () => {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Uždaryti meniu"
-            className="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 text-primary-700 hover:bg-primary-100"
+            className="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 text-primary-700 hover:bg-primary-100"
           >
             <svg
               width="24"

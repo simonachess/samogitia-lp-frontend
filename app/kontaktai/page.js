@@ -89,7 +89,7 @@ export default function ContactPage() {
                   <input
                     id="firstName"
                     name="firstName"
-                    className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-1"
+                    className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1"
                     type="text"
                     placeholder="Vardas"
                     maxLength={100}
@@ -104,7 +104,7 @@ export default function ContactPage() {
                   <input
                     id="lastName"
                     name="lastName"
-                    className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-1"
+                    className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1"
                     type="text"
                     placeholder="Pavardė"
                     maxLength={100}
@@ -121,7 +121,7 @@ export default function ContactPage() {
                 <input
                   id="email"
                   name="email"
-                  className="w-full body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-1"
+                  className="w-full body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1"
                   type="email"
                   placeholder="El. paštas"
                   required
@@ -135,7 +135,7 @@ export default function ContactPage() {
                 <textarea
                   id="message"
                   name="message"
-                  className="w-full bg-[transparent] h-[105px] body-regular-600 text-base rounded box-border p-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-1"
+                  className="w-full bg-[transparent] h-[105px] body-regular-600 text-base rounded box-border p-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1"
                   placeholder="Klausimas"
                   required
                   rows={10}
@@ -147,7 +147,7 @@ export default function ContactPage() {
                 disabled={status === "sending"}
                 aria-busy={status === "sending"}
                 aria-live="polite"
-                className="cursor-pointer [border:none] p-0 bg-primary-500 rounded w-[222px] h-[46px] flex flex-col items-center justify-center disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
+                className="cursor-pointer [border:none] p-0 bg-primary-500 rounded w-[222px] h-[46px] flex flex-col items-center justify-center disabled:opacity-60 focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
               >
                 <div className="relative text-base body-regular-600 text-gray-white text-center inline-block w-[203.12px]">
                   {status === "sending" ? "Siunčiama..." : "Siųsti užklausą"}

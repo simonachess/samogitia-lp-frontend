@@ -20,7 +20,7 @@ const Footer = () => {
                 href="https://www.facebook.com/Vytkaa"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded bg-primary-50 flex flex-col p-3.5 items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
+                className="rounded bg-primary-50 flex flex-col p-3.5 items-center justify-center focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1"
                 aria-label="Facebook"
               >
                 <img
@@ -33,7 +33,7 @@ const Footer = () => {
                 href="https://www.instagram.com/bertavicius"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded bg-primary-50 flex flex-col p-3.5 items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
+                className="rounded bg-primary-50 flex flex-col p-3.5 items-center justify-center focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1"
                 aria-label="Instagram"
               >
                 <img
@@ -53,14 +53,14 @@ const Footer = () => {
 
             <a
               href="tel:+37064768414"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
               aria-label="Call +370 647 68414"
             >
               +370 647 68414
             </a>
             <a
               href="mailto:samogitiagroup@gmail.com"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
               aria-label="Email samogitiagroup@gmail.com"
             >
               samogitiagroup@gmail.com
@@ -71,25 +71,25 @@ const Footer = () => {
           <div className="h-max flex flex-col items-start justify-start gap-[16px] text-base text-gray-500">
             <Link
               href="/paslaugos"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
             >
               Paslaugos
             </Link>
             <Link
               href="/nuoma"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
             >
               Nuoma
             </Link>
             <Link
               href="/projektai"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
             >
               Atlikti darbai
             </Link>
             <Link
               href="/apie"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
             >
               Apie mus
             </Link>
