@@ -45,7 +45,7 @@ export default function FeatureContainer() {
         </div>
 
         {/* Simple grid: 3 cols desktop, 1 col mobile */}
-        <div className="w-full max-w-[1000px] grid grid-cols-3 lg:grid-cols-1 gap-4 md:gap-5">
+        <div className="w-full max-w-[1200px] grid grid-cols-3 lg:grid-cols-1 gap-4 md:gap-5">
           <Link
             href="/paslaugos"
             className="no-underline flex w-full focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded-xl animate-fade-in-up opacity-0 [animation-delay:100ms] [animation-fill-mode:forwards]"
