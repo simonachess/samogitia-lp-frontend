@@ -18,7 +18,7 @@ export default function AboutPage() {
           <div>
             <h2 className="section-heading mb-2">Kas mes esame</h2>
             <p className="font-body-regular-400 text-base text-lightslategray leading-[28px]">
-              Samogitia Group– įmonė, specializuojanti žemės gerbūvio darbuose.
+              Samogitia Group – įmonė, specializuojanti žemės gerbūvio darbuose.
               Atliekame sklypų paruošimą, reljefo formavimą, komunikacijų
               tiesimą ir aplinkos tvarkymą. Taip pat siūlome technikos ir
               įrankių nuomą privatiems ir verslo klientams.

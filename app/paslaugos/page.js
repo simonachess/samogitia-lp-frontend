@@ -1,3 +1,4 @@
+import Image from "next/image";
 import InfoCard from "../../components/info-card";
 import { client, urlFor } from "../../lib/sanity";
 import groq from "groq";
@@ -10,8 +11,7 @@ export default async function ServicesPage() {
       _id,
       title,
       "slug": slug.current,
-      icon,
-      description
+      icon
     }`,
   );
 
@@ -26,7 +26,7 @@ export default async function ServicesPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] w-full flex md:flex-col gap-10 md:gap-4">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] w-full max-w-[960px] gap-4">
           {services.length === 0 ? (
             <p className="text-lightslategray">Informacija ruošiama...</p>
           ) : (
@@ -34,12 +34,18 @@ export default async function ServicesPage() {
               <InfoCard
                 key={service._id}
                 icon={
-                  service.icon
-                    ? urlFor(service.icon).width(64).height(64).url()
-                    : null
+                  service.icon ? (
+                    <Image
+                      src={urlFor(service.icon).width(64).height(64).url()}
+                      alt=""
+                      width={64}
+                      height={64}
+                      className="w-16 h-16 object-contain"
+                    />
+                  ) : null
                 }
                 title={service.title}
-                href={`/paslaugos/${service.slug}`}
+                href={service.slug ? `/paslaugos/${service.slug}` : undefined}
               />
             ))
           )}
