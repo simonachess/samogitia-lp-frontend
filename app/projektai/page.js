@@ -26,11 +26,13 @@ export default async function WorksPage() {
     id: p._id,
     title: p.title,
     description: p.description,
-    // convert mainImage to CSS background-image string
-    bg: p.mainImage
-      ? `url("${urlFor(p.mainImage).width(800).height(500).url()}")`
-      : `url("/card-1@3x.png")`, // fallback
-    href: p.slug ? `/projektai/${p.slug}` : "#", // 👈 FIX: /projects, not /works
+    imageUrl: p.mainImage
+      ? urlFor(p.mainImage).width(800).height(500).url()
+      : "/card-1@3x.png",
+    imageAlt: p.title
+      ? `${p.title} – atliktas projektas`
+      : "Atliktas projektas",
+    href: p.slug ? `/projektai/${p.slug}` : "#",
     gallery: p.gallery || [],
   }));
 

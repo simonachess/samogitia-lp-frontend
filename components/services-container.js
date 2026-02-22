@@ -36,10 +36,9 @@ const ServicesContainer = ({ items = [] }) => {
                     key={it.id || `${it.title}-${idx}`}
                     title={it.title}
                     description={it.description}
-                    propBackgroundImage={it.bg}
-                    propPadding="unset"
-                    propBoxSizing="unset"
-                    href={it.href || "/"} // 👈 important fix
+                    imageUrl={it.imageUrl}
+                    imageAlt={it.imageAlt}
+                    href={it.href || "/"}
                   />
                 ))
               )}
