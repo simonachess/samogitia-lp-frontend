@@ -91,7 +91,6 @@ export async function POST(req) {
       .join(" ");
 
     const { data, error } = await resend.emails.send({
-      // Production: replace with verified domain, e.g. noreply@samogitiagroup.lt
       from: "Samogitia Group <onboarding@resend.dev>",
       to: toEmail,
       reply_to: emailStr,
