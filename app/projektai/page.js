@@ -1,4 +1,4 @@
-import ServicesContainer from "../../components/services-container";
+import ProjectsMasonrySection from "../../components/projects-masonry-section";
 import { client, urlFor } from "../../lib/sanity";
 import groq from "groq";
 
@@ -17,24 +17,33 @@ export default async function WorksPage() {
       title,
       description,
       "slug": slug.current,
-      mainImage,
+      mainImage {
+        ...,
+        "dimensions": asset->metadata.dimensions
+      },
       gallery
     }`,
   );
 
-  const items = projects.map((p) => ({
-    id: p._id,
-    title: p.title,
-    description: p.description,
-    imageUrl: p.mainImage
-      ? urlFor(p.mainImage).width(800).height(500).url()
-      : "/card-1@3x.png",
-    imageAlt: p.title
-      ? `${p.title} – atliktas projektas`
-      : "Atliktas projektas",
-    href: p.slug ? `/projektai/${p.slug}` : "#",
-    gallery: p.gallery || [],
-  }));
+  const items = projects.map((p) => {
+    const dims = p.mainImage?.dimensions;
+    const imageUrl = p.mainImage
+      ? urlFor(p.mainImage).width(1200).url()
+      : "/card-1@3x.png";
+    return {
+      id: p._id,
+      title: p.title,
+      description: p.description,
+      imageUrl,
+      imageAlt: p.title
+        ? `${p.title} – atliktas projektas`
+        : "Atliktas projektas",
+      href: p.slug ? `/projektai/${p.slug}` : "#",
+      gallery: p.gallery || [],
+      imageWidth: dims?.width ?? 1200,
+      imageHeight: dims?.height ?? 800,
+    };
+  });
 
-  return <ServicesContainer items={items} />;
+  return <ProjectsMasonrySection items={items} />;
 }

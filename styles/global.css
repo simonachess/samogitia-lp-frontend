@@ -218,3 +218,28 @@ body {
     font-weight: 400;
   }
 }
+
+/* react-masonry-css: projektai list */
+.projects-masonry-grid {
+  display: flex;
+  margin-left: -12px;
+  width: auto;
+}
+.projects-masonry-grid_column {
+  padding-left: 12px;
+  background-clip: padding-box;
+}
+.projects-masonry-grid_column > div {
+  margin-bottom: 12px;
+}
+@media (max-width: 960px) {
+  .projects-masonry-grid {
+    margin-left: -10px;
+  }
+  .projects-masonry-grid_column {
+    padding-left: 10px;
+  }
+  .projects-masonry-grid_column > div {
+    margin-bottom: 10px;
+  }
+}

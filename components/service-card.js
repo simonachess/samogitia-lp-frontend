@@ -24,7 +24,9 @@ const ServiceCard = ({
         className="object-cover object-top"
       />
       <div className="absolute bottom-2 left-2 right-2 flex flex-col items-start justify-start gap-1 z-[1] bg-gray-white/60 rounded p-2">
-        <h2 className="card-heading">{title}</h2>
+        <h2 className="text-lg md:text-base font-semibold text-gray-700">
+          {title}
+        </h2>
         {description && (
           <p className="text-sm text-gray-700 truncate leading-tight max-w-full">
             {description}

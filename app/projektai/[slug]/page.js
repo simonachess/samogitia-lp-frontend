@@ -1,8 +1,8 @@
 // app/projektai/[slug]/page.js
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";
+import ProjectGallery from "../../../components/project-gallery";
 
 export const revalidate = 60;
 
@@ -60,47 +60,35 @@ export default async function ProjectDetailPage({ params }) {
 
   if (!project) return notFound();
 
+  // Build images list: main first, then gallery (for display + modal)
+  const images = [];
+  if (project.mainImage) {
+    images.push({
+      src: urlFor(project.mainImage).width(1200).height(800).url(),
+      alt: project.title || "Projekto nuotrauka",
+    });
+  }
+  if (project.gallery && project.gallery.length > 0) {
+    project.gallery.forEach((img, idx) => {
+      images.push({
+        src: urlFor(img).width(1200).height(800).url(),
+        alt: `${project.title} nuotrauka ${images.length + 1}`,
+      });
+    });
+  }
+
   return (
     <div className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
       <div className="max-w-[1200px] w-full px-4 flex flex-col gap-10 items-center">
-        {/* Title + main image */}
-        <div className="flex flex-col gap-6 items-center">
+        <div className="flex flex-col gap-6 items-center w-full">
           <h1 className="page-heading">{project.title}</h1>
           {project.description && (
             <p className="page-subheading">{project.description}</p>
           )}
-          {project.mainImage && (
-            <div className="w-full max-w-[900px] relative aspect-[2/1]">
-              <Image
-                src={urlFor(project.mainImage).width(1200).height(600).url()}
-                alt={project.title}
-                fill
-                className="rounded-xl object-cover"
-                sizes="(max-width: 900px) 100vw, 900px"
-              />
-            </div>
+          {images.length > 0 && (
+            <ProjectGallery images={images} projectTitle={project.title} />
           )}
         </div>
-
-        {/* Gallery (jei yra daugiau nuotraukų) */}
-        {project.gallery && project.gallery.length > 0 && (
-          <div className="w-full max-w-[900px] flex flex-col gap-4 items-start text-left">
-            <h2 className="section-heading">Papildomos projekto nuotraukos</h2>
-            <div className="grid [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))] gap-4">
-              {project.gallery.map((img, idx) => (
-                <div key={idx} className="relative h-[200px]">
-                  <Image
-                    src={urlFor(img).width(800).height(600).url()}
-                    alt={`${project.title} nuotrauka ${idx + 1}`}
-                    fill
-                    className="object-cover rounded-lg"
-                    sizes="(max-width: 800px) 100vw, 220px"
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );
