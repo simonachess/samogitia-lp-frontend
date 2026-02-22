@@ -2,7 +2,9 @@
 import { notFound } from "next/navigation";
 import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";
+import { portableTextToPlainText } from "../../../lib/portable-text";
 import ProjectGallery from "../../../components/project-gallery";
+import ProjectBody from "../../../components/project-body";
 
 export const revalidate = 60;
 
@@ -33,8 +35,10 @@ export async function generateMetadata({ params }) {
   }
 
   const pageTitle = project.title || "Atliktas projektas";
-  const pageDescription =
-    project.description || "Žemės gerbūvio ir aplinkos tvarkymo projektas.";
+  const pageDescription = Array.isArray(project.description)
+    ? portableTextToPlainText(project.description) ||
+      "Žemės gerbūvio ir aplinkos tvarkymo projektas."
+    : project.description || "Žemės gerbūvio ir aplinkos tvarkymo projektas.";
 
   return {
     title: pageTitle,
@@ -82,10 +86,25 @@ export default async function ProjectDetailPage({ params }) {
     <div className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
       <div className="max-w-[1200px] w-full px-4 flex flex-col gap-10 items-center">
         <div className="flex flex-col gap-6 items-center w-full">
-          <h1 className="page-heading">{project.title}</h1>
-          {project.description && (
-            <p className="page-subheading">{project.description}</p>
-          )}
+          <h1 className="page-heading w-full max-w-[960px]">{project.title}</h1>
+          {project.description &&
+            (Array.isArray(project.description) ? (
+              <ProjectBody value={project.description} />
+            ) : (
+              <div className="page-subheading w-full max-w-[960px] text-left">
+                {String(project.description)
+                  .split(/\n/)
+                  .filter(Boolean)
+                  .map((para, i) => (
+                    <p
+                      key={i}
+                      className="mb-4 last:mb-0 text-primary-800 leading-relaxed"
+                    >
+                      {para}
+                    </p>
+                  ))}
+              </div>
+            ))}
           {images.length > 0 && (
             <ProjectGallery images={images} projectTitle={project.title} />
           )}
