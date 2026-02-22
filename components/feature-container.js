@@ -5,7 +5,7 @@ export default function FeatureContainer() {
   return (
     <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
       <div className="w-[1200px] items-center px-4 max-w-full flex flex-col md:gap-10 gap-20">
-        <div className="flex w-full flex-col gap-6 items-center">
+        <div className="flex w-full flex-col gap-6 items-center animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
           <h2 className="page-heading">Paslaugos</h2>
           <div className="page-subheading">
             Teikiame žemės gerbūvio darbus, sklypų paruošimą, komunikacijų
@@ -18,12 +18,12 @@ export default function FeatureContainer() {
         <div className="w-full max-w-[940px] flex md:flex-col gap-10 md:gap-4">
           <Link
             href="/paslaugos"
-            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-lg"
+            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-lg animate-fade-in-up opacity-0 [animation-delay:100ms] [animation-fill-mode:forwards]"
           >
             <div
-              className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)]
+              className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)] hover:-translate-y-1
                 flex flex-col p-6 text-left text-gray-700 font-body-regular-400
-                transition-shadow`}
+                transition-all duration-300 ease-out`}
             >
               <div className="flex flex-col gap-8">
                 {/* {icon && <div className="text-primary-500">{icon}</div>} */}
@@ -43,12 +43,12 @@ export default function FeatureContainer() {
 
           <Link
             href="/nuoma"
-            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-lg"
+            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-lg animate-fade-in-up opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]"
           >
             <div
-              className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)]
+              className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)] hover:-translate-y-1
                 flex flex-col p-6 text-left text-gray-700 font-body-regular-400
-                transition-shadow `}
+                transition-all duration-300 ease-out`}
             >
               <div className="flex flex-col gap-8">
                 {/* {icon && <div className="text-primary-500">{icon}</div>} */}

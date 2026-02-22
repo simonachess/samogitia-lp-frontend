@@ -14,7 +14,7 @@ const ServiceCard = ({
   return (
     <Link
       href={href}
-      className="cursor-pointer [text-decoration:none] rounded-lg h-[320px] w-[320px] flex flex-row items-start justify-start relative overflow-hidden text-left text-5xl text-gray-white font-body-regular-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
+      className="cursor-pointer [text-decoration:none] rounded-lg h-[320px] w-[320px] flex flex-row items-start justify-start relative overflow-hidden text-left text-5xl text-gray-white font-body-regular-400 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-transform duration-300 ease-out hover:scale-[1.02]"
     >
       <Image
         src={imageUrl}

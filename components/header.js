@@ -103,8 +103,7 @@ const Header = () => {
         <div className="fixed inset-0 z-[60] bg-black/40 flex justify-end lg:flex">
           <div
             ref={panelRef}
-            className="w-[280px] h-full bg-white p-6 flex flex-col gap-5 shadow-xl
-                       transition-transform duration-150 ease-out"
+            className="w-[280px] h-full bg-white p-6 flex flex-col gap-5 shadow-xl animate-slide-in-right"
           >
             <div className="flex justify-end">
               <button

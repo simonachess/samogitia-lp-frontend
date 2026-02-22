@@ -67,7 +67,7 @@ export default function ContactPage() {
           <form
             name="contact"
             onSubmit={onSubmit}
-            className="w-full rounded-xl bg-gray-white shadow-[0px_0px_24px_rgba(0,_0,_0,_0.03)] flex flex-col py-7 px-[30px] items-center justify-start gap-[17px] text-left text-5xl text-darkslategray body-regular-600"
+            className="w-full rounded-xl bg-gray-white shadow-[0px_0px_24px_rgba(0,_0,_0,_0.03)] flex flex-col py-7 px-[30px] items-center justify-start gap-[17px] text-left text-5xl text-darkslategray body-regular-600 animate-fade-in-up opacity-0 [animation-fill-mode:forwards]"
           >
             {/* Honeypot field for bots */}
             <p className="hidden">
@@ -147,7 +147,7 @@ export default function ContactPage() {
                 disabled={status === "sending"}
                 aria-busy={status === "sending"}
                 aria-live="polite"
-                className="cursor-pointer [border:none] p-0 bg-primary-500 rounded w-[222px] h-[46px] flex flex-col items-center justify-center disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
+                className="cursor-pointer [border:none] p-0 bg-primary-500 rounded w-[222px] h-[46px] flex flex-col items-center justify-center disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
               >
                 <div className="relative text-base body-regular-600 text-gray-white text-center inline-block w-[203.12px]">
                   {status === "sending" ? "Siunčiama..." : "Siųsti užklausą"}
