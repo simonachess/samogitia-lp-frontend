@@ -243,3 +243,28 @@ body {
     margin-bottom: 10px;
   }
 }
+
+/* Project detail gallery: small masonry grid */
+.project-gallery-grid {
+  display: flex;
+  margin-left: -8px;
+  width: auto;
+}
+.project-gallery-grid_column {
+  padding-left: 8px;
+  background-clip: padding-box;
+}
+.project-gallery-grid_column > div {
+  margin-bottom: 8px;
+}
+@media (max-width: 640px) {
+  .project-gallery-grid {
+    margin-left: -6px;
+  }
+  .project-gallery-grid_column {
+    padding-left: 6px;
+  }
+  .project-gallery-grid_column > div {
+    margin-bottom: 6px;
+  }
+}

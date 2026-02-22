@@ -2,7 +2,10 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Image from "next/image";
+import Masonry from "react-masonry-css";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
+
+const GALLERY_BREAKPOINT_COLS = { default: 3, 768: 2, 420: 1 };
 
 export default function ProjectGallery({ images = [], projectTitle = "" }) {
   const [modalOpen, setModalOpen] = useState(false);
@@ -43,49 +46,35 @@ export default function ProjectGallery({ images = [], projectTitle = "" }) {
 
   if (!images || images.length === 0) return null;
 
-  const mainImage = images[0];
   const hasMultiple = images.length > 1;
 
   return (
-    <div className="w-full max-w-[900px] flex flex-col gap-4 items-center">
-      {/* Main image – larger, clickable to open modal */}
-      <button
-        type="button"
-        onClick={() => openModal(0)}
-        className="w-full relative aspect-[16/10] overflow-hidden rounded-xl bg-primary-100 cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary-400/25 focus:ring-offset-2"
+    <div className="w-full max-w-[900px]">
+      {/* Masonry grid: each image clickable → opens lightbox */}
+      <Masonry
+        breakpointCols={GALLERY_BREAKPOINT_COLS}
+        className="project-gallery-grid"
+        columnClassName="project-gallery-grid_column"
       >
-        <Image
-          src={mainImage.src}
-          alt={mainImage.alt}
-          fill
-          className="object-cover"
-          sizes="(max-width: 900px) 100vw, 900px"
-        />
-      </button>
+        {images.map((img, idx) => (
+          <button
+            key={idx}
+            type="button"
+            onClick={() => openModal(idx)}
+            className="w-full relative aspect-[4/3] overflow-hidden rounded-lg cursor-zoom-in focus:outline-none focus:ring-2 focus:ring-primary-400/25 focus:ring-offset-1 transition-opacity hover:opacity-95"
+          >
+            <Image
+              src={img.src}
+              alt={img.alt}
+              fill
+              className="object-cover"
+              sizes="(max-width: 420px) 100vw, (max-width: 768px) 50vw, 300px"
+            />
+          </button>
+        ))}
+      </Masonry>
 
-      {/* Thumbnails – only when more than one image */}
-      {hasMultiple && (
-        <div className="w-full flex flex-wrap justify-center gap-2">
-          {images.map((img, idx) => (
-            <button
-              key={idx}
-              type="button"
-              onClick={() => openModal(idx)}
-              className="relative w-20 h-20 md:w-24 md:h-24 flex-shrink-0 overflow-hidden rounded-lg border-2 border-transparent hover:border-primary-400 focus:outline-none focus:ring-2 focus:ring-primary-400/25 focus:ring-offset-1 transition-colors"
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                fill
-                className="object-cover"
-                sizes="96px"
-              />
-            </button>
-          ))}
-        </div>
-      )}
-
-      {/* Modal */}
+      {/* Modal / lightbox */}
       {modalOpen && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4"

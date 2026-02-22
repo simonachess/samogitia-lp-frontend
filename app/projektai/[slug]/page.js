@@ -61,17 +61,18 @@ export default async function ProjectDetailPage({ params }) {
   if (!project) return notFound();
 
   // Build images list: main first, then gallery (for display + modal)
+  // Use width(1200) only so full image is visible (no crop to 1200×800)
   const images = [];
   if (project.mainImage) {
     images.push({
-      src: urlFor(project.mainImage).width(1200).height(800).url(),
+      src: urlFor(project.mainImage).width(1200).url(),
       alt: project.title || "Projekto nuotrauka",
     });
   }
   if (project.gallery && project.gallery.length > 0) {
     project.gallery.forEach((img, idx) => {
       images.push({
-        src: urlFor(img).width(1200).height(800).url(),
+        src: urlFor(img).width(1200).url(),
         alt: `${project.title} nuotrauka ${images.length + 1}`,
       });
     });
