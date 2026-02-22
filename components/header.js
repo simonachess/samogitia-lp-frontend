@@ -112,6 +112,26 @@ const Header = () => {
           ref={menuRef}
           className="fixed inset-0 z-[60] bg-primary-50 flex flex-col items-center justify-center lg:flex animate-fade-in-menu"
         >
+          <button
+            type="button"
+            onClick={() => setOpen(false)}
+            aria-label="Uždaryti meniu"
+            className="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 text-primary-700 hover:bg-primary-100"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden
+            >
+              <path d="M18 6L6 18M6 6l12 12" />
+            </svg>
+          </button>
           <nav className="flex flex-col items-center gap-8 text-center">
             {navLinks.map(({ href, label }) => (
               <Link
