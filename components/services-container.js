@@ -13,7 +13,7 @@ const ServicesContainer = ({ items = [] }) => {
 
   return (
     <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="max-w-[1200px] mx-auto px-4 w-full items-center flex flex-col items-center justify-start md:gap-10 gap-20 text-center text-21xl text-primary-800 font-body-regular-400">
+      <div className="max-w-[1200px] mx-auto px-4 w-full items-center flex flex-col items-center justify-start md:gap-10 gap-20 text-center text-primary-800 font-body-regular-400">
         <div className="flex flex-col items-center gap-[24px] animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
           <h2 className="page-heading">Atlikti darbai</h2>
           <div className="page-subheading">
@@ -23,7 +23,7 @@ const ServicesContainer = ({ items = [] }) => {
           </div>
         </div>
 
-        <div className="flex flex-wrap py-0 px-2.5 box-border items-start justify-center text-left text-5xl text-gray-white">
+        <div className="flex flex-wrap py-0 px-2.5 box-border items-start justify-center text-left text-base text-gray-white">
           <div className="flex flex-col items-center justify-start gap-[24px]">
             <div className="grid grid-cols-3 gap-[26px] lg:grid-cols-2 md:grid-cols-1">
               {shown.length === 0 ? (

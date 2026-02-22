@@ -16,10 +16,8 @@ export default function AboutPage() {
 
         <div className="flex flex-col gap-6 text-left max-w-[720px] w-full">
           <div>
-            <h2 className="text-xl font-semibold text-primary-800 mb-2">
-              Kas mes esame
-            </h2>
-            <p className="text-base text-lightslategray leading-[28px]">
+            <h2 className="section-heading mb-2">Kas mes esame</h2>
+            <p className="font-body-regular-400 text-base text-lightslategray leading-[28px]">
               Samogitia Group– įmonė, specializuojanti žemės gerbūvio darbuose.
               Atliekame sklypų paruošimą, reljefo formavimą, komunikacijų
               tiesimą ir aplinkos tvarkymą. Taip pat siūlome technikos ir
@@ -28,10 +26,8 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-primary-800 mb-2">
-              Mūsų paslaugos
-            </h2>
-            <ul className="list-disc list-inside text-base text-lightslategray leading-[28px] space-y-2">
+            <h2 className="section-heading mb-2">Mūsų paslaugos</h2>
+            <ul className="font-body-regular-400 list-disc list-inside text-base text-lightslategray leading-[28px] space-y-2">
               <li>Žemės gerbūvio darbai ir sklypo paruošimas</li>
               <li>Reljefo formavimas ir žemės lyginimas</li>
               <li>Komunikacijų tiesimas ir kasimas</li>
@@ -41,10 +37,8 @@ export default function AboutPage() {
           </div>
 
           <div>
-            <h2 className="text-xl font-semibold text-primary-800 mb-2">
-              Aptarnaujame
-            </h2>
-            <p className="text-base text-lightslategray leading-[28px]">
+            <h2 className="section-heading mb-2">Aptarnaujame</h2>
+            <p className="font-body-regular-400 text-base text-lightslategray leading-[28px]">
               Dirbame Telšiuose, Plungėje, Mažeikiuose, Šiauliuose, Klaipėdoje
               ir visame Žemaitijos regione. Susisiekite su mumis – paruošime
               individualų pasiūlymą jūsų projektui.

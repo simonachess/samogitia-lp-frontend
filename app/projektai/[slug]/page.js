@@ -85,9 +85,7 @@ export default async function ProjectDetailPage({ params }) {
         {/* Gallery (jei yra daugiau nuotraukų) */}
         {project.gallery && project.gallery.length > 0 && (
           <div className="w-full max-w-[900px] flex flex-col gap-4 items-start text-left">
-            <h2 className="text-2xl font-semibold text-primary-800">
-              Papildomos projekto nuotraukos
-            </h2>
+            <h2 className="section-heading">Papildomos projekto nuotraukos</h2>
             <div className="grid [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))] gap-4">
               {project.gallery.map((img, idx) => (
                 <div key={idx} className="relative h-[200px]">

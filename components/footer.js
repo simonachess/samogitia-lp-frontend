@@ -3,7 +3,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div className="w-full flex py-[40px] items-start justify-start flex-wrap">
-      <footer className=" max-w-[1200px] w-full px-4 mx-auto flex flex-row items-start justify-between text-left text-5xl text-gray-black font-body-regular-400 md:flex-col md:gap-[50px] sm:flex-col sm:gap-[50px]">
+      <footer className=" max-w-[1200px] w-full px-4 mx-auto flex flex-row items-start justify-between text-left text-base text-gray-black font-body-regular-400 md:flex-col md:gap-[50px] sm:flex-col sm:gap-[50px]">
         <div className="w-max flex flex-col items-start justify-start gap-[20px] text-center text-primary-500 font-body-regular-400">
           <div className="flex flex-row items-center justify-center gap-[8px]">
             <img
