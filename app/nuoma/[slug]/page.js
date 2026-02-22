@@ -71,7 +71,7 @@ export default async function RentDetailPage({ params }) {
                 className="w-[56px] h-[56px]"
               />
             )}
-            <h2 className="page-heading">{item.title}</h2>
+            <h1 className="page-heading">{item.title}</h1>
           </div>
 
           <div className="page-subheading max-w-[800px]">

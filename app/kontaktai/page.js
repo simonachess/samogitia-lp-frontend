@@ -58,7 +58,7 @@ export default function ContactPage() {
       <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-row flex-wrap items-start justify-center text-center text-primary-800 font-body-regular-400">
         <div className="flex flex-col py-0 px-2.5 box-border items-center justify-start md:gap-10 gap-20 w-full">
           <div className="max-w-[720px] flex flex-col items-center justify-start gap-[24px]">
-            <h2 className="page-heading">Susisiekite</h2>
+            <h1 className="page-heading">Susisiekite</h1>
             <div className="page-subheading">
               Užpildykite formą ir mes su jumis susisieksime.
             </div>

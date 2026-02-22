@@ -74,7 +74,7 @@ export default async function ServiceDetailPage({ params }) {
                 className="w-[56px] h-[56px]"
               />
             )}
-            <h2 className="page-heading">{service.title}</h2>
+            <h1 className="page-heading">{service.title}</h1>
           </div>
 
           {(service.longDescription ?? service.description) &&
