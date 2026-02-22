@@ -40,6 +40,14 @@ export const metadata = {
     description:
       "Žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Lietuvoje.",
     url: "https://samogitiagroup.lt",
+    images: [
+      {
+        url: "/hero-dektop.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Samogitia – žemės gerbūvio darbai",
+      },
+    ],
   },
   alternates: {
     canonical: "https://samogitiagroup.lt",

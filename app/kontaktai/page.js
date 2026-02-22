@@ -5,35 +5,50 @@ import { useState } from "react";
 
 export default function ContactPage() {
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
+  const [errorMessage, setErrorMessage] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
     setStatus("sending");
+    setErrorMessage("");
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const payload = {
+      firstName: formData.get("firstName") || "",
+      lastName: formData.get("lastName") || "",
+      email: formData.get("email") || "",
+      message: formData.get("message") || "",
+      botField: formData.get("bot-field") || "",
+    };
 
     try {
-      const form = e.currentTarget;
-      const formData = new FormData(form);
-
-      const payload = {
-        firstName: formData.get("firstName") || "",
-        lastName: formData.get("lastName") || "",
-        email: formData.get("email") || "",
-        message: formData.get("message") || "",
-        botField: formData.get("bot-field") || "",
-      };
-
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
 
-      if (!res.ok) throw new Error("Failed");
+      const data = await res.json().catch(() => ({}));
+
+      if (!res.ok) {
+        if (res.status === 429) {
+          setErrorMessage("Per daug užklausų. Bandykite vėliau.");
+        } else if (res.status === 400 && data?.error) {
+          setErrorMessage(data.error);
+        } else {
+          setErrorMessage("Nepavyko išsiųsti. Bandykite dar kartą.");
+        }
+        setStatus("error");
+        return;
+      }
 
       form.reset();
       setStatus("sent");
     } catch (e2) {
       console.error(e2);
+      setErrorMessage("Nepavyko išsiųsti. Bandykite dar kartą.");
       setStatus("error");
     }
   };
@@ -74,7 +89,7 @@ export default function ContactPage() {
                   <input
                     id="firstName"
                     name="firstName"
-                    className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+                    className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-1"
                     type="text"
                     placeholder="Vardas"
                     maxLength={100}
@@ -89,7 +104,7 @@ export default function ContactPage() {
                   <input
                     id="lastName"
                     name="lastName"
-                    className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+                    className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-1"
                     type="text"
                     placeholder="Pavardė"
                     maxLength={100}
@@ -106,7 +121,7 @@ export default function ContactPage() {
                 <input
                   id="email"
                   name="email"
-                  className="w-full body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+                  className="w-full body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-1"
                   type="email"
                   placeholder="El. paštas"
                   required
@@ -120,7 +135,7 @@ export default function ContactPage() {
                 <textarea
                   id="message"
                   name="message"
-                  className="w-full bg-[transparent] h-[105px] body-regular-600 text-base rounded box-border p-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+                  className="w-full bg-[transparent] h-[105px] body-regular-600 text-base rounded box-border p-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-1"
                   placeholder="Klausimas"
                   required
                   rows={10}
@@ -132,7 +147,7 @@ export default function ContactPage() {
                 disabled={status === "sending"}
                 aria-busy={status === "sending"}
                 aria-live="polite"
-                className="cursor-pointer [border:none] p-0 bg-primary-500 rounded w-[222px] h-[46px] flex flex-col items-center justify-center disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+                className="cursor-pointer [border:none] p-0 bg-primary-500 rounded w-[222px] h-[46px] flex flex-col items-center justify-center disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
               >
                 <div className="relative text-base body-regular-600 text-gray-white text-center inline-block w-[203.12px]">
                   {status === "sending" ? "Siunčiama..." : "Siųsti užklausą"}
@@ -154,7 +169,7 @@ export default function ContactPage() {
                   role="alert"
                   aria-live="assertive"
                 >
-                  Nepavyko išsiųsti. Bandykite dar kartą.
+                  {errorMessage}
                 </p>
               )}
             </div>

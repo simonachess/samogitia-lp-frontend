@@ -18,7 +18,7 @@ export default function FeatureContainer() {
         <div className="w-full max-w-[940px] flex md:flex-col gap-10 md:gap-4">
           <Link
             href="/paslaugos"
-            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-lg"
+            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-lg"
           >
             <div
               className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)]
@@ -43,7 +43,7 @@ export default function FeatureContainer() {
 
           <Link
             href="/nuoma"
-            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-lg"
+            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-lg"
           >
             <div
               className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)]

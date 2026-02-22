@@ -16,20 +16,32 @@ const Footer = () => {
           </div>
           <div className="flex flex-col items-start justify-start gap-[13px] text-left text-base text-gray-500 font-body-regular-400">
             <div className="w-max gap-2 flex flex-row items-center justify-between">
-              <div className="rounded bg-primary-50 flex flex-col p-3.5 items-center justify-center">
+              <a
+                href="https://www.facebook.com/Vytkaa"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded bg-primary-50 flex flex-col p-3.5 items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
+                aria-label="Facebook"
+              >
                 <img
                   className="w-5 h-[21.67px]"
                   alt=""
                   src="/social-media-logo.svg"
                 />
-              </div>
-              <div className="rounded bg-primary-50 flex flex-col p-3.5 items-center justify-center">
+              </a>
+              <a
+                href="https://www.instagram.com/bertavicius"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded bg-primary-50 flex flex-col p-3.5 items-center justify-center focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2"
+                aria-label="Instagram"
+              >
                 <img
                   className="relative w-5 h-5 overflow-hidden shrink-0"
                   alt=""
                   src="/social-media-logo3.svg"
                 />
-              </div>
+              </a>
             </div>
           </div>
         </div>
@@ -39,14 +51,14 @@ const Footer = () => {
 
             <a
               href="tel:+37064768414"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
               aria-label="Call +370 647 68414"
             >
               +370 647 68414
             </a>
             <a
               href="mailto:samogitiagroup@gmail.com"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
               aria-label="Email samogitiagroup@gmail.com"
             >
               samogitiagroup@gmail.com
@@ -57,25 +69,25 @@ const Footer = () => {
           <div className="h-max flex flex-col items-start justify-start gap-[16px] text-base text-gray-500">
             <Link
               href="/paslaugos"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
             >
               Paslaugos
             </Link>
             <Link
               href="/nuoma"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
             >
               Nuoma
             </Link>
             <Link
               href="/projektai"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
             >
               Atlikti darbai
             </Link>
             <Link
               href="/apie"
-              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded"
+              className="leading-[24px] text-inherit focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded"
             >
               Apie mus
             </Link>
