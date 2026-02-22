@@ -57,6 +57,7 @@ export default async function RentPage() {
                         alt=""
                         width={64}
                         height={64}
+                        sizes="64px"
                         className="w-16 h-16 object-contain"
                       />
                     ) : null

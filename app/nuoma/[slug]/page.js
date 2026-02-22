@@ -67,6 +67,7 @@ export default async function RentDetailPage({ params }) {
                 alt={item.title}
                 width={56}
                 height={56}
+                sizes="56px"
                 className="w-[56px] h-[56px]"
               />
             )}

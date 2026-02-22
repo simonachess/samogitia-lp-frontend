@@ -3,6 +3,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 const Header = () => {
@@ -58,12 +59,13 @@ const Header = () => {
           href="/"
           className="flex flex-row items-center justify-center gap-[8px] focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
         >
-          <img
-            className="relative w-auto md:h-[60px] h-20"
-            alt="logo"
+          <Image
             src="/logo.svg"
+            alt="Samogitia – žemės gerbūvio darbai"
             width={204}
             height={80}
+            className="w-auto md:h-[60px] h-20"
+            priority
           />
         </Link>
 

@@ -20,7 +20,7 @@ const ServiceCard = ({
         src={imageUrl}
         alt={imageAlt}
         fill
-        sizes="320px"
+        sizes="(max-width: 420px) 100vw, (max-width: 960px) 50vw, 320px"
         className="object-cover object-top"
       />
       <div className="absolute bottom-2 left-2 right-2 flex flex-col items-start justify-start gap-1 z-[1] bg-gray-white/60 rounded p-2">

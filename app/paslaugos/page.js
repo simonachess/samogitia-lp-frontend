@@ -40,6 +40,7 @@ export default async function ServicesPage() {
                       alt=""
                       width={64}
                       height={64}
+                      sizes="64px"
                       className="w-16 h-16 object-contain"
                     />
                   ) : null

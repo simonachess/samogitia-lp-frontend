@@ -67,6 +67,7 @@ export default async function ServiceDetailPage({ params }) {
                 alt={service.title}
                 width={56}
                 height={56}
+                sizes="56px"
                 className="w-[56px] h-[56px]"
               />
             )}
