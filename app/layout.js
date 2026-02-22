@@ -45,7 +45,7 @@ export const metadata = {
         url: "/hero-dektop.jpg",
         width: 1200,
         height: 630,
-        alt: "Samogitia – žemės gerbūvio darbai",
+        alt: "Samogitia Group – žemės gerbūvio darbai",
       },
     ],
   },

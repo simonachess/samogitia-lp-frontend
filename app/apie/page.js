@@ -1,7 +1,7 @@
 export const metadata = {
   title: "Apie mus",
   description:
-    "Samogitia – žemės gerbūvio darbai, sklypų paruošimas, technikos ir įrankių nuoma Žemaitijoje ir visoje Lietuvoje.",
+    "Samogitia Group – žemės gerbūvio darbai, sklypų paruošimas, technikos ir įrankių nuoma Žemaitijoje ir visoje Lietuvoje.",
 };
 
 export default function AboutPage() {
@@ -20,7 +20,7 @@ export default function AboutPage() {
               Kas mes esame
             </h2>
             <p className="text-base text-lightslategray leading-[28px]">
-              Samogitia – įmonė, specializuojanti žemės gerbūvio darbuose.
+              Samogitia Group– įmonė, specializuojanti žemės gerbūvio darbuose.
               Atliekame sklypų paruošimą, reljefo formavimą, komunikacijų
               tiesimą ir aplinkos tvarkymą. Taip pat siūlome technikos ir
               įrankių nuomą privatiems ir verslo klientams.
