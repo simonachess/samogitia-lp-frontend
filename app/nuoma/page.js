@@ -1,4 +1,5 @@
 // app/nuoma/page.js
+import Image from "next/image";
 import InfoCard from "../../components/info-card";
 import { client, urlFor } from "../../lib/sanity";
 import groq from "groq";
@@ -29,7 +30,7 @@ export default async function RentPage() {
           </div>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] w-full flex md:flex-col gap-10 md:gap-4">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] w-full max-w-[960px] gap-4">
           {items.length === 0 ? (
             <p className="text-lightslategray">Informacija ruošiama...</p>
           ) : (
@@ -50,9 +51,15 @@ export default async function RentPage() {
                 <InfoCard
                   key={item._id}
                   icon={
-                    item.icon
-                      ? urlFor(item.icon).width(64).height(64).url()
-                      : null
+                    item.icon ? (
+                      <Image
+                        src={urlFor(item.icon).width(64).height(64).url()}
+                        alt=""
+                        width={64}
+                        height={64}
+                        className="w-16 h-16 object-contain"
+                      />
+                    ) : null
                   }
                   title={item.title}
                   // Show description, and if empty, show price text instead

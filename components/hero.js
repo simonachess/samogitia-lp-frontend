@@ -6,7 +6,7 @@ const Hero = () => {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-dektop.jpg"
+          src="/hero-desktop.jpg"
           alt="Žemės gerbūvio darbai Žemaitijoje"
           fill
           priority

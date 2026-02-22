@@ -42,7 +42,7 @@ export const metadata = {
     url: "https://samogitiagroup.lt",
     images: [
       {
-        url: "/hero-dektop.jpg",
+        url: "/hero-desktop.jpg",
         width: 1200,
         height: 630,
         alt: "Samogitia Group – žemės gerbūvio darbai",
