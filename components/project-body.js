@@ -41,6 +41,11 @@ const components = {
       <strong className="font-semibold">{children}</strong>
     ),
     em: ({ children }) => <em>{children}</em>,
+    fontSize: ({ value, children }) => {
+      const size = value?.size || "normal";
+      const className = `text-size-${size}`;
+      return <span className={className}>{children}</span>;
+    },
     link: ({ value, children }) => (
       <a
         href={value?.href}
@@ -54,10 +59,13 @@ const components = {
   },
 };
 
-export default function ProjectBody({ value }) {
+export default function ProjectBody({
+  value,
+  className = "project-description",
+}) {
   if (!value || (Array.isArray(value) && value.length === 0)) return null;
   return (
-    <div className="w-full max-w-[720px] text-left project-body">
+    <div className={`${className} w-full max-w-[720px] text-left project-body`}>
       <PortableText value={value} components={components} />
     </div>
   );

@@ -3,6 +3,8 @@ import { notFound } from "next/navigation";
 import Image from "next/image";
 import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";
+import { portableTextToPlainText } from "../../../lib/portable-text";
+import ProjectBody from "../../../components/project-body";
 
 export const revalidate = 60;
 
@@ -32,10 +34,11 @@ export async function generateMetadata({ params }) {
   }
 
   const pageTitle = service.title || "Žemės gerbūvio paslauga";
-  const pageDescription =
-    service.longDescription ||
-    service.description ||
-    "Žemės gerbūvio ir aplinkos tvarkymo paslauga.";
+  const rawDesc = service.longDescription ?? service.description;
+  const pageDescription = Array.isArray(rawDesc)
+    ? portableTextToPlainText(rawDesc) ||
+      "Žemės gerbūvio ir aplinkos tvarkymo paslauga."
+    : rawDesc || "Žemės gerbūvio ir aplinkos tvarkymo paslauga.";
 
   return {
     title: pageTitle,
@@ -60,7 +63,7 @@ export default async function ServiceDetailPage({ params }) {
     <div className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
       <div className="max-w-[1200px] w-full px-4 items-center">
         <div className="flex flex-col gap-6 items-center">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 mb-6">
             {service.icon && (
               <Image
                 src={urlFor(service.icon).width(56).height(56).url()}
@@ -74,9 +77,27 @@ export default async function ServiceDetailPage({ params }) {
             <h2 className="page-heading">{service.title}</h2>
           </div>
 
-          <div className="page-subheading max-w-[800px]">
-            {service.longDescription || service.description}
-          </div>
+          {(service.longDescription ?? service.description) &&
+            (Array.isArray(service.longDescription ?? service.description) ? (
+              <ProjectBody
+                value={service.longDescription ?? service.description}
+                className="service-description"
+              />
+            ) : (
+              <div className="service-description page-subheading w-full max-w-[960px] text-left">
+                {String(service.longDescription ?? service.description)
+                  .split(/\n/)
+                  .filter(Boolean)
+                  .map((para, i) => (
+                    <p
+                      key={i}
+                      className="mb-4 last:mb-0 text-primary-800 leading-relaxed"
+                    >
+                      {para}
+                    </p>
+                  ))}
+              </div>
+            ))}
         </div>
       </div>
     </div>

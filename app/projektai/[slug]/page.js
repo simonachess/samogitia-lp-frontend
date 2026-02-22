@@ -91,7 +91,7 @@ export default async function ProjectDetailPage({ params }) {
             (Array.isArray(project.description) ? (
               <ProjectBody value={project.description} />
             ) : (
-              <div className="page-subheading w-full max-w-[960px] text-left">
+              <div className="project-description page-subheading w-full max-w-[960px] text-left">
                 {String(project.description)
                   .split(/\n/)
                   .filter(Boolean)
