@@ -125,70 +125,44 @@ body {
     }
   }
 
-  /* Project detail: description/body text (plain text or block content) */
-  .project-description {
+  /* Rich text (project/service description: plain text or block content) */
+  .rich-description {
     color: #1e2640;
     font-size: 16px;
     font-weight: 400;
     line-height: 1.6;
   }
-  .project-description p {
+  .rich-description p {
     margin-bottom: 1rem;
     font-weight: 400;
   }
-  .project-description p:last-child {
+  .rich-description p:last-child {
     margin-bottom: 0;
   }
   @media (min-width: 421px) {
-    .project-description {
-      font-size: 17px;
-    }
-  }
-
-  /* Service detail: description/body text (plain text or block content) */
-  .service-description {
-    color: #1e2640;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 1.6;
-  }
-  .service-description p {
-    margin-bottom: 1rem;
-    font-weight: 400;
-  }
-  .service-description p:last-child {
-    margin-bottom: 0;
-  }
-  @media (min-width: 421px) {
-    .service-description {
+    .rich-description {
       font-size: 17px;
     }
   }
 
   /* Portable text: font size mark (small, normal, large, x-large, xx-large) */
-  .project-description .text-size-small,
-  .service-description .text-size-small {
+  .rich-description .text-size-small {
     font-size: 14px;
   }
-  .project-description .text-size-normal,
-  .service-description .text-size-normal {
+  .rich-description .text-size-normal {
     font-size: 16px;
   }
-  .project-description .text-size-large,
-  .service-description .text-size-large {
+  .rich-description .text-size-large {
     font-size: 18px;
   }
-  .project-description .text-size-x-large,
-  .service-description .text-size-x-large {
+  .rich-description .text-size-x-large {
     font-size: 20px;
   }
-  .project-description .text-size-xx-large,
-  .service-description .text-size-xx-large {
+  .rich-description .text-size-xx-large {
     font-size: 22px;
   }
   @media (min-width: 421px) {
-    .project-description .text-size-normal,
-    .service-description .text-size-normal {
+    .rich-description .text-size-normal {
       font-size: 17px;
     }
   }

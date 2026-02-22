@@ -4,7 +4,7 @@ import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";
 import { portableTextToPlainText } from "../../../lib/portable-text";
 import ProjectGallery from "../../../components/project-gallery";
-import ProjectBody from "../../../components/project-body";
+import RichBody from "../../../components/rich-body";
 
 export const revalidate = 60;
 
@@ -89,9 +89,9 @@ export default async function ProjectDetailPage({ params }) {
           <h1 className="page-heading w-full max-w-[960px]">{project.title}</h1>
           {project.description &&
             (Array.isArray(project.description) ? (
-              <ProjectBody value={project.description} />
+              <RichBody value={project.description} />
             ) : (
-              <div className="project-description page-subheading w-full max-w-[960px] text-left">
+              <div className="rich-description page-subheading w-full max-w-[720px] text-left">
                 {String(project.description)
                   .split(/\n/)
                   .filter(Boolean)

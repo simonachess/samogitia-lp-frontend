@@ -53,7 +53,7 @@ If you only have **description** and no longDescription, change **description** 
 
 ## Frontend (already done)
 
-- If **longDescription** or **description** is an **array** → rendered with `ProjectBody` and class **`service-description`** (headings, bold, lists, links).
-- If it’s a **string** → split by newlines into paragraphs; wrapper uses class **`service-description`**.
+- If **longDescription** or **description** is an **array** → rendered with `RichBody` and class **`rich-description`** (headings, bold, lists, links).
+- If it’s a **string** → split by newlines into paragraphs; wrapper uses class **`rich-description`**.
 - Meta description uses plain text (block content is converted to a string for SEO).
-- To style service description only: edit `styles/global.css` → **`.service-description`** (separate from `.project-description` for project detail).
+- To style: edit `styles/global.css` → **`.rich-description`** (same class used for project and service descriptions).

@@ -84,7 +84,7 @@ You see a **block editor**: each paragraph is a block, and you can format text (
 
 ### What the frontend renders
 
-Styled HTML: paragraphs, **bold**, headings (H2), lists, links — all from `components/project-body.js`.
+Styled HTML: paragraphs, **bold**, headings (H2), lists, links — all from `components/rich-body.js`.
 
 ```
   Šis projektas buvo įgyvendintas 2024 m.

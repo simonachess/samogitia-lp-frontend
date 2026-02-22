@@ -59,13 +59,10 @@ const components = {
   },
 };
 
-export default function ProjectBody({
-  value,
-  className = "project-description",
-}) {
+export default function RichBody({ value }) {
   if (!value || (Array.isArray(value) && value.length === 0)) return null;
   return (
-    <div className={`${className} w-full max-w-[720px] text-left project-body`}>
+    <div className="rich-description w-full max-w-[720px] text-left">
       <PortableText value={value} components={components} />
     </div>
   );

@@ -4,7 +4,7 @@ import Image from "next/image";
 import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";
 import { portableTextToPlainText } from "../../../lib/portable-text";
-import ProjectBody from "../../../components/project-body";
+import RichBody from "../../../components/rich-body";
 
 export const revalidate = 60;
 
@@ -79,12 +79,11 @@ export default async function ServiceDetailPage({ params }) {
 
           {(service.longDescription ?? service.description) &&
             (Array.isArray(service.longDescription ?? service.description) ? (
-              <ProjectBody
+              <RichBody
                 value={service.longDescription ?? service.description}
-                className="service-description"
               />
             ) : (
-              <div className="service-description page-subheading w-full max-w-[960px] text-left">
+              <div className="rich-description page-subheading w-full max-w-[720px] text-left">
                 {String(service.longDescription ?? service.description)
                   .split(/\n/)
                   .filter(Boolean)

@@ -71,9 +71,9 @@ Save, deploy/restart Sanity Studio. Existing projects with a string description 
 
 ## 2. Frontend (already done)
 
-- **Block content** is rendered by `ProjectBody` with styles in `components/project-body.js` and `styles/global.css` (`.project-description`).
+- **Block content** is rendered by `RichBody` (`components/rich-body.js`) with styles in `styles/global.css` (`.rich-description`).
 - To change how it looks, edit:
-  - **Global**: `styles/global.css` → `.project-description` (project detail only; services use `.service-description`)
-  - **Per element** (paragraphs, headings, lists, links): `components/project-body.js` → `components` object
+  - **Global**: `styles/global.css` → `.rich-description` (used for both project and service descriptions)
+  - **Per element** (paragraphs, headings, lists, links): `components/rich-body.js` → `components` object
 
 No other frontend changes are required once the API returns `description` as an array of blocks.
