@@ -10,14 +10,10 @@ const components = {
       </p>
     ),
     h2: ({ children }) => (
-      <h2 className="text-lg font-semibold text-primary-800 mt-6 mb-2 first:mt-0">
-        {children}
-      </h2>
+      <h2 className="font-semibold text-primary-800">{children}</h2>
     ),
     h3: ({ children }) => (
-      <h3 className="text-base font-semibold text-primary-800 mt-4 mb-2">
-        {children}
-      </h3>
+      <h3 className="font-semibold text-primary-800">{children}</h3>
     ),
   },
   list: {

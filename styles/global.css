@@ -139,9 +139,30 @@ body {
   .rich-description p:last-child {
     margin-bottom: 0;
   }
+  .rich-description h2 {
+    font-size: 1.125rem; /* 18px */
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  .rich-description h2:first-child {
+    margin-top: 0;
+  }
+  .rich-description h3 {
+    font-size: 1rem; /* 16px */
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
   @media (min-width: 421px) {
     .rich-description {
       font-size: 17px;
+    }
+    .rich-description h2 {
+      font-size: 1.25rem; /* 20px */
+    }
+    .rich-description h3 {
+      font-size: 1.0625rem; /* 17px */
     }
   }
 
