@@ -62,7 +62,7 @@ const components = {
 export default function RichBody({ value }) {
   if (!value || (Array.isArray(value) && value.length === 0)) return null;
   return (
-    <div className="rich-description w-full max-w-[720px] text-left">
+    <div className="rich-description w-full text-left">
       <PortableText value={value} components={components} />
     </div>
   );

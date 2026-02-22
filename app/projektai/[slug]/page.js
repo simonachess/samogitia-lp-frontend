@@ -91,7 +91,7 @@ export default async function ProjectDetailPage({ params }) {
             (Array.isArray(project.description) ? (
               <RichBody value={project.description} />
             ) : (
-              <div className="rich-description page-subheading w-full max-w-[720px] text-left">
+              <div className="rich-description page-subheading w-full text-left">
                 {String(project.description)
                   .split(/\n/)
                   .filter(Boolean)

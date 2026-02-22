@@ -83,7 +83,7 @@ export default async function ServiceDetailPage({ params }) {
                 value={service.longDescription ?? service.description}
               />
             ) : (
-              <div className="rich-description page-subheading w-full max-w-[720px] text-left">
+              <div className="rich-description page-subheading w-full text-left">
                 {String(service.longDescription ?? service.description)
                   .split(/\n/)
                   .filter(Boolean)
