@@ -47,6 +47,10 @@ module.exports = {
           "0%": { transform: "translateX(100%)" },
           "100%": { transform: "translateX(0)" },
         },
+        "fade-in-menu": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
         spin: {
           "0%": { transform: "rotate(0deg)" },
           "100%": { transform: "rotate(360deg)" },
@@ -57,6 +61,7 @@ module.exports = {
         "fade-in-up": "fade-in-up 0.6s ease-out forwards",
         "fade-in-scale": "fade-in-scale 0.4s ease-out forwards",
         "slide-in-right": "slide-in-right 0.25s ease-out forwards",
+        "fade-in-menu": "fade-in-menu 0.2s ease-out forwards",
         "spin-slow": "spin 1s linear infinite",
       },
       animationDelay: {

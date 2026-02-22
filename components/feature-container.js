@@ -1,5 +1,34 @@
 // components/feature-container.js
 import Link from "next/link";
+import { Construction, Wrench, Images } from "lucide-react";
+
+const iconSize = 24;
+const iconBoxSize = "w-12 h-12";
+
+const cardBase =
+  "rounded-xl bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)] hover:-translate-y-1 flex flex-col text-left text-gray-700 font-body-regular-400 transition-all duration-300 ease-out border border-primary-50";
+const cardIconBox =
+  "flex-shrink-0 rounded-xl bg-primary-50 flex items-center justify-center text-primary-500";
+const cardTitle = "card-heading text-primary-800";
+const cardDesc = "text-base leading-[24px] text-lightslategray";
+const cardCta =
+  "inline-flex items-center gap-1 text-primary-500 font-medium text-base mt-auto";
+
+const ChevronRight = () => (
+  <svg
+    className="w-4 h-4 flex-shrink-0"
+    fill="none"
+    viewBox="0 0 24 24"
+    stroke="currentColor"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth={2}
+      d="M9 5l7 7-7 7"
+    />
+  </svg>
+);
 
 export default function FeatureContainer() {
   return (
@@ -15,54 +44,73 @@ export default function FeatureContainer() {
           </div>
         </div>
 
-        <div className="w-full max-w-[940px] flex md:flex-col gap-10 md:gap-4">
+        {/* Simple grid: 3 cols desktop, 1 col mobile */}
+        <div className="w-full max-w-[1000px] grid grid-cols-3 lg:grid-cols-1 gap-4 md:gap-5">
           <Link
             href="/paslaugos"
-            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-lg animate-fade-in-up opacity-0 [animation-delay:100ms] [animation-fill-mode:forwards]"
+            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-xl animate-fade-in-up opacity-0 [animation-delay:100ms] [animation-fill-mode:forwards]"
           >
-            <div
-              className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)] hover:-translate-y-1
-                flex flex-col p-6 text-left text-gray-700 font-body-regular-400
-                transition-all duration-300 ease-out`}
-            >
-              <div className="flex flex-col gap-8">
-                {/* {icon && <div className="text-primary-500">{icon}</div>} */}
-                <div className="flex flex-col gap-6">
-                  <h3 className="card-heading">Žemės gerbūvio paslaugos</h3>
-                  <p className="text-base leading-[24px] text-lightslategray">
-                    Aplinka, sklypo paruošimas, žemės lyginimas ir kiti žemės
-                    tvarkymo darbai.
-                  </p>
+            <div className={`w-full flex flex-col p-6 gap-5 ${cardBase}`}>
+              <div className="flex items-center gap-4">
+                <div className={`${iconBoxSize} ${cardIconBox}`}>
+                  <Construction size={iconSize} strokeWidth={1.5} />
                 </div>
-                <div className="underline text-primary-500">
-                  Visos paslaugos
-                </div>
+                <h3 className={`${cardTitle} flex-1`}>
+                  Žemės gerbūvio paslaugos
+                </h3>
               </div>
+              <p className={cardDesc}>
+                Aplinka, sklypo paruošimas, žemės lyginimas ir kiti žemės
+                tvarkymo darbai.
+              </p>
+              <span className={cardCta}>
+                Visos paslaugos
+                <ChevronRight />
+              </span>
             </div>
           </Link>
 
           <Link
             href="/nuoma"
-            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-lg animate-fade-in-up opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]"
+            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-xl animate-fade-in-up opacity-0 [animation-delay:150ms] [animation-fill-mode:forwards]"
           >
-            <div
-              className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)] hover:-translate-y-1
-                flex flex-col p-6 text-left text-gray-700 font-body-regular-400
-                transition-all duration-300 ease-out`}
-            >
-              <div className="flex flex-col gap-8">
-                {/* {icon && <div className="text-primary-500">{icon}</div>} */}
-                <div className="flex flex-col gap-6">
-                  <h3 className="card-heading">Technikos ir įrankių nuoma</h3>
-                  <p className="text-base leading-[24px] text-lightslategray">
-                    Technika ir įrankiai skirti sklypo, kiemo ir aplinkos
-                    tvarkymo darbams.
-                  </p>
+            <div className={`w-full flex flex-col p-6 gap-5 ${cardBase}`}>
+              <div className="flex items-center gap-4">
+                <div className={`${iconBoxSize} ${cardIconBox}`}>
+                  <Wrench size={iconSize} strokeWidth={1.5} />
                 </div>
-                <div className="underline text-primary-500">
-                  Nuomojami įrankiai ir technika
-                </div>
+                <h3 className={`${cardTitle} flex-1`}>
+                  Technikos ir įrankių nuoma
+                </h3>
               </div>
+              <p className={cardDesc}>
+                Technika ir įrankiai sklypo, kiemo ir aplinkos darbams.
+              </p>
+              <span className={cardCta}>
+                Nuomoti
+                <ChevronRight />
+              </span>
+            </div>
+          </Link>
+
+          <Link
+            href="/projektai"
+            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-400 focus:ring-offset-2 rounded-xl animate-fade-in-up opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]"
+          >
+            <div className={`w-full flex flex-col p-6 gap-5 ${cardBase}`}>
+              <div className="flex items-center gap-4">
+                <div className={`${iconBoxSize} ${cardIconBox}`}>
+                  <Images size={iconSize} strokeWidth={1.5} />
+                </div>
+                <h3 className={`${cardTitle} flex-1`}>Atlikti darbai</h3>
+              </div>
+              <p className={cardDesc}>
+                Mūsų įgyvendinti projektai ir atlikti darbai.
+              </p>
+              <span className={cardCta}>
+                Peržiūrėti
+                <ChevronRight />
+              </span>
             </div>
           </Link>
         </div>
