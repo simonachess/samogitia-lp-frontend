@@ -1,5 +1,6 @@
-// app/projects/[slug]/page.js
+// app/projektai/[slug]/page.js
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";
 
@@ -69,11 +70,13 @@ export default async function ProjectDetailPage({ params }) {
             <p className="page-subheading">{project.description}</p>
           )}
           {project.mainImage && (
-            <div className="w-full max-w-[900px]">
-              <img
+            <div className="w-full max-w-[900px] relative aspect-[2/1]">
+              <Image
                 src={urlFor(project.mainImage).width(1200).height(600).url()}
                 alt={project.title}
-                className="w-full h-auto rounded-xl object-cover"
+                fill
+                className="rounded-xl object-cover"
+                sizes="(max-width: 900px) 100vw, 900px"
               />
             </div>
           )}
@@ -87,12 +90,15 @@ export default async function ProjectDetailPage({ params }) {
             </h2>
             <div className="grid [grid-template-columns:repeat(auto-fit,minmax(220px,1fr))] gap-4">
               {project.gallery.map((img, idx) => (
-                <img
-                  key={idx}
-                  src={urlFor(img).width(800).height(600).url()}
-                  alt={`${project.title} nuotrauka ${idx + 1}`}
-                  className="w-full h-[200px] object-cover rounded-lg"
-                />
+                <div key={idx} className="relative h-[200px]">
+                  <Image
+                    src={urlFor(img).width(800).height(600).url()}
+                    alt={`${project.title} nuotrauka ${idx + 1}`}
+                    fill
+                    className="object-cover rounded-lg"
+                    sizes="(max-width: 800px) 100vw, 220px"
+                  />
+                </div>
               ))}
             </div>
           </div>

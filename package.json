@@ -3,11 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^4.7.0",
     "@sanity/client": "^7.15.0",
     "@sanity/image-url": "^2.0.3",
-    "@supabase/supabase-js": "^2.31.0",
-    "antd": "^4.17.4",
     "groq": "^5.11.0",
     "next": "^14.2.35",
     "next-sanity": "^7.1.4",
@@ -27,7 +24,6 @@
     "prepare": "husky install",
     "dev": "next dev",
     "build": "next build",
-    "export": "next export",
     "start": "next start",
     "lint": "next lint"
   },

@@ -1,4 +1,4 @@
-// app/components/feature-container.js
+// components/feature-container.js
 import Link from "next/link";
 
 export default function FeatureContainer() {
@@ -16,7 +16,10 @@ export default function FeatureContainer() {
         </div>
 
         <div className="w-full max-w-[940px] flex md:flex-col gap-10 md:gap-4">
-          <Link href="/paslaugos" className="no-underline flex w-full">
+          <Link
+            href="/paslaugos"
+            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-lg"
+          >
             <div
               className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)]
                 flex flex-col p-6 text-left text-gray-700 font-body-regular-400
@@ -38,7 +41,10 @@ export default function FeatureContainer() {
             </div>
           </Link>
 
-          <Link href="/nuoma" className="no-underline flex w-full">
+          <Link
+            href="/nuoma"
+            className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-lg"
+          >
             <div
               className={`w-full rounded-lg bg-gray-white hover:shadow-[0px_24px_68px_rgba(59,_77,_129,_0.08)]
                 flex flex-col p-6 text-left text-gray-700 font-body-regular-400

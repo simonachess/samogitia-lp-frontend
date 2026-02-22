@@ -1,4 +1,4 @@
-// app/rent/page.js
+// app/nuoma/page.js
 import InfoCard from "../../components/info-card";
 import { client, urlFor } from "../../lib/sanity";
 import groq from "groq";

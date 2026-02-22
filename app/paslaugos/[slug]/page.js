@@ -1,5 +1,6 @@
-// app/services/[slug]/page.js
+// app/paslaugos/[slug]/page.js
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";
 
@@ -61,9 +62,11 @@ export default async function ServiceDetailPage({ params }) {
         <div className="flex flex-col gap-6 items-center">
           <div className="flex items-center gap-4">
             {service.icon && (
-              <img
+              <Image
                 src={urlFor(service.icon).width(56).height(56).url()}
                 alt={service.title}
+                width={56}
+                height={56}
                 className="w-[56px] h-[56px]"
               />
             )}

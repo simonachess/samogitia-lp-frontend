@@ -1,5 +1,6 @@
-// app/rent/[slug]/page.js
+// app/nuoma/[slug]/page.js
 import { notFound } from "next/navigation";
+import Image from "next/image";
 import groq from "groq";
 import { client, urlFor } from "../../../lib/sanity";
 
@@ -61,9 +62,11 @@ export default async function RentDetailPage({ params }) {
         <div className="flex flex-col gap-6 items-center">
           <div className="flex items-center gap-4">
             {item.icon && (
-              <img
+              <Image
                 src={urlFor(item.icon).width(56).height(56).url()}
                 alt={item.title}
+                width={56}
+                height={56}
                 className="w-[56px] h-[56px]"
               />
             )}

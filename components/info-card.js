@@ -23,7 +23,10 @@ export default function InfoCard({ icon, title, description, href }) {
   );
 
   return href ? (
-    <Link href={href} className="no-underline flex w-full">
+    <Link
+      href={href}
+      className="no-underline flex w-full focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 rounded-lg"
+    >
       {Card}
     </Link>
   ) : (

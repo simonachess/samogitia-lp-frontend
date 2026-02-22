@@ -15,8 +15,7 @@ const publicSans = Public_Sans({
 });
 
 export const metadata = {
-  // set this to your real domain when you have it
-  // metadataBase: new URL("https://samogitiagroup.lt"),
+  metadataBase: new URL("https://samogitiagroup.lt"),
   title: {
     default: "Žemės gerbūvio darbai | Samogitia",
     template: "%s | Samogitia",

@@ -3,39 +3,45 @@ import { client } from "../lib/sanity";
 import groq from "groq";
 
 export default async function sitemap() {
-  // TODO: kai turėsi domeną, pakeisk į tikrą:
-  // pvz. const baseUrl = "https://samogitia.lt";
   const baseUrl = "https://samogitiagroup.lt";
 
-  // Vienu metu parsitraukiam paslaugas ir projektus iš Sanity
-  const [services, projects, rent] = await Promise.all([
-    client.fetch(
-      groq`*[_type == "service" && defined(slug.current)]{
-        "slug": slug.current,
-        _updatedAt
-      }`,
-    ),
-    client.fetch(
-      groq`*[_type == "project" && defined(slug.current)]{
-        "slug": slug.current,
-        _updatedAt
-      }`,
-    ),
-    client.fetch(
-      groq`*[_type == "rent" && defined(slug.current)]{
-        "slug": slug.current,
-        _updatedAt
-      }`,
-    ),
-  ]);
+  let services = [];
+  let projects = [];
+  let rent = [];
 
-  // Statiniai puslapiai (jei turi /contact, irgi pridėk)
+  try {
+    [services, projects, rent] = await Promise.all([
+      client.fetch(
+        groq`*[_type == "service" && defined(slug.current)]{
+          "slug": slug.current,
+          _updatedAt
+        }`,
+      ),
+      client.fetch(
+        groq`*[_type == "project" && defined(slug.current)]{
+          "slug": slug.current,
+          _updatedAt
+        }`,
+      ),
+      client.fetch(
+        groq`*[_type == "rent" && defined(slug.current)]{
+          "slug": slug.current,
+          _updatedAt
+        }`,
+      ),
+    ]);
+  } catch (err) {
+    console.error("Sitemap Sanity fetch error:", err);
+    // Continue with empty arrays so static pages still get generated
+  }
+
   const staticPages = [
     "",
     "/paslaugos",
     "/nuoma",
     "/projektai",
     "/kontaktai",
+    "/apie",
   ].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),

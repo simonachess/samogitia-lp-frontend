@@ -1,4 +1,4 @@
-// app/contact/page.js
+// app/kontaktai/page.js
 "use client";
 
 import { useState } from "react";
@@ -67,46 +67,72 @@ export default function ContactPage() {
 
             <div className="flex flex-col items-center justify-start gap-[10px] w-full">
               <div className="flex flex-row items-start justify-center gap-[10px] md:flex-col w-full">
+                <div className="flex flex-col gap-1 w-full">
+                  <label htmlFor="firstName" className="sr-only">
+                    Vardas
+                  </label>
+                  <input
+                    id="firstName"
+                    name="firstName"
+                    className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+                    type="text"
+                    placeholder="Vardas"
+                    maxLength={100}
+                    minLength={2}
+                    required
+                  />
+                </div>
+                <div className="flex flex-col gap-1 w-full">
+                  <label htmlFor="lastName" className="sr-only">
+                    Pavardė
+                  </label>
+                  <input
+                    id="lastName"
+                    name="lastName"
+                    className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+                    type="text"
+                    placeholder="Pavardė"
+                    maxLength={100}
+                    minLength={2}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="flex flex-col gap-1 w-full">
+                <label htmlFor="email" className="sr-only">
+                  El. paštas
+                </label>
                 <input
-                  name="firstName"
-                  className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray"
-                  type="text"
-                  placeholder="Vardas"
-                  maxLength={100}
-                  minLength={2}
-                  required
-                />
-                <input
-                  name="lastName"
-                  className="body-regular-600 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray"
-                  type="text"
-                  placeholder="Pavardė"
-                  maxLength={100}
-                  minLength={2}
+                  id="email"
+                  name="email"
+                  className="w-full body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+                  type="email"
+                  placeholder="El. paštas"
                   required
                 />
               </div>
 
-              <input
-                name="email"
-                className="w-full body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray"
-                type="email"
-                placeholder="El. paštas"
-                required
-              />
-
-              <textarea
-                name="message"
-                className="w-full bg-[transparent] h-[105px] body-regular-600 text-base rounded box-border p-3 border-[1px] border-solid border-gray"
-                placeholder="Klausimas"
-                required
-                rows={10}
-              />
+              <div className="flex flex-col gap-1 w-full">
+                <label htmlFor="message" className="sr-only">
+                  Klausimas
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  className="w-full bg-[transparent] h-[105px] body-regular-600 text-base rounded box-border p-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-1"
+                  placeholder="Klausimas"
+                  required
+                  rows={10}
+                />
+              </div>
 
               <button
                 type="submit"
                 disabled={status === "sending"}
-                className="cursor-pointer [border:none] p-0 bg-primary-500 rounded w-[222px] h-[46px] flex flex-col items-center justify-center disabled:opacity-60"
+                aria-busy={status === "sending"}
+                aria-live="polite"
+                className="cursor-pointer [border:none] p-0 bg-primary-500 rounded w-[222px] h-[46px] flex flex-col items-center justify-center disabled:opacity-60 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
               >
                 <div className="relative text-base body-regular-600 text-gray-white text-center inline-block w-[203.12px]">
                   {status === "sending" ? "Siunčiama..." : "Siųsti užklausą"}
@@ -114,12 +140,20 @@ export default function ContactPage() {
               </button>
 
               {status === "sent" && (
-                <p className="text-sm text-green-700">
+                <p
+                  className="text-sm text-green-700"
+                  role="status"
+                  aria-live="polite"
+                >
                   Ačiū! Užklausa išsiųsta ✅
                 </p>
               )}
               {status === "error" && (
-                <p className="text-sm text-red-600">
+                <p
+                  className="text-sm text-red-600"
+                  role="alert"
+                  aria-live="assertive"
+                >
                   Nepavyko išsiųsti. Bandykite dar kartą.
                 </p>
               )}
