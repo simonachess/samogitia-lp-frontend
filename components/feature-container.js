@@ -33,7 +33,7 @@ const ChevronRight = () => (
 export default function FeatureContainer() {
   return (
     <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="w-[1200px] items-center px-4 max-w-full flex flex-col md:gap-10 gap-20">
+      <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-col items-center md:gap-10 gap-20">
         <div className="flex w-full flex-col gap-6 items-center animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
           <h2 className="page-heading">Paslaugos</h2>
           <div className="page-subheading">
