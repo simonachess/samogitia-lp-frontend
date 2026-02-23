@@ -171,36 +171,32 @@ export default function ContactPage() {
                 />
               </div>
 
+              {(status === "sent" || status === "error") && (
+                <div
+                  role={status === "sent" ? "status" : "alert"}
+                  aria-live={status === "sent" ? "polite" : "assertive"}
+                  className={`w-full py-3 px-4 rounded text-sm font-medium ${
+                    status === "sent"
+                      ? "bg-green-50 text-green-800"
+                      : "bg-red-50 text-red-700"
+                  }`}
+                >
+                  {status === "sent"
+                    ? "Ačiū! Užklausa išsiųsta. Susisieksime su jumis netrukus."
+                    : errorMessage}
+                </div>
+              )}
+
               <button
                 type="submit"
                 disabled={status === "sending"}
                 aria-busy={status === "sending"}
-                aria-live="polite"
                 className="btn-primary w-[222px] h-[46px]"
               >
-                <div className="relative text-base body-regular-600 text-gray-white text-center inline-block w-[203.12px]">
+                <span className="text-base body-regular-600 text-gray-white">
                   {status === "sending" ? "Siunčiama..." : "Siųsti užklausą"}
-                </div>
+                </span>
               </button>
-
-              {status === "sent" && (
-                <p
-                  className="text-sm text-green-700"
-                  role="status"
-                  aria-live="polite"
-                >
-                  Ačiū! Užklausa išsiųsta ✅
-                </p>
-              )}
-              {status === "error" && (
-                <p
-                  className="text-sm text-red-600"
-                  role="alert"
-                  aria-live="assertive"
-                >
-                  {errorMessage}
-                </p>
-              )}
             </div>
           </form>
         </div>

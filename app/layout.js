@@ -2,21 +2,26 @@ import "../styles/global.css";
 import SiteLayout from "../components/layout/layout";
 import CookieConsent from "../components/cookie-consent";
 import AnalyticsGate from "../components/analytics-gate";
+import { validateEnv, getSiteUrl } from "../lib/env";
 import { Inter, Public_Sans } from "next/font/google";
+
+validateEnv();
 
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
   weight: ["400", "600"],
   variable: "--font-public-sans",
+  display: "swap",
 });
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://samogitiagroup.lt";
+const siteUrl = getSiteUrl();
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -77,7 +82,7 @@ export default function RootLayout({ children }) {
       "Žemaitija",
       "Lietuva",
     ],
-    url: "https://samogitia-lp-frontend.vercel.app",
+    url: siteUrl,
     telephone: "+37064768414",
     address: {
       "@type": "PostalAddress",

@@ -1,8 +1,10 @@
 // app/nuoma/[slug]/page.js
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import groq from "groq";
 import { client, urlFor } from "../../../lib/sanity";
+import { getSiteUrl } from "../../../lib/env";
 
 export const revalidate = 60;
 
@@ -36,14 +38,18 @@ export async function generateMetadata({ params }) {
     item.longDescription ||
     item.description ||
     "Technikos ir įrangos nuomos paslauga.";
+  const siteUrl = getSiteUrl();
+  const canonical = `${siteUrl}/nuoma/${params.slug}`;
 
   return {
     title: pageTitle,
     description: pageDescription,
+    alternates: { canonical },
     openGraph: {
       title: pageTitle,
       description: pageDescription,
       type: "article",
+      url: canonical,
     },
   };
 }
@@ -56,9 +62,44 @@ export default async function RentDetailPage({ params }) {
 
   if (!item) return notFound();
 
+  const siteUrl = getSiteUrl();
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: item.title,
+    description: item.longDescription || item.description,
+    url: `${siteUrl}/nuoma/${params.slug}`,
+  };
+
   return (
     <section className="page-section" aria-labelledby="rental-title">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="page-container page-section-inner animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
+        <nav
+          aria-label="Navigacijos kelias"
+          className="w-full max-w-[960px] mb-4"
+        >
+          <ol className="flex flex-wrap gap-2 text-sm text-primary-500 list-none m-0 p-0">
+            <li>
+              <Link href="/" className="link-default">
+                Pradžia
+              </Link>
+            </li>
+            <li aria-hidden>/</li>
+            <li>
+              <Link href="/nuoma" className="link-default">
+                Nuoma
+              </Link>
+            </li>
+            <li aria-hidden>/</li>
+            <li className="text-primary-800" aria-current="page">
+              {item.title}
+            </li>
+          </ol>
+        </nav>
         <article>
           <div className="flex flex-col gap-6 items-center">
             <div className="flex items-center gap-4">

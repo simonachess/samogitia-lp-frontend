@@ -1,9 +1,11 @@
 // app/paslaugos/[slug]/page.js
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
 import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";
 import { portableTextToPlainText } from "../../../lib/portable-text";
+import { getSiteUrl } from "../../../lib/env";
 import RichBody from "../../../components/rich-body";
 
 export const revalidate = 60;
@@ -39,14 +41,18 @@ export async function generateMetadata({ params }) {
     ? portableTextToPlainText(rawDesc) ||
       "Žemės gerbūvio ir aplinkos tvarkymo paslauga."
     : rawDesc || "Žemės gerbūvio ir aplinkos tvarkymo paslauga.";
+  const siteUrl = getSiteUrl();
+  const canonical = `${siteUrl}/paslaugos/${params.slug}`;
 
   return {
     title: pageTitle,
     description: pageDescription,
+    alternates: { canonical },
     openGraph: {
       title: pageTitle,
       description: pageDescription,
       type: "article",
+      url: canonical,
     },
   };
 }
@@ -59,9 +65,47 @@ export default async function ServiceDetailPage({ params }) {
 
   if (!service) return notFound();
 
+  const siteUrl = getSiteUrl();
+  const rawDesc = service.longDescription ?? service.description;
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: service.title,
+    description: Array.isArray(rawDesc)
+      ? portableTextToPlainText(rawDesc)
+      : rawDesc,
+    url: `${siteUrl}/paslaugos/${params.slug}`,
+  };
+
   return (
     <section className="page-section" aria-labelledby="service-title">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       <div className="page-container page-section-inner animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
+        <nav
+          aria-label="Navigacijos kelias"
+          className="w-full max-w-[960px] mb-4"
+        >
+          <ol className="flex flex-wrap gap-2 text-sm text-primary-500 list-none m-0 p-0">
+            <li>
+              <Link href="/" className="link-default">
+                Pradžia
+              </Link>
+            </li>
+            <li aria-hidden>/</li>
+            <li>
+              <Link href="/paslaugos" className="link-default">
+                Paslaugos
+              </Link>
+            </li>
+            <li aria-hidden>/</li>
+            <li className="text-primary-800" aria-current="page">
+              {service.title}
+            </li>
+          </ol>
+        </nav>
         <article>
           <div className="flex flex-col gap-6 items-center w-full">
             <div className="flex items-center gap-4 mb-6">

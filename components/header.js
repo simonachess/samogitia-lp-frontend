@@ -9,6 +9,8 @@ import { usePathname } from "next/navigation";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const menuRef = useRef(null);
+  const burgerRef = useRef(null);
+  const firstLinkRef = useRef(null);
 
   const pathname = usePathname();
 
@@ -42,6 +44,19 @@ const Header = () => {
     return () => {
       document.body.style.overflow = "";
     };
+  }, [open]);
+
+  // focus management: focus first link when menu opens, return to burger when closed
+  const prevOpenRef = useRef(open);
+  useEffect(() => {
+    if (open) {
+      requestAnimationFrame(() => {
+        firstLinkRef.current?.focus();
+      });
+    } else if (prevOpenRef.current) {
+      burgerRef.current?.focus();
+    }
+    prevOpenRef.current = open;
   }, [open]);
 
   const navLinks = [
@@ -89,6 +104,7 @@ const Header = () => {
 
           {/* Mobile burger – animated */}
           <button
+            ref={burgerRef}
             type="button"
             className="cursor-pointer [border:none] p-3 -m-1 bg-transparent flex lg:hidden items-center justify-center focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
             aria-label={open ? "Uždaryti meniu" : "Atidaryti meniu"}
@@ -147,9 +163,10 @@ const Header = () => {
             aria-label="Meniu"
           >
             <ul className="nav-list flex flex-col items-center gap-8">
-              {navLinks.map(({ href, label }) => (
+              {navLinks.map(({ href, label }, idx) => (
                 <li key={href}>
                   <Link
+                    ref={idx === 0 ? firstLinkRef : null}
                     href={href}
                     className={`card-heading-sm ${linkClass(href)}`}
                     onClick={() => setOpen(false)}
