@@ -46,7 +46,7 @@ export const metadata = {
     url: siteUrl,
     images: [
       {
-        url: "/hero-desktop.jpg",
+        url: "/original_size.jpg",
         width: 1200,
         height: 630,
         alt: "Samogitia Group – žemės gerbūvio darbai",
