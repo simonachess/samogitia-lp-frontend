@@ -142,7 +142,7 @@ const Header = () => {
             type="button"
             onClick={() => setOpen(false)}
             aria-label="Uždaryti meniu"
-            className="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 text-primary-700 hover:bg-primary-100"
+            className="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 text-primary-700 bg-transparent"
           >
             <svg
               width="24"
@@ -163,10 +163,20 @@ const Header = () => {
             aria-label="Meniu"
           >
             <ul className="nav-list flex flex-col items-center gap-8">
-              {navLinks.map(({ href, label }, idx) => (
+              <li>
+                <Link
+                  ref={firstLinkRef}
+                  href="/"
+                  className={`card-heading-sm ${linkClass("/")}`}
+                  onClick={() => setOpen(false)}
+                  aria-current={pathname === "/" ? "page" : undefined}
+                >
+                  PAGRINDINIS
+                </Link>
+              </li>
+              {navLinks.map(({ href, label }) => (
                 <li key={href}>
                   <Link
-                    ref={idx === 0 ? firstLinkRef : null}
                     href={href}
                     className={`card-heading-sm ${linkClass(href)}`}
                     onClick={() => setOpen(false)}
