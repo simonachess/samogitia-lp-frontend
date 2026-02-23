@@ -69,6 +69,7 @@ export default function ProjectGallery({ images = [], projectTitle = "" }) {
               fill
               className="object-cover"
               sizes="(max-width: 420px) 100vw, (max-width: 768px) 50vw, 300px"
+              quality={80}
             />
           </button>
         ))}

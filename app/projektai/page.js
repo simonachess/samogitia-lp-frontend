@@ -28,7 +28,7 @@ export default async function WorksPage() {
   const items = projects.map((p) => {
     const dims = p.mainImage?.dimensions;
     const imageUrl = p.mainImage
-      ? urlFor(p.mainImage).width(1200).url()
+      ? urlFor(p.mainImage).width(800).url()
       : "/card-1@3x.png";
     return {
       id: p._id,

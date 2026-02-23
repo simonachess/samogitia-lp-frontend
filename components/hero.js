@@ -6,18 +6,34 @@ const Hero = () => {
       className="relative w-full flex flex-col items-center py-[80px] md:py-[120px] text-center text-gray-white font-body-regular-400 overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Background image */}
+      {/* Background image: lower quality on mobile for faster LCP; add hero-mobile.jpg for best results */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="/hero-desktop.jpg"
-          alt="Žemės gerbūvio darbai Žemaitijoje"
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          quality={85}
-          className="object-cover object-top"
-        />
+        {/* Mobile: lower quality for faster decode; optionally add hero-mobile.jpg (smaller file) */}
+        <div className="absolute inset-0 md:hidden">
+          <Image
+            src="/hero-desktop.jpg"
+            alt="Žemės gerbūvio darbai Žemaitijoje"
+            fill
+            priority
+            fetchPriority="high"
+            sizes="(max-width: 768px) 100vw, 100vw"
+            quality={75}
+            className="object-cover object-top"
+          />
+        </div>
+        {/* Desktop */}
+        <div className="absolute inset-0 hidden md:block">
+          <Image
+            src="/hero-desktop.jpg"
+            alt="Žemės gerbūvio darbai Žemaitijoje"
+            fill
+            priority
+            fetchPriority="high"
+            sizes="100vw"
+            quality={85}
+            className="object-cover object-top"
+          />
+        </div>
       </div>
 
       {/* Content on top of the image */}

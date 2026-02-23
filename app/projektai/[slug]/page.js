@@ -82,7 +82,6 @@ export default async function ProjectDetailPage({ params }) {
   };
 
   // Build images list: main first, then gallery (for display + modal)
-  // Use width(1200) only so full image is visible (no crop to 1200×800)
   const images = [];
   if (project.mainImage) {
     images.push({

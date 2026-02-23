@@ -34,7 +34,7 @@ export default function ProjectCard({
             isVertical ? "object-cover object-center" : "object-contain"
           }
           sizes="(max-width: 420px) 100vw, (max-width: 960px) 50vw, 400px"
-          quality={90}
+          quality={80}
         />
       </div>
       <div className="p-4 flex flex-col gap-2">
