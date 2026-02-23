@@ -25,7 +25,7 @@ export const metadata = {
     template: "%s | Samogitia Group",
   },
   description:
-    "Profesionalūs žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Lietuvoje.",
+    "Profesionalūs žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Žemaitijoje.",
   keywords: [
     "žemės darbai",
     "žemės gerbūvis",
@@ -42,7 +42,7 @@ export const metadata = {
     locale: "lt_LT",
     title: "Žemės gerbūvio darbai | Samogitia Group",
     description:
-      "Žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Lietuvoje.",
+      "Žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Žemaitijoje.",
     url: siteUrl,
     images: [
       {
