@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <section className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="max-w-[720px] w-full px-4 mx-auto flex flex-col gap-8 text-left">
+    <section className="page-section">
+      <div className="page-container-narrow flex flex-col gap-8 text-left">
         <h1 className="page-heading">Privatumo politika</h1>
         <p className="page-subheading text-left">
           Paskutinį kartą atnaujinta: {new Date().toLocaleDateString("lt-LT")}.
@@ -20,7 +20,7 @@ export default function PrivacyPage() {
 
         <div className="flex flex-col gap-6">
           <div>
-            <h2 className="section-heading mb-2">1. Kas esame</h2>
+            <h2 className="section-heading">1. Kas esame</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Samogitia Group – įmonė, teikianti žemės gerbūvio paslaugas,
               sklypų paruošimą, technikos ir įrankių nuomą. Svetainės
@@ -44,7 +44,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">2. Kokius duomenis renkame</h2>
+            <h2 className="section-heading">2. Kokius duomenis renkame</h2>
             <ul className="font-body-regular-400 text-base text-primary-800 leading-relaxed list-disc list-inside space-y-2">
               <li>
                 <strong>Kontaktų forma:</strong> vardas, pavardė, el. paštas,
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">3. Kaip naudojame duomenis</h2>
+            <h2 className="section-heading">3. Kaip naudojame duomenis</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Kontaktų duomenis naudojame tik atsakyti į jūsų užklausas ir
               teikti paslaugas. Slapukus – svetainės veikimui ir (su sutikimu)
@@ -74,9 +74,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">
-              4. Kiek laiko saugome duomenis
-            </h2>
+            <h2 className="section-heading">4. Kiek laiko saugome duomenis</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Užklausų ir susirašinėjimo duomenis saugome tik tiek, kiek reikia
               atsakyti ir vykdyti sutartį ar teisėtus interesus. Slapukų
@@ -86,7 +84,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">5. Jūsų teisės (BDAR)</h2>
+            <h2 className="section-heading">5. Jūsų teisės (BDAR)</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Turite teisę: gauti savo duomenų kopiją, reikalauti pataisyti ar
               ištrinti duomenis, apriboti apdorojimą, nesutikti, atšaukti
@@ -110,7 +108,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">6. Slapukų valdymas</h2>
+            <h2 className="section-heading">6. Slapukų valdymas</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Svetainėje rodomas pranešimas leidžia sutikti arba atsisakyti
               pasirinktinių slapukų. Būtini slapukai reikalingi svetainės
@@ -120,7 +118,7 @@ export default function PrivacyPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">7. Pakeitimai ir kontaktai</h2>
+            <h2 className="section-heading">7. Pakeitimai ir kontaktai</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Privatumo politiką galime atnaujinti – apie reikšmingus pakeitimus
               pranešime šioje svetainėje. Klausimams:{" "}

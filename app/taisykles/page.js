@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <section className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="max-w-[720px] w-full px-4 mx-auto flex flex-col gap-8 text-left">
+    <section className="page-section">
+      <div className="page-container-narrow flex flex-col gap-8 text-left">
         <h1 className="page-heading">Naudojimo sąlygos</h1>
         <p className="page-subheading text-left">
           Naudodamiesi Samogitia Group svetaine sutinkate su šiomis sąlygomis.
@@ -18,7 +18,7 @@ export default function TermsPage() {
 
         <div className="flex flex-col gap-6">
           <div>
-            <h2 className="section-heading mb-2">1. Bendros nuostatos</h2>
+            <h2 className="section-heading">1. Bendros nuostatos</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Šios sąlygos reglamentuoja svetainės naudojimą. Svetainės
               administratorius – Samogitia Group. Naudodamiesi svetaine
@@ -31,7 +31,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">2. Paslaugų aprašymas</h2>
+            <h2 className="section-heading">2. Paslaugų aprašymas</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Svetainėje pateikiame informaciją apie žemės gerbūvio paslaugas,
               sklypų paruošimą, technikos ir įrankių nuomą. Turinys skiriamas
@@ -45,7 +45,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">3. Intelektinė nuosavybė</h2>
+            <h2 className="section-heading">3. Intelektinė nuosavybė</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Svetainės turinys (tekstai, nuotraukos, logotipai, dizainas) yra
               Samogitia Group nuosavybė arba naudojamas su teisėtųjų leidimu. Be
@@ -55,7 +55,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">4. Atsakomybės apribojimas</h2>
+            <h2 className="section-heading">4. Atsakomybės apribojimas</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Svetainėje pateikiama informacija gali būti keičiama be
               išankstinio įspėjimo. Stengiamės teikti teisingą informaciją,
@@ -66,7 +66,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">5. Pakeitimai</h2>
+            <h2 className="section-heading">5. Pakeitimai</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Galime atnaujinti naudojimo sąlygas. Apie reikšmingus pakeitimus
               pranešime šioje svetainėje. Toliau naudodamiesi svetaine po
@@ -75,7 +75,7 @@ export default function TermsPage() {
           </div>
 
           <div>
-            <h2 className="section-heading mb-2">6. Kontaktai</h2>
+            <h2 className="section-heading">6. Kontaktai</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Klausimams dėl sąlygų:{" "}
               <a

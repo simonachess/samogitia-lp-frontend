@@ -60,9 +60,9 @@ export default async function ServiceDetailPage({ params }) {
   if (!service) return notFound();
 
   return (
-    <div className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="max-w-[1200px] w-full px-4 items-center">
-        <div className="flex flex-col gap-6 items-center">
+    <div className="page-section">
+      <div className="page-container page-section-inner">
+        <div className="flex flex-col gap-6 items-center w-full">
           <div className="flex items-center gap-4 mb-6">
             {service.icon && (
               <Image

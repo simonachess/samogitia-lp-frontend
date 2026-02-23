@@ -54,7 +54,7 @@ const Header = () => {
 
   return (
     <header className="bg-gray-white h-[76px] md:h-[98px] flex flex-row py-2 md:py-4 box-border items-center justify-between sticky w-full top-0 [background:white] z-[50] text-center text-base text-primary-500 font-body-regular-400">
-      <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-row items-center justify-between w-full">
+      <div className="page-container flex flex-row items-center justify-between w-full">
         <Link
           href="/"
           className="flex flex-row items-center justify-center gap-[8px] focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"

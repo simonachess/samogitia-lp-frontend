@@ -59,10 +59,10 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-row flex-wrap items-start justify-center text-center text-primary-800 font-body-regular-400">
-        <div className="max-w-[960px] flex flex-col py-0 px-2.5 box-border items-center justify-start gap-10 md:gap-20 w-full">
-          <div className="max-w-[720px] flex flex-col items-center justify-start gap-[24px]">
+    <section className="page-section">
+      <div className="page-container flex flex-row flex-wrap items-start justify-center text-center text-primary-800 font-body-regular-400">
+        <div className="max-w-[960px] w-full flex flex-col py-0 px-2.5 box-border items-center justify-start gap-10 md:gap-20">
+          <div className="page-heading-block">
             <h1 className="page-heading">Susisiekite</h1>
             <div className="page-subheading">
               Užpildykite formą ir mes su jumis susisieksime.

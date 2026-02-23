@@ -20,8 +20,8 @@ export default async function RentPage() {
   );
 
   return (
-    <section className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-400">
-      <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-col items-center gap-10 md:gap-20">
+    <section className="page-section">
+      <div className="page-container page-section-inner body-regular-400">
         <div className="flex w-full flex-col gap-6 items-center">
           <h1 className="page-heading">Technikos ir įrankių nuoma</h1>
           <div className="page-subheading">
