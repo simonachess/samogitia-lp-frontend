@@ -22,6 +22,9 @@ const publicSans = Public_Sans({
 });
 
 const siteUrl = getSiteUrl();
+// Always use production domain for og:image so Facebook gets a stable image URL
+// (avoids Vercel preview / 404 and fallback to hero _next/image)
+const ogImageOrigin = "https://samogitia-lp-frontend.vercel.app/";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -51,7 +54,7 @@ export const metadata = {
     url: siteUrl,
     images: [
       {
-        url: `${siteUrl}/original_size.jpg`,
+        url: `${ogImageOrigin}/original_size.jpg`,
         width: 1200,
         height: 630,
         alt: "Samogitia Group – žemės gerbūvio darbai",
