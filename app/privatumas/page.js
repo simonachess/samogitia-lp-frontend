@@ -13,18 +13,18 @@ export default function PrivacyPage() {
         <h1 className="page-heading">Privatumo politika</h1>
         <p className="page-subheading text-left">
           Paskutinį kartą atnaujinta: {new Date().toLocaleDateString("lt-LT")}.
-          Samogitia Group (toliau – „mes“, „įmonė“) gerbia jūsų privatumą. Šioje
-          politikoje aprašome, kokius duomenis renkame, kaip juos naudojame ir
-          kaip galite pasinaudoti savo teisėmis.
+          MB „Samogitia Group“ (toliau – „mes“, „įmonė“) gerbia jūsų privatumą.
+          Šioje politikoje aprašome, kokius duomenis renkame, kaip juos
+          naudojame ir kaip galite pasinaudoti savo teisėmis.
         </p>
 
         <div className="flex flex-col gap-6">
           <div>
             <h2 className="section-heading">1. Kas esame</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
-              Samogitia Group – įmonė, teikianti žemės gerbūvio paslaugas,
+              MB „Samogitia Group“ – įmonė, teikianti žemės gerbūvio paslaugas,
               sklypų paruošimą, technikos ir įrankių nuomą. Svetainės
-              administratorius: Samogitia Group. Susisiekti galite per{" "}
+              administratorius: MB „Samogitia Group“. Susisiekti galite per{" "}
               <Link href="/kontaktai" className="link-default">
                 kontaktų formą
               </Link>

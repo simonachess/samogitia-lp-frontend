@@ -51,21 +51,29 @@ const Footer = () => {
             <div className="leading-[24px] font-semibold text-primary-800">
               Kontaktai
             </div>
-
-            <a
-              href="tel:+37064768414"
-              className="leading-[24px] link-default"
-              aria-label="Call +370 647 68414"
-            >
-              +370 647 68414
-            </a>
-            <a
-              href="mailto:samogitiagroup@gmail.com"
-              className="leading-[24px] link-default"
-              aria-label="Email samogitiagroup@gmail.com"
-            >
-              samogitiagroup@gmail.com
-            </a>
+            <div>MB „Samogitia Group“</div>
+            <div>Įmonės kodas: 306371912</div>
+            <div>PVM mokėtojo kodas: LT100016553619</div>
+            <div>
+              Tel.:{" "}
+              <a
+                href="tel:+37064768414"
+                className="leading-[24px] link-default"
+                aria-label="Call +370 647 68414"
+              >
+                +370 647 68414
+              </a>
+            </div>
+            <div>
+              El.paštas:{" "}
+              <a
+                href="mailto:samogitiagroup@gmail.com"
+                className="leading-[24px] link-default"
+                aria-label="Email samogitiagroup@gmail.com"
+              >
+                samogitiagroup@gmail.com
+              </a>
+            </div>
           </div>
         </div>
         <div className="w-max flex flex-col items-start justify-start gap-[32px]">

@@ -12,8 +12,9 @@ export default function TermsPage() {
       <div className="page-container-narrow flex flex-col gap-8 text-left animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
         <h1 className="page-heading">Naudojimo sąlygos</h1>
         <p className="page-subheading text-left">
-          Naudodamiesi Samogitia Group svetaine sutinkate su šiomis sąlygomis.
-          Paskutinį kartą atnaujinta: {new Date().toLocaleDateString("lt-LT")}.
+          Naudodamiesi MB „Samogitia Group“ svetaine sutinkate su šiomis
+          sąlygomis. Paskutinį kartą atnaujinta:{" "}
+          {new Date().toLocaleDateString("lt-LT")}.
         </p>
 
         <div className="flex flex-col gap-6">
@@ -21,7 +22,7 @@ export default function TermsPage() {
             <h2 className="section-heading">1. Bendros nuostatos</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Šios sąlygos reglamentuoja svetainės naudojimą. Svetainės
-              administratorius – Samogitia Group. Naudodamiesi svetaine
+              administratorius – MB „Samogitia Group“. Naudodamiesi svetaine
               patvirtinate, kad sutinkate su šiomis sąlygomis ir su mūsų{" "}
               <Link href="/privatumas" className="link-default">
                 privatumo politika
@@ -48,9 +49,9 @@ export default function TermsPage() {
             <h2 className="section-heading">3. Intelektinė nuosavybė</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Svetainės turinys (tekstai, nuotraukos, logotipai, dizainas) yra
-              Samogitia Group nuosavybė arba naudojamas su teisėtųjų leidimu. Be
-              rašytinio sutikimo draudžiama kopijuoti, platinti ar naudoti
-              komerciniais tikslais.
+              MB „Samogitia Group“ nuosavybė arba naudojamas su teisėtųjų
+              leidimu. Be rašytinio sutikimo draudžiama kopijuoti, platinti ar
+              naudoti komerciniais tikslais.
             </p>
           </div>
 
