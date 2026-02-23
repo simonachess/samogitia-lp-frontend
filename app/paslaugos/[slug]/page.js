@@ -54,7 +54,7 @@ export async function generateMetadata({ params }) {
         .height(OG_IMAGE_HEIGHT)
         .fit("fill")
         .url()
-    : `${siteUrl}/original_size.jpg`;
+    : `${siteUrl}/samogitia_group_og.jpg`;
 
   return {
     title: pageTitle,
