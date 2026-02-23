@@ -17,7 +17,7 @@ const Hero = () => {
             priority
             fetchPriority="high"
             sizes="(max-width: 768px) 100vw, 100vw"
-            quality={75}
+            quality={85}
             className="object-cover object-top"
           />
         </div>
@@ -30,7 +30,7 @@ const Hero = () => {
             priority
             fetchPriority="high"
             sizes="100vw"
-            quality={85}
+            quality={95}
             className="object-cover object-top"
           />
         </div>
