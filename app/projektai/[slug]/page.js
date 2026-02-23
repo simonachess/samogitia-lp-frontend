@@ -111,13 +111,13 @@ export default async function ProjectDetailPage({ params }) {
         >
           <ol className="flex flex-wrap gap-2 text-sm text-primary-500 list-none m-0 p-0">
             <li>
-              <Link href="/" className="link-default">
+              <Link href="/" className="link-default no-underline">
                 Pradžia
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/projektai" className="link-default">
+              <Link href="/projektai" className="link-default no-underline">
                 Atlikti darbai
               </Link>
             </li>

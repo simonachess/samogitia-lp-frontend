@@ -120,13 +120,13 @@ export default async function ServiceDetailPage({ params }) {
         >
           <ol className="flex flex-wrap gap-2 text-sm text-primary-500 list-none m-0 p-0">
             <li>
-              <Link href="/" className="link-default">
+              <Link href="/" className="link-default no-underline">
                 Pradžia
               </Link>
             </li>
             <li aria-hidden>/</li>
             <li>
-              <Link href="/paslaugos" className="link-default">
+              <Link href="/paslaugos" className="link-default no-underline">
                 Paslaugos
               </Link>
             </li>
@@ -238,7 +238,7 @@ export default async function ServiceDetailPage({ params }) {
                   <li key={s.slug}>
                     <Link
                       href={`/paslaugos/${s.slug}`}
-                      className="link-default text-primary-500"
+                      className="link-default text-primary-500 no-underline"
                     >
                       {s.title}
                     </Link>
@@ -248,7 +248,7 @@ export default async function ServiceDetailPage({ params }) {
               <p className="text-sm mb-0 mt-0 text-primary-500">
                 <Link
                   href="/paslaugos"
-                  className="link-default text-primary-500"
+                  className="link-default text-primary-500 no-underline"
                 >
                   Visos paslaugos →
                 </Link>
