@@ -67,7 +67,7 @@ export default function ProjectsMasonrySection({ items = [] }) {
             onClick={() =>
               setVisible((v) => Math.min(v + PAGE_SIZE, items.length))
             }
-            className="btn-primary"
+            className="btn-primary animate-fade-in-up opacity-0 [animation-fill-mode:forwards] [animation-delay:350ms]"
           >
             <span className="text-base font-medium text-gray-white">
               Užkrauti daugiau
