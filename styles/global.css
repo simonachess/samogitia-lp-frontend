@@ -205,7 +205,7 @@ body {
     margin-bottom: 0;
   }
   .rich-description h2 {
-    font-size: 1.125rem; /* 18px */
+    font-size: 1.125rem; /* 18px mobile */
     font-weight: 600;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
@@ -214,7 +214,7 @@ body {
     margin-top: 0;
   }
   .rich-description h3 {
-    font-size: 1rem; /* 16px */
+    font-size: 1rem; /* 16px mobile */
     font-weight: 600;
     margin-top: 2rem;
     margin-bottom: 0.5rem;
@@ -224,10 +224,18 @@ body {
       font-size: 17px;
     }
     .rich-description h2 {
-      font-size: 1.25rem; /* 20px */
+      font-size: 1.25rem; /* 20px tablet */
     }
     .rich-description h3 {
-      font-size: 1.0625rem; /* 17px */
+      font-size: 1.125rem; /* 18px tablet */
+    }
+  }
+  @media (min-width: 960px) {
+    .rich-description h2 {
+      font-size: 24px; /* desktop */
+    }
+    .rich-description h3 {
+      font-size: 20px; /* desktop */
     }
   }
 
@@ -278,6 +286,12 @@ body {
   @media (min-width: 420px) {
     .section-heading {
       font-size: 20px;
+    }
+  }
+
+  @media (min-width: 960px) {
+    .section-heading {
+      font-size: 24px;
     }
   }
 
