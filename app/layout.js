@@ -1,5 +1,7 @@
 import "../styles/global.css";
 import SiteLayout from "../components/layout/layout";
+import CookieConsent from "../components/cookie-consent";
+import AnalyticsGate from "../components/analytics-gate";
 import { Inter, Public_Sans } from "next/font/google";
 
 const inter = Inter({
@@ -93,6 +95,8 @@ export default function RootLayout({ children }) {
           }}
         />
         <SiteLayout>{children}</SiteLayout>
+        <CookieConsent />
+        <AnalyticsGate />
       </body>
     </html>
   );

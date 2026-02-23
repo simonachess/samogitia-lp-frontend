@@ -42,6 +42,7 @@ export default async function sitemap() {
     "/projektai",
     "/kontaktai",
     "/apie",
+    "/privatumas",
   ].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),

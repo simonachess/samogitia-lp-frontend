@@ -7,7 +7,7 @@ export default function Layout({ children }) {
     <div className="relative bg-gray-white w-full flex flex-col items-center justify-start">
       <Link
         href="#main-content"
-        className="absolute left-4 -top-16 z-[100] px-4 py-2 bg-primary-500 text-gray-white rounded focus:top-4 focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 transition-all duration-150"
+        className="absolute left-4 -top-16 z-[100] btn-primary focus:top-4"
       >
         Pereiti prie pagrindinio turinio
       </Link>

@@ -2,10 +2,13 @@
 "use client";
 
 import { useState } from "react";
+import PhoneInput from "react-phone-number-input";
+import "react-phone-number-input/style.css";
 
 export default function ContactPage() {
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
   const [errorMessage, setErrorMessage] = useState("");
+  const [phoneValue, setPhoneValue] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -19,6 +22,7 @@ export default function ContactPage() {
       firstName: formData.get("firstName") || "",
       lastName: formData.get("lastName") || "",
       email: formData.get("email") || "",
+      phone: phoneValue || "",
       message: formData.get("message") || "",
       botField: formData.get("bot-field") || "",
     };
@@ -45,6 +49,7 @@ export default function ContactPage() {
       }
 
       form.reset();
+      setPhoneValue("");
       setStatus("sent");
     } catch (e2) {
       console.error(e2);
@@ -114,18 +119,40 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-1 w-full">
-                <label htmlFor="email" className="sr-only">
-                  El. paštas
-                </label>
-                <input
-                  id="email"
-                  name="email"
-                  className="w-full body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1"
-                  type="email"
-                  placeholder="El. paštas"
-                  required
-                />
+              <div className="flex flex-row items-start justify-center gap-[10px] md:flex-col w-full">
+                <div className="flex flex-col gap-1 w-full">
+                  <label htmlFor="contact-phone-number" className="sr-only">
+                    Telefonas
+                  </label>
+                  <div className="contact-phone-input">
+                    <PhoneInput
+                      international
+                      defaultCountry="LT"
+                      value={phoneValue}
+                      onChange={setPhoneValue}
+                      placeholder="612 34567"
+                      className="contact-phone-input__control"
+                      numberInputProps={{
+                        id: "contact-phone-number",
+                        className:
+                          "body-regular-600 text-base bg-transparent border-0 py-4 px-3 rounded focus:outline-none focus:ring-0 w-full min-w-0",
+                      }}
+                    />
+                  </div>
+                </div>
+                <div className="flex flex-col gap-1 w-full">
+                  <label htmlFor="email" className="sr-only">
+                    El. paštas
+                  </label>
+                  <input
+                    id="email"
+                    name="email"
+                    className="w-full body-regular-600 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1"
+                    type="email"
+                    placeholder="El. paštas"
+                    required
+                  />
+                </div>
               </div>
 
               <div className="flex flex-col gap-1 w-full">
@@ -147,7 +174,7 @@ export default function ContactPage() {
                 disabled={status === "sending"}
                 aria-busy={status === "sending"}
                 aria-live="polite"
-                className="cursor-pointer [border:none] p-0 bg-primary-500 rounded w-[222px] h-[46px] flex flex-col items-center justify-center disabled:opacity-60 focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
+                className="btn-primary w-[222px] h-[46px]"
               >
                 <div className="relative text-base body-regular-600 text-gray-white text-center inline-block w-[203.12px]">
                   {status === "sending" ? "Siunčiama..." : "Siųsti užklausą"}

@@ -8,10 +8,7 @@ export default function NotFound() {
         <p className="page-subheading">
           Puslapis nerastas. Galbūt jis buvo perkeltas arba ištrintas.
         </p>
-        <Link
-          href="/"
-          className="cursor-pointer [border:none] py-3 px-6 bg-primary-500 rounded text-gray-white font-medium hover:opacity-90 focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 transition-all duration-200 active:scale-[0.98]"
-        >
+        <Link href="/" className="btn-primary">
           Grįžti į pradžią
         </Link>
       </div>

@@ -45,7 +45,7 @@ const components = {
     link: ({ value, children }) => (
       <a
         href={value?.href}
-        className="text-primary-600 underline hover:text-primary-700"
+        className="link-default"
         target={value?.blank ? "_blank" : undefined}
         rel={value?.blank ? "noopener noreferrer" : undefined}
       >

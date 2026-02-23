@@ -42,6 +42,69 @@ body {
 }
 
 @layer components {
+  /* Buttons: consistent primary and secondary */
+  .btn-primary {
+    @apply inline-flex items-center justify-center py-3 px-6 text-base font-medium text-gray-white bg-primary-500 border-0 rounded cursor-pointer transition-all duration-200;
+  }
+  .btn-primary:hover {
+    @apply bg-primary-700;
+  }
+  .btn-primary:active {
+    @apply scale-[0.98];
+  }
+  .btn-primary:focus {
+    @apply outline-none ring-2 ring-primary-400/25 ring-offset-1;
+  }
+  .btn-primary:disabled {
+    @apply opacity-60 cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center py-3 px-5 text-base font-medium text-primary-800 bg-transparent border border-primary-400/50 rounded cursor-pointer transition-all duration-200;
+  }
+  .btn-secondary:hover {
+    @apply bg-primary-50 border-primary-400;
+  }
+  .btn-secondary:focus {
+    @apply outline-none ring-2 ring-primary-400/25 ring-offset-1;
+  }
+  /* Secondary on dark background (e.g. cookie bar) */
+  .btn-secondary-dark {
+    @apply inline-flex items-center justify-center py-3 px-5 text-base font-medium text-gray-white bg-white/10 border border-white/60 rounded cursor-pointer transition-all duration-200;
+  }
+  .btn-secondary-dark:hover {
+    @apply bg-white/20;
+  }
+  .btn-secondary-dark:focus {
+    @apply outline-none ring-2 ring-white/40 ring-offset-2 ring-offset-primary-800;
+  }
+  /* In-content links: same color as text, underline */
+  .link-default {
+    @apply text-inherit underline focus:outline-none focus:ring-2 focus:ring-primary-400/25 focus:ring-offset-1 rounded;
+  }
+  .link-default:hover {
+    @apply underline;
+  }
+
+  /* Contact form: react-phone-number-input wrapper (one bordered field) */
+  .contact-phone-input {
+    @apply flex rounded border border-solid border-gray;
+    --PhoneInput-color--focus: #6e80b4;
+    --PhoneInputCountryFlag-borderColor: rgba(0, 0, 0, 0.2);
+    --PhoneInputCountryFlag-borderColor--focus: #6e80b4;
+  }
+  .contact-phone-input:focus-within {
+    @apply ring-1 ring-primary-400/25 ring-offset-1 outline-none;
+  }
+  .contact-phone-input .contact-phone-input__control {
+    @apply flex-1 min-w-0 flex;
+  }
+  .contact-phone-input .PhoneInputCountry {
+    @apply pl-3;
+  }
+  .contact-phone-input .PhoneInputInput {
+    @apply flex-1 min-w-0;
+  }
+
   .page-heading {
     font-family:
       var(--font-inter),

@@ -38,7 +38,7 @@ export async function POST(req) {
     }
 
     const body = await req.json();
-    const { firstName, lastName, email, message, botField } = body;
+    const { firstName, lastName, email, phone, message, botField } = body;
 
     // simple bot honeypot
     if (botField) {
@@ -89,6 +89,7 @@ export async function POST(req) {
     ]
       .filter(Boolean)
       .join(" ");
+    const phoneStr = String(phone || "").trim();
 
     const { data, error } = await resend.emails.send({
       from: "Samogitia Group <onboarding@resend.dev>",
@@ -100,6 +101,7 @@ Gauta nauja užklausa iš kontaktų formos.
 
 Vardas, pavardė: ${fullName || "nenurodyta"}
 El. paštas: ${emailStr}
+${phoneStr ? `Telefonas: ${phoneStr}` : ""}
 
 Žinutė:
 ${messageStr}

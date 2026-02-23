@@ -66,7 +66,7 @@ export default function ProjectsMasonrySection({ items = [] }) {
             onClick={() =>
               setVisible((v) => Math.min(v + PAGE_SIZE, items.length))
             }
-            className="cursor-pointer [border:none] py-3 px-6 bg-primary-500 rounded focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 transition-all duration-200 hover:opacity-90 active:scale-[0.98]"
+            className="btn-primary"
           >
             <span className="text-base font-medium text-gray-white">
               Užkrauti daugiau
