@@ -84,7 +84,7 @@ export default async function ProjectDetailPage({ params }) {
 
   return (
     <div className="page-section">
-      <div className="page-container page-section-inner">
+      <div className="page-container page-section-inner animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
         <div className="flex flex-col gap-6 items-center w-full">
           <h1 className="page-heading w-full max-w-[960px]">{project.title}</h1>
           {project.description &&

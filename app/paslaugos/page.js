@@ -17,7 +17,7 @@ export default async function ServicesPage() {
 
   return (
     <section className="page-section">
-      <div className="page-container page-section-inner">
+      <div className="page-container page-section-inner animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
         <div className="flex w-full flex-col gap-6 items-center">
           <h1 className="page-heading">Žemės gerbūvio paslaugos</h1>
           <div className="page-subheading">

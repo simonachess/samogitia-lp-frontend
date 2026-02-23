@@ -21,7 +21,7 @@ export default async function RentPage() {
 
   return (
     <section className="page-section">
-      <div className="page-container page-section-inner body-regular-400">
+      <div className="page-container page-section-inner font-body-regular-400 animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
         <div className="flex w-full flex-col gap-6 items-center">
           <h1 className="page-heading">Technikos ir įrankių nuoma</h1>
           <div className="page-subheading">

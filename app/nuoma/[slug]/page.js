@@ -58,7 +58,7 @@ export default async function RentDetailPage({ params }) {
 
   return (
     <div className="page-section">
-      <div className="page-container page-section-inner">
+      <div className="page-container page-section-inner animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
         <div className="flex flex-col gap-6 items-center">
           <div className="flex items-center gap-4">
             {item.icon && (

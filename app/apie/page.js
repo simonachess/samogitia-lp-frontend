@@ -7,7 +7,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <section className="page-section">
-      <div className="page-container page-section-inner flex flex-col items-center gap-8 body-regular-600 max-w-[960px]">
+      <div className="page-container page-section-inner flex flex-col items-center gap-8 body-regular-600 max-w-[960px] animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
         <h1 className="page-heading">Apie mus</h1>
         <div className="page-subheading">
           Teikiame profesionalius žemės gerbūvio darbus, sklypų paruošimą,
