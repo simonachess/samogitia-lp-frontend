@@ -7,6 +7,7 @@ export const metadata = {
 };
 
 export default function TermsPage() {
+  const updatedAt = new Date();
   return (
     <section className="page-section" aria-labelledby="taisykles-heading">
       <div className="page-container-narrow flex flex-col gap-8 text-left animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
@@ -16,7 +17,10 @@ export default function TermsPage() {
         <p className="page-subheading text-left">
           Naudodamiesi MB „Samogitia Group“ svetaine sutinkate su šiomis
           sąlygomis. Paskutinį kartą atnaujinta:{" "}
-          {new Date().toLocaleDateString("lt-LT")}.
+          <time dateTime={updatedAt.toISOString().split("T")[0]}>
+            {updatedAt.toLocaleDateString("lt-LT")}
+          </time>
+          .
         </p>
 
         <div className="flex flex-col gap-6">

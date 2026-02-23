@@ -367,6 +367,14 @@ body {
     font-weight: 400;
   }
 
+  /* Semantic: address (reset default italic), nav list (no bullets) */
+  address {
+    font-style: normal;
+  }
+  .nav-list {
+    @apply list-none m-0 p-0;
+  }
+
   /* Page layout: consistent section + container + inner gap */
   .page-section {
     @apply w-full bg-primary-50 flex flex-col items-center text-center body-regular-600;

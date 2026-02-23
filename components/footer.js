@@ -46,7 +46,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="w-max flex flex-col items-start justify-start gap-[32px]">
+        <address className="w-max flex flex-col items-start justify-start gap-[32px] not-italic">
           <div className="h-max flex flex-col items-start justify-start gap-[16px] text-base text-gray-500">
             <div className="leading-[24px] font-semibold text-primary-800">
               Kontaktai
@@ -75,31 +75,43 @@ const Footer = () => {
               </a>
             </div>
           </div>
-        </div>
+        </address>
         <nav
           className="w-max flex flex-col items-start justify-start gap-[32px]"
           aria-label="Svetainės nuorodos"
         >
-          <div className="h-max flex flex-col items-start justify-start gap-[16px] text-base text-gray-500">
-            <Link href="/paslaugos" className="leading-[24px] link-default">
-              Paslaugos
-            </Link>
-            <Link href="/nuoma" className="leading-[24px] link-default">
-              Nuoma
-            </Link>
-            <Link href="/projektai" className="leading-[24px] link-default">
-              Atlikti darbai
-            </Link>
-            <Link href="/apie" className="leading-[24px] link-default">
-              Apie mus
-            </Link>
-            <Link href="/privatumas" className="leading-[24px] link-default">
-              Privatumo politika
-            </Link>
-            <Link href="/taisykles" className="leading-[24px] link-default">
-              Naudojimo sąlygos
-            </Link>
-          </div>
+          <ul className="nav-list h-max flex flex-col items-start justify-start gap-[16px] text-base text-gray-500">
+            <li>
+              <Link href="/paslaugos" className="leading-[24px] link-default">
+                Paslaugos
+              </Link>
+            </li>
+            <li>
+              <Link href="/nuoma" className="leading-[24px] link-default">
+                Nuoma
+              </Link>
+            </li>
+            <li>
+              <Link href="/projektai" className="leading-[24px] link-default">
+                Atlikti darbai
+              </Link>
+            </li>
+            <li>
+              <Link href="/apie" className="leading-[24px] link-default">
+                Apie mus
+              </Link>
+            </li>
+            <li>
+              <Link href="/privatumas" className="leading-[24px] link-default">
+                Privatumo politika
+              </Link>
+            </li>
+            <li>
+              <Link href="/taisykles" className="leading-[24px] link-default">
+                Naudojimo sąlygos
+              </Link>
+            </li>
+          </ul>
         </nav>
       </footer>
     </div>

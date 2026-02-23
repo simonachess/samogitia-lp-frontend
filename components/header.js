@@ -73,13 +73,19 @@ const Header = () => {
           className="flex flex-row items-center justify-end gap-[36px] text-sm text-primary-900"
           aria-label="Pagrindinė navigacija"
         >
-          <div className="hidden lg:flex flex-row items-start justify-start gap-1">
+          <ul className="nav-list hidden lg:flex flex-row items-start justify-start gap-1">
             {navLinks.map(({ href, label }) => (
-              <Link key={href} href={href} className={linkClass(href)}>
-                {label}
-              </Link>
+              <li key={href}>
+                <Link
+                  href={href}
+                  className={linkClass(href)}
+                  aria-current={isActive(href) ? "page" : undefined}
+                >
+                  {label}
+                </Link>
+              </li>
             ))}
-          </div>
+          </ul>
 
           {/* Mobile burger – animated */}
           <button
@@ -140,16 +146,20 @@ const Header = () => {
             className="flex flex-col items-center gap-8 text-center"
             aria-label="Meniu"
           >
-            {navLinks.map(({ href, label }) => (
-              <Link
-                key={href}
-                href={href}
-                className={`card-heading-sm ${linkClass(href)}`}
-                onClick={() => setOpen(false)}
-              >
-                {label}
-              </Link>
-            ))}
+            <ul className="nav-list flex flex-col items-center gap-8">
+              {navLinks.map(({ href, label }) => (
+                <li key={href}>
+                  <Link
+                    href={href}
+                    className={`card-heading-sm ${linkClass(href)}`}
+                    onClick={() => setOpen(false)}
+                    aria-current={isActive(href) ? "page" : undefined}
+                  >
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
       )}

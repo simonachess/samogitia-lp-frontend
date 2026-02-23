@@ -7,6 +7,7 @@ export const metadata = {
 };
 
 export default function PrivacyPage() {
+  const updatedAt = new Date();
   return (
     <section className="page-section" aria-labelledby="privatumas-heading">
       <div className="page-container-narrow flex flex-col gap-8 text-left animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
@@ -14,10 +15,13 @@ export default function PrivacyPage() {
           Privatumo politika
         </h1>
         <p className="page-subheading text-left">
-          Paskutinį kartą atnaujinta: {new Date().toLocaleDateString("lt-LT")}.
-          MB „Samogitia Group“ (toliau – „mes“, „įmonė“) gerbia jūsų privatumą.
-          Šioje politikoje aprašome, kokius duomenis renkame, kaip juos
-          naudojame ir kaip galite pasinaudoti savo teisėmis.
+          Paskutinį kartą atnaujinta:{" "}
+          <time dateTime={updatedAt.toISOString().split("T")[0]}>
+            {updatedAt.toLocaleDateString("lt-LT")}
+          </time>
+          . MB „Samogitia Group“ (toliau – „mes“, „įmonė“) gerbia jūsų
+          privatumą. Šioje politikoje aprašome, kokius duomenis renkame, kaip
+          juos naudojame ir kaip galite pasinaudoti savo teisėmis.
         </p>
 
         <div className="flex flex-col gap-6">
