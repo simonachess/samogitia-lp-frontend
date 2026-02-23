@@ -6,7 +6,7 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
+    <section className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-600">
       <div className="max-w-[1200px] items-center w-full px-4 mx-auto body-regular-600 gap-8 flex flex-col">
         <h1 className="page-heading">Apie mus</h1>
         <div className="page-subheading max-w-[720px]">

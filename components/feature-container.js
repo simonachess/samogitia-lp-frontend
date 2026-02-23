@@ -32,8 +32,8 @@ const ChevronRight = () => (
 
 export default function FeatureContainer() {
   return (
-    <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-col items-center md:gap-10 gap-20">
+    <section className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-600">
+      <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-col items-center gap-10 md:gap-20">
         <div className="flex w-full flex-col gap-6 items-center animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
           <h2 className="page-heading">Paslaugos</h2>
           <div className="page-subheading">
@@ -45,7 +45,7 @@ export default function FeatureContainer() {
         </div>
 
         {/* Simple grid: 3 cols desktop, 1 col mobile */}
-        <div className="w-full max-w-[1200px] grid grid-cols-3 lg:grid-cols-1 gap-4 md:gap-5">
+        <div className="w-full max-w-[1200px] grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-5">
           <Link
             href="/paslaugos"
             className="no-underline flex w-full focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded-xl animate-fade-in-up opacity-0 [animation-delay:100ms] [animation-fill-mode:forwards]"

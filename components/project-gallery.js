@@ -5,7 +5,7 @@ import Image from "next/image";
 import Masonry from "react-masonry-css";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
-const GALLERY_BREAKPOINT_COLS = { default: 3, 768: 2, 420: 1 };
+const GALLERY_BREAKPOINT_COLS = { default: 3, 960: 2, 420: 1 };
 
 export default function ProjectGallery({ images = [], projectTitle = "" }) {
   const [modalOpen, setModalOpen] = useState(false);

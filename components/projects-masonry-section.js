@@ -17,8 +17,8 @@ export default function ProjectsMasonrySection({ items = [] }) {
   const canLoadMore = visible < items.length;
 
   return (
-    <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
-      <div className="max-w-[1200px] mx-auto px-4 w-full flex flex-col items-center md:gap-10 gap-20 text-primary-800 font-body-regular-400">
+    <section className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-600">
+      <div className="max-w-[1200px] mx-auto px-4 w-full flex flex-col items-center gap-10 md:gap-20 text-primary-800 font-body-regular-400">
         <div className="flex flex-col items-center gap-[24px] animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
           <h2 className="page-heading">Atlikti darbai</h2>
           <div className="page-subheading">

@@ -83,7 +83,7 @@ export default async function ProjectDetailPage({ params }) {
   }
 
   return (
-    <div className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
+    <div className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-600">
       <div className="max-w-[1200px] w-full px-4 flex flex-col gap-10 items-center">
         <div className="flex flex-col gap-6 items-center w-full">
           <h1 className="page-heading w-full max-w-[960px]">{project.title}</h1>

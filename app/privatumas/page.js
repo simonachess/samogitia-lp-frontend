@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
+    <section className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-600">
       <div className="max-w-[720px] w-full px-4 mx-auto flex flex-col gap-8 text-left">
         <h1 className="page-heading">Privatumo politika</h1>
         <p className="page-subheading text-left">

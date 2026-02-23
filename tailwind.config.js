@@ -85,16 +85,11 @@ module.exports = {
       xl: "20px",
       "21xl": "40px",
     },
+    /* Mobile-first: min-width (sm = 420px+, md = 960px+, lg = 1201px+) */
     screens: {
-      lg: {
-        max: "1200px",
-      },
-      md: {
-        max: "960px",
-      },
-      sm: {
-        max: "420px",
-      },
+      sm: "420px",
+      md: "960px",
+      lg: "1201px",
     },
   },
 

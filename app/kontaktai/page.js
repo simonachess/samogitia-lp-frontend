@@ -59,9 +59,9 @@ export default function ContactPage() {
   };
 
   return (
-    <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
+    <section className="w-full bg-primary-50 py-[40px] md:py-[80px] flex flex-col items-center text-center body-regular-600">
       <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-row flex-wrap items-start justify-center text-center text-primary-800 font-body-regular-400">
-        <div className="flex flex-col py-0 px-2.5 box-border items-center justify-start md:gap-10 gap-20 w-full">
+        <div className="max-w-[960px] flex flex-col py-0 px-2.5 box-border items-center justify-start gap-10 md:gap-20 w-full">
           <div className="max-w-[720px] flex flex-col items-center justify-start gap-[24px]">
             <h1 className="page-heading">Susisiekite</h1>
             <div className="page-subheading">
@@ -86,7 +86,7 @@ export default function ContactPage() {
             </div>
 
             <div className="flex flex-col items-center justify-start gap-[10px] w-full">
-              <div className="flex flex-row items-start justify-center gap-[10px] md:flex-col w-full">
+              <div className="flex flex-col md:flex-row items-start justify-center gap-[10px] w-full">
                 <div className="flex flex-col gap-1 w-full">
                   <label htmlFor="firstName" className="sr-only">
                     Vardas
@@ -119,7 +119,7 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              <div className="flex flex-row items-start justify-center gap-[10px] md:flex-col w-full">
+              <div className="flex flex-col md:flex-row items-start justify-center gap-[10px] w-full">
                 <div className="flex flex-col gap-1 w-full">
                   <label htmlFor="contact-phone-number" className="sr-only">
                     Telefonas

@@ -53,7 +53,7 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gray-white md:h-[76px] h-[98px] flex flex-row md:py-2 py-4 box-border items-center justify-between sticky w-full top-0 [background:white] z-[50] text-center text-base text-primary-500 font-body-regular-400">
+    <header className="bg-gray-white h-[76px] md:h-[98px] flex flex-row py-2 md:py-4 box-border items-center justify-between sticky w-full top-0 [background:white] z-[50] text-center text-base text-primary-500 font-body-regular-400">
       <div className="max-w-[1200px] w-full mx-auto px-4 flex flex-row items-center justify-between w-full">
         <Link
           href="/"
@@ -64,14 +64,14 @@ const Header = () => {
             alt="Samogitia Group – žemės gerbūvio darbai"
             width={204}
             height={80}
-            className="w-auto md:h-[60px] h-20"
+            className="w-auto h-[60px] md:h-20"
             priority
           />
         </Link>
 
         {/* Desktop nav */}
         <div className="flex flex-row items-center justify-end gap-[36px] text-sm text-primary-900">
-          <div className="flex flex-row items-start justify-start gap-1 lg:hidden">
+          <div className="hidden lg:flex flex-row items-start justify-start gap-1">
             {navLinks.map(({ href, label }) => (
               <Link key={href} href={href} className={linkClass(href)}>
                 {label}
@@ -82,7 +82,7 @@ const Header = () => {
           {/* Mobile burger – animated */}
           <button
             type="button"
-            className="cursor-pointer [border:none] p-3 -m-1 bg-transparent hidden lg:flex items-center justify-center focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
+            className="cursor-pointer [border:none] p-3 -m-1 bg-transparent flex lg:hidden items-center justify-center focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
             aria-label={open ? "Uždaryti meniu" : "Atidaryti meniu"}
             aria-expanded={open}
             onClick={() => setOpen(!open)}
@@ -112,7 +112,7 @@ const Header = () => {
       {open && (
         <div
           ref={menuRef}
-          className="fixed inset-0 z-[60] bg-primary-50 flex flex-col items-center justify-center lg:flex animate-fade-in-menu"
+          className="fixed inset-0 z-[60] bg-primary-50 flex flex-col items-center justify-center animate-fade-in-menu"
         >
           <button
             type="button"
