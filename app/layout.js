@@ -93,10 +93,6 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="lt" className={`${inter.variable} ${publicSans.variable}`}>
-      <head>
-        <link rel="preconnect" href="https://cdn.sanity.io" />
-        <link rel="dns-prefetch" href="https://cdn.sanity.io" />
-      </head>
       <body>
         {/* 🔹 LocalBusiness structured data Google'ui */}
         <script

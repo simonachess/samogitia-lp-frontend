@@ -3,6 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   experimental: {
     optimizePackageImports: ["lucide-react"],
+    optimizeCss: true,
   },
   images: {
     remotePatterns: [{ protocol: "https", hostname: "cdn.sanity.io" }],
