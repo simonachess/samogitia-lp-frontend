@@ -18,12 +18,16 @@ export async function generateStaticParams() {
   return services.filter((s) => s.slug).map((s) => ({ slug: s.slug }));
 }
 
+const OG_IMAGE_WIDTH = 1200;
+const OG_IMAGE_HEIGHT = 630;
+
 export async function generateMetadata({ params }) {
   const service = await client.fetch(
     groq`*[_type == "service" && slug.current == $slug][0]{
       title,
       description,
-      longDescription
+      longDescription,
+      icon
     }`,
     { slug: params.slug },
   );
@@ -44,6 +48,14 @@ export async function generateMetadata({ params }) {
   const siteUrl = getSiteUrl();
   const canonical = `${siteUrl}/paslaugos/${params.slug}`;
 
+  const ogImageUrl = service.icon
+    ? urlFor(service.icon)
+        .width(OG_IMAGE_WIDTH)
+        .height(OG_IMAGE_HEIGHT)
+        .fit("fill")
+        .url()
+    : `${siteUrl}/original_size.jpg`;
+
   return {
     title: pageTitle,
     description: pageDescription,
@@ -53,6 +65,14 @@ export async function generateMetadata({ params }) {
       description: pageDescription,
       type: "article",
       url: canonical,
+      images: [
+        {
+          url: ogImageUrl,
+          width: OG_IMAGE_WIDTH,
+          height: OG_IMAGE_HEIGHT,
+          alt: pageTitle,
+        },
+      ],
     },
   };
 }
