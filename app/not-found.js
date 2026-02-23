@@ -13,7 +13,7 @@ export default function NotFound() {
         <p className="page-subheading text-center max-w-[480px]">
           Puslapis nerastas. Galbūt jis buvo perkeltas arba ištrintas.
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 items-center">
+        <div className="flex flex-col gap-4 items-center">
           <Link href="/" className="btn-primary">
             Grįžti į pradžią
           </Link>

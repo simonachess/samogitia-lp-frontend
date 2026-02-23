@@ -52,8 +52,8 @@ const Footer = () => {
               Kontaktai
             </div>
             <div>MB „Samogitia Group“</div>
-            <div>Įmonės kodas: 306371912</div>
-            <div>PVM mokėtojo kodas: LT100016553619</div>
+            <div>Įm. k.: 306371912</div>
+            <div>PVM mok. k.: LT100016553619</div>
             <div>
               Tel.:{" "}
               <a
@@ -65,7 +65,7 @@ const Footer = () => {
               </a>
             </div>
             <div>
-              El.paštas:{" "}
+              El.p.:{" "}
               <a
                 href="mailto:samogitiagroup@gmail.com"
                 className="leading-[24px] link-default"
