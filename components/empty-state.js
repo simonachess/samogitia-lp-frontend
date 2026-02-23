@@ -6,7 +6,7 @@ export default function EmptyState({
   ctaHref = "/kontaktai",
 }) {
   return (
-    <div className="flex flex-col items-center justify-center gap-4 py-12 text-center animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
+    <div className="flex flex-col items-center justify-center gap-4 py-4 text-center animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
       <p className="text-primary-800 text-base max-w-md">{message}</p>
       <Link
         href={ctaHref}
