@@ -32,10 +32,12 @@ const ChevronRight = () => (
 
 export default function FeatureContainer() {
   return (
-    <section className="page-section">
+    <section className="page-section" aria-labelledby="features-heading">
       <div className="page-container page-section-inner">
         <div className="page-heading-block w-full animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
-          <h2 className="page-heading">Paslaugos</h2>
+          <h2 id="features-heading" className="page-heading">
+            Paslaugos
+          </h2>
           <div className="page-subheading">
             Teikiame žemės gerbūvio darbus, sklypų paruošimą, komunikacijų
             tiesimo paslaugas, aplinkos tvarkymą, bei technikos ir įrankių
@@ -50,7 +52,7 @@ export default function FeatureContainer() {
             href="/paslaugos"
             className="no-underline flex w-full focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded-xl animate-fade-in-up opacity-0 [animation-delay:100ms] [animation-fill-mode:forwards]"
           >
-            <div className={`w-full flex flex-col p-6 gap-5 ${cardBase}`}>
+            <article className={`w-full flex flex-col p-6 gap-5 ${cardBase}`}>
               <div className="flex items-center gap-4">
                 <div className={`${iconBoxSize} ${cardIconBox}`}>
                   <Construction size={iconSize} strokeWidth={1.5} />
@@ -67,14 +69,14 @@ export default function FeatureContainer() {
                 Visos paslaugos
                 <ChevronRight />
               </span>
-            </div>
+            </article>
           </Link>
 
           <Link
             href="/nuoma"
             className="no-underline flex w-full focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded-xl animate-fade-in-up opacity-0 [animation-delay:150ms] [animation-fill-mode:forwards]"
           >
-            <div className={`w-full flex flex-col p-6 gap-5 ${cardBase}`}>
+            <article className={`w-full flex flex-col p-6 gap-5 ${cardBase}`}>
               <div className="flex items-center gap-4">
                 <div className={`${iconBoxSize} ${cardIconBox}`}>
                   <Wrench size={iconSize} strokeWidth={1.5} />
@@ -90,14 +92,14 @@ export default function FeatureContainer() {
                 Nuomoti
                 <ChevronRight />
               </span>
-            </div>
+            </article>
           </Link>
 
           <Link
             href="/projektai"
             className="no-underline flex w-full focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded-xl animate-fade-in-up opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]"
           >
-            <div className={`w-full flex flex-col p-6 gap-5 ${cardBase}`}>
+            <article className={`w-full flex flex-col p-6 gap-5 ${cardBase}`}>
               <div className="flex items-center gap-4">
                 <div className={`${iconBoxSize} ${cardIconBox}`}>
                   <Images size={iconSize} strokeWidth={1.5} />
@@ -111,7 +113,7 @@ export default function FeatureContainer() {
                 Peržiūrėti
                 <ChevronRight />
               </span>
-            </div>
+            </article>
           </Link>
         </div>
       </div>

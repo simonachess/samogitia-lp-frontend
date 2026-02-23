@@ -83,33 +83,40 @@ export default async function ProjectDetailPage({ params }) {
   }
 
   return (
-    <div className="page-section">
+    <section className="page-section" aria-labelledby="project-title">
       <div className="page-container page-section-inner animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
-        <div className="flex flex-col gap-6 items-center w-full">
-          <h1 className="page-heading w-full max-w-[960px]">{project.title}</h1>
-          {project.description &&
-            (Array.isArray(project.description) ? (
-              <RichBody value={project.description} />
-            ) : (
-              <div className="rich-description page-subheading w-full max-w-[960px] text-left">
-                {String(project.description)
-                  .split(/\n/)
-                  .filter(Boolean)
-                  .map((para, i) => (
-                    <p
-                      key={i}
-                      className="mb-4 last:mb-0 text-primary-800 leading-relaxed"
-                    >
-                      {para}
-                    </p>
-                  ))}
-              </div>
-            ))}
-          {images.length > 0 && (
-            <ProjectGallery images={images} projectTitle={project.title} />
-          )}
-        </div>
+        <article>
+          <div className="flex flex-col gap-6 items-center w-full">
+            <h1
+              id="project-title"
+              className="page-heading w-full max-w-[960px]"
+            >
+              {project.title}
+            </h1>
+            {project.description &&
+              (Array.isArray(project.description) ? (
+                <RichBody value={project.description} />
+              ) : (
+                <div className="rich-description page-subheading w-full max-w-[960px] text-left">
+                  {String(project.description)
+                    .split(/\n/)
+                    .filter(Boolean)
+                    .map((para, i) => (
+                      <p
+                        key={i}
+                        className="mb-4 last:mb-0 text-primary-800 leading-relaxed"
+                      >
+                        {para}
+                      </p>
+                    ))}
+                </div>
+              ))}
+            {images.length > 0 && (
+              <ProjectGallery images={images} projectTitle={project.title} />
+            )}
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
   );
 }

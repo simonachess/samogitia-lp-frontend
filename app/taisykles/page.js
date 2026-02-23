@@ -8,9 +8,11 @@ export const metadata = {
 
 export default function TermsPage() {
   return (
-    <section className="page-section">
+    <section className="page-section" aria-labelledby="taisykles-heading">
       <div className="page-container-narrow flex flex-col gap-8 text-left animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
-        <h1 className="page-heading">Naudojimo sąlygos</h1>
+        <h1 id="taisykles-heading" className="page-heading">
+          Naudojimo sąlygos
+        </h1>
         <p className="page-subheading text-left">
           Naudodamiesi MB „Samogitia Group“ svetaine sutinkate su šiomis
           sąlygomis. Paskutinį kartą atnaujinta:{" "}

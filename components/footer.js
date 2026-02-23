@@ -76,7 +76,10 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="w-max flex flex-col items-start justify-start gap-[32px]">
+        <nav
+          className="w-max flex flex-col items-start justify-start gap-[32px]"
+          aria-label="Svetainės nuorodos"
+        >
           <div className="h-max flex flex-col items-start justify-start gap-[16px] text-base text-gray-500">
             <Link href="/paslaugos" className="leading-[24px] link-default">
               Paslaugos
@@ -97,7 +100,7 @@ const Footer = () => {
               Naudojimo sąlygos
             </Link>
           </div>
-        </div>
+        </nav>
       </footer>
     </div>
   );

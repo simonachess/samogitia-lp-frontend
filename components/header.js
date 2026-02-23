@@ -69,8 +69,10 @@ const Header = () => {
           />
         </Link>
 
-        {/* Desktop nav */}
-        <div className="flex flex-row items-center justify-end gap-[36px] text-sm text-primary-900">
+        <nav
+          className="flex flex-row items-center justify-end gap-[36px] text-sm text-primary-900"
+          aria-label="Pagrindinė navigacija"
+        >
           <div className="hidden lg:flex flex-row items-start justify-start gap-1">
             {navLinks.map(({ href, label }) => (
               <Link key={href} href={href} className={linkClass(href)}>
@@ -105,7 +107,7 @@ const Header = () => {
               />
             </span>
           </button>
-        </div>
+        </nav>
       </div>
 
       {/* Full-screen mobile menu */}
@@ -134,7 +136,10 @@ const Header = () => {
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>
           </button>
-          <nav className="flex flex-col items-center gap-8 text-center">
+          <nav
+            className="flex flex-col items-center gap-8 text-center"
+            aria-label="Meniu"
+          >
             {navLinks.map(({ href, label }) => (
               <Link
                 key={href}

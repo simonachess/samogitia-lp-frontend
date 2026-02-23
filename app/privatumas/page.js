@@ -8,9 +8,11 @@ export const metadata = {
 
 export default function PrivacyPage() {
   return (
-    <section className="page-section">
+    <section className="page-section" aria-labelledby="privatumas-heading">
       <div className="page-container-narrow flex flex-col gap-8 text-left animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
-        <h1 className="page-heading">Privatumo politika</h1>
+        <h1 id="privatumas-heading" className="page-heading">
+          Privatumo politika
+        </h1>
         <p className="page-subheading text-left">
           Paskutinį kartą atnaujinta: {new Date().toLocaleDateString("lt-LT")}.
           MB „Samogitia Group“ (toliau – „mes“, „įmonė“) gerbia jūsų privatumą.

@@ -57,36 +57,40 @@ export default async function RentDetailPage({ params }) {
   if (!item) return notFound();
 
   return (
-    <div className="page-section">
+    <section className="page-section" aria-labelledby="rental-title">
       <div className="page-container page-section-inner animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
-        <div className="flex flex-col gap-6 items-center">
-          <div className="flex items-center gap-4">
-            {item.icon && (
-              <Image
-                src={urlFor(item.icon).width(56).height(56).url()}
-                alt={item.title}
-                width={56}
-                height={56}
-                sizes="56px"
-                className="w-[56px] h-[56px]"
-              />
-            )}
-            <h1 className="page-heading">{item.title}</h1>
-          </div>
-
-          <div className="page-subheading max-w-[800px]">
-            {item.longDescription || item.description}
-          </div>
-
-          {(item.pricePerDay || item.pricePerHour) && (
-            <div className="mt-4 text-primary-800 font-semibold text-lg">
-              {item.pricePerDay && `Kaina nuo ${item.pricePerDay} €/diena`}
-              {item.pricePerDay && item.pricePerHour && " · "}
-              {item.pricePerHour && `nuo ${item.pricePerHour} €/val.`}
+        <article>
+          <div className="flex flex-col gap-6 items-center">
+            <div className="flex items-center gap-4">
+              {item.icon && (
+                <Image
+                  src={urlFor(item.icon).width(56).height(56).url()}
+                  alt={item.title}
+                  width={56}
+                  height={56}
+                  sizes="56px"
+                  className="w-[56px] h-[56px]"
+                />
+              )}
+              <h1 id="rental-title" className="page-heading">
+                {item.title}
+              </h1>
             </div>
-          )}
-        </div>
+
+            <div className="page-subheading max-w-[800px]">
+              {item.longDescription || item.description}
+            </div>
+
+            {(item.pricePerDay || item.pricePerHour) && (
+              <div className="mt-4 text-primary-800 font-semibold text-lg">
+                {item.pricePerDay && `Kaina nuo ${item.pricePerDay} €/diena`}
+                {item.pricePerDay && item.pricePerHour && " · "}
+                {item.pricePerHour && `nuo ${item.pricePerHour} €/val.`}
+              </div>
+            )}
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
   );
 }

@@ -12,10 +12,12 @@ const ServicesContainer = ({ items = [] }) => {
   const canLoadMore = visible < items.length;
 
   return (
-    <section className="page-section">
+    <section className="page-section" aria-labelledby="services-heading">
       <div className="page-container page-section-inner text-center text-primary-800 font-body-regular-400">
         <div className="page-heading-block animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
-          <h2 className="page-heading">Atlikti darbai</h2>
+          <h2 id="services-heading" className="page-heading">
+            Atlikti darbai
+          </h2>
           <div className="page-subheading">
             Čia pateikiami mūsų atlikti žemės gerbūvio darbai ir įgyvendinti
             projektai. Kokybiški sprendimai sklypų paruošimui, komunikacijų
@@ -32,7 +34,7 @@ const ServicesContainer = ({ items = [] }) => {
                 </p>
               ) : (
                 shown.map((it, idx) => (
-                  <div
+                  <article
                     key={it.id || `${it.title}-${idx}`}
                     className="animate-fade-in-scale opacity-0 [animation-fill-mode:forwards]"
                     style={{ animationDelay: `${Math.min(idx * 80, 400)}ms` }}
@@ -44,7 +46,7 @@ const ServicesContainer = ({ items = [] }) => {
                       imageAlt={it.imageAlt}
                       href={it.href || "/"}
                     />
-                  </div>
+                  </article>
                 ))
               )}
             </div>

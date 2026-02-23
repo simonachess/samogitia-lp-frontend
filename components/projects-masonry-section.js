@@ -17,10 +17,12 @@ export default function ProjectsMasonrySection({ items = [] }) {
   const canLoadMore = visible < items.length;
 
   return (
-    <section className="page-section">
+    <section className="page-section" aria-labelledby="projects-heading">
       <div className="page-container page-section-inner text-primary-800 font-body-regular-400">
         <div className="page-heading-block animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
-          <h2 className="page-heading">Atlikti darbai</h2>
+          <h2 id="projects-heading" className="page-heading">
+            Atlikti darbai
+          </h2>
           <div className="page-subheading">
             Čia pateikiami mūsų atlikti žemės gerbūvio darbai ir įgyvendinti
             projektai. Kokybiški sprendimai sklypų paruošimui, komunikacijų
@@ -40,7 +42,7 @@ export default function ProjectsMasonrySection({ items = [] }) {
               columnClassName="projects-masonry-grid_column"
             >
               {shown.map((it, idx) => (
-                <div
+                <article
                   key={it.id || `${it.title}-${idx}`}
                   className="animate-fade-in-scale opacity-0 [animation-fill-mode:forwards]"
                   style={{ animationDelay: `${Math.min(idx * 80, 400)}ms` }}
@@ -54,7 +56,7 @@ export default function ProjectsMasonrySection({ items = [] }) {
                     imageWidth={it.imageWidth}
                     imageHeight={it.imageHeight}
                   />
-                </div>
+                </article>
               ))}
             </Masonry>
           )}

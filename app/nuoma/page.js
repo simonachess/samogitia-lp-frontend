@@ -20,10 +20,12 @@ export default async function RentPage() {
   );
 
   return (
-    <section className="page-section">
+    <section className="page-section" aria-labelledby="nuoma-heading">
       <div className="page-container page-section-inner font-body-regular-400 animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
         <div className="flex w-full flex-col gap-6 items-center">
-          <h1 className="page-heading">Technikos ir įrankių nuoma</h1>
+          <h1 id="nuoma-heading" className="page-heading">
+            Technikos ir įrankių nuoma
+          </h1>
           <div className="page-subheading">
             Nuomojame techniką ir įrankius sklypo, kiemo ir kitų teritorijų
             darbams. Pasirinkite įrangą pagal savo poreikius.
@@ -48,29 +50,30 @@ export default async function RentPage() {
               }
 
               return (
-                <InfoCard
-                  key={item._id}
-                  icon={
-                    item.icon ? (
-                      <Image
-                        src={urlFor(item.icon).width(64).height(64).url()}
-                        alt=""
-                        width={64}
-                        height={64}
-                        sizes="64px"
-                        className="w-16 h-16 object-contain"
-                      />
-                    ) : null
-                  }
-                  title={item.title}
-                  // Show description, and if empty, show price text instead
-                  description={
-                    item.description ||
-                    priceText ||
-                    "Plačiau apie nuomos sąlygas..."
-                  }
-                  href={`/nuoma/${item.slug}`}
-                />
+                <article key={item._id}>
+                  <InfoCard
+                    icon={
+                      item.icon ? (
+                        <Image
+                          src={urlFor(item.icon).width(64).height(64).url()}
+                          alt=""
+                          width={64}
+                          height={64}
+                          sizes="64px"
+                          className="w-16 h-16 object-contain"
+                        />
+                      ) : null
+                    }
+                    title={item.title}
+                    // Show description, and if empty, show price text instead
+                    description={
+                      item.description ||
+                      priceText ||
+                      "Plačiau apie nuomos sąlygas..."
+                    }
+                    href={`/nuoma/${item.slug}`}
+                  />
+                </article>
               );
             })
           )}

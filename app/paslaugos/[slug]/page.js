@@ -60,45 +60,49 @@ export default async function ServiceDetailPage({ params }) {
   if (!service) return notFound();
 
   return (
-    <div className="page-section">
+    <section className="page-section" aria-labelledby="service-title">
       <div className="page-container page-section-inner animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
-        <div className="flex flex-col gap-6 items-center w-full">
-          <div className="flex items-center gap-4 mb-6">
-            {service.icon && (
-              <Image
-                src={urlFor(service.icon).width(56).height(56).url()}
-                alt={service.title}
-                width={56}
-                height={56}
-                sizes="56px"
-                className="w-[56px] h-[56px]"
-              />
-            )}
-            <h1 className="page-heading">{service.title}</h1>
-          </div>
+        <article>
+          <div className="flex flex-col gap-6 items-center w-full">
+            <div className="flex items-center gap-4 mb-6">
+              {service.icon && (
+                <Image
+                  src={urlFor(service.icon).width(56).height(56).url()}
+                  alt={service.title}
+                  width={56}
+                  height={56}
+                  sizes="56px"
+                  className="w-[56px] h-[56px]"
+                />
+              )}
+              <h1 id="service-title" className="page-heading">
+                {service.title}
+              </h1>
+            </div>
 
-          {(service.longDescription ?? service.description) &&
-            (Array.isArray(service.longDescription ?? service.description) ? (
-              <RichBody
-                value={service.longDescription ?? service.description}
-              />
-            ) : (
-              <div className="rich-description page-subheading w-full max-w-[960px] text-left">
-                {String(service.longDescription ?? service.description)
-                  .split(/\n/)
-                  .filter(Boolean)
-                  .map((para, i) => (
-                    <p
-                      key={i}
-                      className="mb-4 last:mb-0 text-primary-800 leading-relaxed"
-                    >
-                      {para}
-                    </p>
-                  ))}
-              </div>
-            ))}
-        </div>
+            {(service.longDescription ?? service.description) &&
+              (Array.isArray(service.longDescription ?? service.description) ? (
+                <RichBody
+                  value={service.longDescription ?? service.description}
+                />
+              ) : (
+                <div className="rich-description page-subheading w-full max-w-[960px] text-left">
+                  {String(service.longDescription ?? service.description)
+                    .split(/\n/)
+                    .filter(Boolean)
+                    .map((para, i) => (
+                      <p
+                        key={i}
+                        className="mb-4 last:mb-0 text-primary-800 leading-relaxed"
+                      >
+                        {para}
+                      </p>
+                    ))}
+                </div>
+              ))}
+          </div>
+        </article>
       </div>
-    </div>
+    </section>
   );
 }
