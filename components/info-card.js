@@ -9,7 +9,7 @@ export default function InfoCard({ icon, title, description, href }) {
 
         <div className="flex flex-col gap-4">
           <div className="flex items-center gap-2">
-            <h3 className="text-base md:text-sm font-semibold text-primary-800 flex-1 min-w-0">
+            <h3 className="text-base font-semibold text-primary-800 flex-1 min-w-0">
               {title}
             </h3>
             {href && (
