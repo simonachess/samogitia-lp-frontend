@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import ServiceCard from "./service-card";
+import EmptyState from "./empty-state";
 
 const PAGE_SIZE = 6;
 
@@ -29,9 +30,9 @@ const ServicesContainer = ({ items = [] }) => {
           <div className="flex flex-col items-center justify-start gap-[24px]">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[26px]">
               {shown.length === 0 ? (
-                <p className="text-lightslategray text-base col-span-full text-center">
-                  Informacija ruošiama...
-                </p>
+                <div className="col-span-full">
+                  <EmptyState message="Šiuo metu neturime atliktų darbų. Norite sužinoti daugiau apie mūsų paslaugas? Susisiekite su mumis." />
+                </div>
               ) : (
                 shown.map((it, idx) => (
                   <article

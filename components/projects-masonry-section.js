@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Masonry from "react-masonry-css";
 import ProjectCard from "./project-card";
+import EmptyState from "./empty-state";
 
 const PAGE_SIZE = 6;
 const breakpointCols = {
@@ -32,9 +33,7 @@ export default function ProjectsMasonrySection({ items = [] }) {
 
         <div className="w-full text-left">
           {shown.length === 0 ? (
-            <p className="text-lightslategray text-base text-center py-8">
-              Informacija ruošiama...
-            </p>
+            <EmptyState message="Šiuo metu neturime atliktų darbų. Norite sužinoti daugiau apie mūsų paslaugas? Susisiekite su mumis." />
           ) : (
             <Masonry
               breakpointCols={breakpointCols}

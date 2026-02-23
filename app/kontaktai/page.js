@@ -2,8 +2,10 @@
 "use client";
 
 import { useState } from "react";
-import PhoneInput from "react-phone-number-input";
+import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
 import "react-phone-number-input/style.css";
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function ContactPage() {
   const [status, setStatus] = useState("idle"); // idle | sending | sent | error
@@ -12,11 +14,25 @@ export default function ContactPage() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    setStatus("sending");
     setErrorMessage("");
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    const email = (formData.get("email") || "").trim();
+
+    if (!EMAIL_REGEX.test(email)) {
+      setErrorMessage("Įveskite teisingą el. pašto adresą.");
+      setStatus("error");
+      return;
+    }
+
+    if (phoneValue && !isValidPhoneNumber(phoneValue)) {
+      setErrorMessage("Įveskite teisingą telefono numerį.");
+      setStatus("error");
+      return;
+    }
+
+    setStatus("sending");
 
     const payload = {
       firstName: formData.get("firstName") || "",

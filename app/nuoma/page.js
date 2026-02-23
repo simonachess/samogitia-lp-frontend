@@ -1,6 +1,7 @@
 // app/nuoma/page.js
 import Image from "next/image";
 import InfoCard from "../../components/info-card";
+import EmptyState from "../../components/empty-state";
 import { client, urlFor } from "../../lib/sanity";
 import groq from "groq";
 
@@ -34,7 +35,9 @@ export default async function RentPage() {
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] w-full max-w-[960px] gap-4">
           {items.length === 0 ? (
-            <p className="text-lightslategray">Informacija ruošiama...</p>
+            <div className="col-span-full">
+              <EmptyState message="Šiuo metu neturime nuomos pasiūlymų. Norite sužinoti daugiau? Susisiekite su mumis." />
+            </div>
           ) : (
             items.map((item) => {
               let priceText = "";
