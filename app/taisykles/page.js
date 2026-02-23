@@ -1,0 +1,102 @@
+import Link from "next/link";
+
+export const metadata = {
+  title: "Naudojimo sąlygos",
+  description:
+    "Samogitia Group svetainės naudojimo sąlygos – teisės, atsakomybė ir kontaktai.",
+};
+
+export default function TermsPage() {
+  return (
+    <section className="w-full bg-primary-50 md:py-[40px] py-[80px] flex flex-col items-center text-center body-regular-600">
+      <div className="max-w-[720px] w-full px-4 mx-auto flex flex-col gap-8 text-left">
+        <h1 className="page-heading">Naudojimo sąlygos</h1>
+        <p className="page-subheading text-left">
+          Naudodamiesi Samogitia Group svetaine sutinkate su šiomis sąlygomis.
+          Paskutinį kartą atnaujinta: {new Date().toLocaleDateString("lt-LT")}.
+        </p>
+
+        <div className="flex flex-col gap-6">
+          <div>
+            <h2 className="section-heading mb-2">1. Bendros nuostatos</h2>
+            <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
+              Šios sąlygos reglamentuoja svetainės naudojimą. Svetainės
+              administratorius – Samogitia Group. Naudodamiesi svetaine
+              patvirtinate, kad sutinkate su šiomis sąlygomis ir su mūsų{" "}
+              <Link href="/privatumas" className="link-default">
+                privatumo politika
+              </Link>
+              .
+            </p>
+          </div>
+
+          <div>
+            <h2 className="section-heading mb-2">2. Paslaugų aprašymas</h2>
+            <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
+              Svetainėje pateikiame informaciją apie žemės gerbūvio paslaugas,
+              sklypų paruošimą, technikos ir įrankių nuomą. Turinys skiriamas
+              informaciniais tikslais. Konkretūs pasiūlymai ir sutartys
+              sudaromos atskirai per{" "}
+              <Link href="/kontaktai" className="link-default">
+                kontaktus
+              </Link>
+              .
+            </p>
+          </div>
+
+          <div>
+            <h2 className="section-heading mb-2">3. Intelektinė nuosavybė</h2>
+            <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
+              Svetainės turinys (tekstai, nuotraukos, logotipai, dizainas) yra
+              Samogitia Group nuosavybė arba naudojamas su teisėtųjų leidimu. Be
+              rašytinio sutikimo draudžiama kopijuoti, platinti ar naudoti
+              komerciniais tikslais.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="section-heading mb-2">4. Atsakomybės apribojimas</h2>
+            <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
+              Svetainėje pateikiama informacija gali būti keičiama be
+              išankstinio įspėjimo. Stengiamės teikti teisingą informaciją,
+              tačiau neatsakome už netiesioginius nuostolius, kylančius iš
+              svetainės naudojimo ar jos turinio. Nuorodos į trečiųjų šalių
+              svetaines – ne mūsų atsakomybė.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="section-heading mb-2">5. Pakeitimai</h2>
+            <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
+              Galime atnaujinti naudojimo sąlygas. Apie reikšmingus pakeitimus
+              pranešime šioje svetainėje. Toliau naudodamiesi svetaine po
+              pakeitimų sutinkate su atnaujintomis sąlygomis.
+            </p>
+          </div>
+
+          <div>
+            <h2 className="section-heading mb-2">6. Kontaktai</h2>
+            <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
+              Klausimams dėl sąlygų:{" "}
+              <a
+                href="mailto:samogitiagroup@gmail.com"
+                className="link-default"
+              >
+                samogitiagroup@gmail.com
+              </a>
+              ,{" "}
+              <a href="tel:+37064768414" className="link-default">
+                +370 647 68414
+              </a>
+              .{" "}
+              <Link href="/kontaktai" className="link-default">
+                Kontaktų forma
+              </Link>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

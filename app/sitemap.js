@@ -3,7 +3,8 @@ import { client } from "../lib/sanity";
 import groq from "groq";
 
 export default async function sitemap() {
-  const baseUrl = "https://samogitia-lp-frontend.vercel.app";
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://samogitiagroup.lt";
 
   let services = [];
   let projects = [];
@@ -43,6 +44,7 @@ export default async function sitemap() {
     "/kontaktai",
     "/apie",
     "/privatumas",
+    "/taisykles",
   ].map((path) => ({
     url: `${baseUrl}${path}`,
     lastModified: new Date(),

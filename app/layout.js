@@ -16,8 +16,10 @@ const publicSans = Public_Sans({
   variable: "--font-public-sans",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://samogitiagroup.lt";
+
 export const metadata = {
-  metadataBase: new URL("https://samogitia-lp-frontend.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Žemės gerbūvio darbai | Samogitia Group",
     template: "%s | Samogitia Group",
@@ -41,7 +43,7 @@ export const metadata = {
     title: "Žemės gerbūvio darbai | Samogitia Group",
     description:
       "Žemės gerbūvio darbai, sklypų paruošimas, komunikacijų kasimas ir aplinkos tvarkymas Lietuvoje.",
-    url: "https://samogitia-lp-frontend.vercel.app",
+    url: siteUrl,
     images: [
       {
         url: "/hero-desktop.jpg",
@@ -52,7 +54,7 @@ export const metadata = {
     ],
   },
   alternates: {
-    canonical: "https://samogitia-lp-frontend.vercel.app",
+    canonical: siteUrl,
   },
   icons: {
     icon: "/favicon.ico",

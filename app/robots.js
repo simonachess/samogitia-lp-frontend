@@ -1,3 +1,5 @@
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://samogitiagroup.lt";
+
 export default function robots() {
   return {
     rules: [
@@ -6,6 +8,6 @@ export default function robots() {
         allow: "/",
       },
     ],
-    sitemap: "https://samogitiagroup.lt/sitemap.xml",
+    sitemap: `${siteUrl}/sitemap.xml`,
   };
 }

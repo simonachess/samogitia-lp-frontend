@@ -85,6 +85,9 @@ const Footer = () => {
             <Link href="/privatumas" className="leading-[24px] link-default">
               Privatumo politika
             </Link>
+            <Link href="/taisykles" className="leading-[24px] link-default">
+              Naudojimo sąlygos
+            </Link>
           </div>
         </div>
       </footer>
