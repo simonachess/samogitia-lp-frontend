@@ -1,10 +1,19 @@
 import "../styles/global.css";
+import dynamic from "next/dynamic";
 import SiteLayout from "../components/layout/layout";
-import CookieConsent from "../components/cookie-consent";
-import AnalyticsGate from "../components/analytics-gate";
 import { HERO_IMAGE_SRC } from "../components/hero";
 import { validateEnv, getSiteUrl } from "../lib/env";
 import { Inter } from "next/font/google";
+
+// Defer cookie banner and analytics so they don't block first paint (helps mobile Lighthouse)
+const CookieConsent = dynamic(
+  () => import("../components/cookie-consent").then((m) => m.default),
+  { ssr: false },
+);
+const AnalyticsGate = dynamic(
+  () => import("../components/analytics-gate").then((m) => m.default),
+  { ssr: false },
+);
 
 validateEnv();
 
