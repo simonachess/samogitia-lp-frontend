@@ -2,6 +2,18 @@
 
 import { PortableText } from "@portabletext/react";
 
+/** Allow only http(s) or relative paths to prevent javascript:/data: XSS from CMS content */
+function safeHref(href) {
+  if (typeof href !== "string" || !href.trim()) return undefined;
+  const trimmed = href.trim();
+  if (trimmed.startsWith("/") && !trimmed.startsWith("//")) return trimmed;
+  try {
+    const u = new URL(trimmed);
+    if (u.protocol === "https:" || u.protocol === "http:") return trimmed;
+  } catch (_) {}
+  return undefined;
+}
+
 const components = {
   block: {
     normal: ({ children }) => (
@@ -38,20 +50,27 @@ const components = {
     ),
     em: ({ children }) => <em>{children}</em>,
     fontSize: ({ value, children }) => {
-      const size = value?.size || "normal";
-      const className = `text-size-${size}`;
-      return <span className={className}>{children}</span>;
+      const allowed = ["small", "normal", "large", "x-large", "xx-large"];
+      const size =
+        value?.size && allowed.includes(String(value.size))
+          ? value.size
+          : "normal";
+      return <span className={`text-size-${size}`}>{children}</span>;
     },
-    link: ({ value, children }) => (
-      <a
-        href={value?.href}
-        className="link-default"
-        target={value?.blank ? "_blank" : undefined}
-        rel={value?.blank ? "noopener noreferrer" : undefined}
-      >
-        {children}
-      </a>
-    ),
+    link: ({ value, children }) => {
+      const href = safeHref(value?.href);
+      if (!href) return <span className="link-default">{children}</span>;
+      return (
+        <a
+          href={href}
+          className="link-default"
+          target={value?.blank ? "_blank" : undefined}
+          rel={value?.blank ? "noopener noreferrer" : undefined}
+        >
+          {children}
+        </a>
+      );
+    },
   },
 };
 

@@ -1,4 +1,6 @@
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://samogitiagroup.lt";
+import { getSiteUrl } from "../lib/env";
+
+const siteUrl = getSiteUrl();
 
 export default function robots() {
   return {

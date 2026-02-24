@@ -184,6 +184,7 @@ export default function ContactPage() {
                   placeholder="Klausimas"
                   required
                   rows={10}
+                  maxLength={5000}
                 />
               </div>
 

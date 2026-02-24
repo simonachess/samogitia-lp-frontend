@@ -1,10 +1,10 @@
 // app/sitemap.js
 import { client } from "../lib/sanity";
+import { getSiteUrl } from "../lib/env";
 import groq from "groq";
 
 export default async function sitemap() {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://samogitiagroup.lt";
+  const baseUrl = getSiteUrl();
 
   let services = [];
   let projects = [];

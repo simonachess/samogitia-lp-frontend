@@ -88,8 +88,11 @@ export async function POST(req) {
       String(lastName || "").trim(),
     ]
       .filter(Boolean)
-      .join(" ");
-    const phoneStr = String(phone || "").trim();
+      .join(" ")
+      .slice(0, 200);
+    const phoneStr = String(phone || "")
+      .trim()
+      .slice(0, 50);
 
     const { data, error } = await resend.emails.send({
       from: "Samogitia Group <onboarding@resend.dev>",
