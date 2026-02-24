@@ -3,15 +3,19 @@ import Image from "next/image";
 const PHONE_NUMBER = "+37064768414";
 const PHONE_DISPLAY = "+370 647 68414";
 
+// Tiny blur placeholder (gray/earth tone) – shows while hero loads, then fades to sharp
+const HERO_BLUR =
+  "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBEQACEQADAPwA/9k=";
+
 const Hero = () => {
   return (
     <section
       className="relative w-full flex flex-col items-center py-[80px] md:py-[120px] text-center text-gray-white font-body-regular-400 overflow-hidden"
       aria-labelledby="hero-heading"
     >
-      {/* Background image: mobile = optimized (smaller); desktop = preload + unoptimized */}
+      {/* Background: blur placeholder first, then sharp image when loaded */}
       <div className="absolute inset-0 z-0">
-        {/* Mobile: optimized (smaller file) for faster LCP */}
+        {/* Mobile: optimized + blur placeholder */}
         <div className="absolute inset-0 md:hidden">
           <Image
             src="/hero-v7.jpg"
@@ -21,10 +25,12 @@ const Hero = () => {
             fetchPriority="high"
             sizes="100vw"
             quality={75}
-            className="object-cover object-top"
+            placeholder="blur"
+            blurDataURL={HERO_BLUR}
+            className="object-cover object-top transition-opacity duration-300"
           />
         </div>
-        {/* Desktop */}
+        {/* Desktop: unoptimized + blur placeholder */}
         <div className="absolute inset-0 hidden md:block">
           <Image
             src="/hero-v7.jpg"
@@ -34,7 +40,9 @@ const Hero = () => {
             unoptimized
             fetchPriority="high"
             sizes="100vw"
-            className="object-cover object-top"
+            placeholder="blur"
+            blurDataURL={HERO_BLUR}
+            className="object-cover object-top transition-opacity duration-300"
           />
         </div>
       </div>

@@ -11,14 +11,16 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "500", "600"],
   variable: "--font-inter",
-  display: "swap",
+  display: "optional",
+  preload: true,
 });
 
 const publicSans = Public_Sans({
   subsets: ["latin"],
   weight: ["400", "600"],
   variable: "--font-public-sans",
-  display: "swap",
+  display: "optional",
+  preload: true,
 });
 
 const siteUrl = getSiteUrl();
