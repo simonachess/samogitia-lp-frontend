@@ -10,7 +10,6 @@
     box-sizing: border-box;
     font-family:
       var(--font-inter),
-      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -40,7 +39,6 @@ body {
   @apply leading-[normal] m-0;
   font-family:
     var(--font-inter),
-    var(--font-public-sans),
     system-ui,
     -apple-system,
     "Segoe UI",
@@ -55,9 +53,9 @@ body {
 }
 
 @layer components {
-  /* Buttons: consistent primary and secondary */
+  /* Buttons: consistent primary and secondary (font-semibold = 600) */
   .btn-primary {
-    @apply inline-flex items-center justify-center py-3 px-6 text-base font-medium text-gray-white bg-primary-500 border-0 rounded cursor-pointer transition-all duration-200 no-underline;
+    @apply inline-flex items-center justify-center py-3 px-6 text-base font-semibold text-gray-white bg-primary-500 border-0 rounded cursor-pointer transition-all duration-200 no-underline;
   }
   .btn-primary:hover {
     @apply bg-primary-700;
@@ -72,7 +70,7 @@ body {
     @apply opacity-60 cursor-not-allowed;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center py-3 px-5 text-base font-medium text-primary-800 bg-transparent border border-primary-400/50 rounded cursor-pointer transition-all duration-200 no-underline;
+    @apply inline-flex items-center justify-center py-3 px-5 text-base font-semibold text-primary-800 bg-transparent border border-primary-400/50 rounded cursor-pointer transition-all duration-200 no-underline;
   }
   .btn-secondary:hover {
     @apply bg-primary-50 border-primary-400;
@@ -82,7 +80,7 @@ body {
   }
   /* Secondary on dark background (e.g. cookie bar) */
   .btn-secondary-dark {
-    @apply inline-flex items-center justify-center py-3 px-5 text-base font-medium text-gray-white bg-white/10 border border-white/60 rounded cursor-pointer transition-all duration-200 no-underline;
+    @apply inline-flex items-center justify-center py-3 px-5 text-base font-semibold text-gray-white bg-white/10 border border-white/60 rounded cursor-pointer transition-all duration-200 no-underline;
   }
   .btn-secondary-dark:hover {
     @apply bg-white/20;
@@ -121,7 +119,6 @@ body {
   .page-heading {
     font-family:
       var(--font-inter),
-      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -151,7 +148,6 @@ body {
   .card-heading {
     font-family:
       var(--font-inter),
-      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -167,7 +163,6 @@ body {
   .card-heading-sm {
     font-family:
       var(--font-inter),
-      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -183,7 +178,6 @@ body {
   .page-subheading {
     font-family:
       var(--font-inter),
-      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -278,7 +272,6 @@ body {
   .section-heading {
     font-family:
       var(--font-inter),
-      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -312,7 +305,6 @@ body {
   .hero-heading {
     font-family:
       var(--font-inter),
-      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -341,7 +333,6 @@ body {
   .hero-subheading {
     font-family:
       var(--font-inter),
-      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",
@@ -363,7 +354,6 @@ body {
   .body-regular-600 {
     font-family:
       var(--font-inter),
-      var(--font-public-sans),
       system-ui,
       -apple-system,
       "Segoe UI",

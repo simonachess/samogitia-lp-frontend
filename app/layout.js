@@ -4,23 +4,15 @@ import CookieConsent from "../components/cookie-consent";
 import AnalyticsGate from "../components/analytics-gate";
 import { HERO_IMAGE_SRC } from "../components/hero";
 import { validateEnv, getSiteUrl } from "../lib/env";
-import { Inter, Public_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
 
 validateEnv();
 
-// Only 400 + 600 to reduce font bundle; font-medium (500) will fall back to 400
+// Single font + 400/600 only = smaller font payload. next/font self-hosts at build (already "local").
 const inter = Inter({
   subsets: ["latin"],
   weight: ["400", "600"],
   variable: "--font-inter",
-  display: "optional",
-  preload: true,
-});
-
-const publicSans = Public_Sans({
-  subsets: ["latin"],
-  weight: ["400", "600"],
-  variable: "--font-public-sans",
   display: "optional",
   preload: true,
 });
@@ -98,7 +90,7 @@ export default function RootLayout({ children }) {
   };
 
   return (
-    <html lang="lt" className={`${inter.variable} ${publicSans.variable}`}>
+    <html lang="lt" className={inter.variable}>
       <head>
         {/* Preload LCP hero on desktop (unoptimized = same URL); mobile uses Next optimized URL */}
         <link
