@@ -215,11 +215,11 @@ export default async function ServiceDetailPage({ params }) {
           </div>
 
           {otherServices.length > 0 && (
-            <div className="flex flex-col gap-10">
+            <div className="flex flex-col gap-6 md:gap-10">
               <h2 className="text-lg font-semibold text-primary-800 mb-0 mt-0">
                 Kitos paslaugos
               </h2>
-              <ul className="flex flex-wrap list-none m-0 p-0 gap-10 justify-center w-full">
+              <ul className="flex flex-wrap list-none m-0 p-0 gap-4 md:gap-8 justify-center w-full">
                 {otherServices.map((s) => (
                   <li key={s.slug}>
                     <Link
