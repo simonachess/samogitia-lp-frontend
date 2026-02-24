@@ -8,15 +8,15 @@ Prieš paleidžiant svetainę live, nustatykite šiuos kintamuosius **production
 
 **Kam:** canonical URL, sitemap.xml, OpenGraph, robots.txt.
 
-| Kintamasis             | Pvz. reikšmė                | Kur naudojama                    |
-| ---------------------- | --------------------------- | -------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | `https://samogitiagroup.lt` | layout.js, sitemap.js, robots.js |
+| Kintamasis             | Pvz. reikšmė           | Kur naudojama                    |
+| ---------------------- | ---------------------- | -------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | `https://samogitia.lt` | layout.js, sitemap.js, robots.js |
 
 **Kaip nustatyti (Vercel):**
 
 - Settings → Environment Variables → Add:
   - Name: `NEXT_PUBLIC_SITE_URL`
-  - Value: `https://samogitiagroup.lt` (arba jūsų tikras domenas)
+  - Value: `https://samogitia.lt` (arba jūsų tikras domenas)
   - Environment: Production (ir Preview, jei norite)
 
 **Kaip patikrinti po deploy:**
@@ -90,12 +90,12 @@ Prieš paleidžiant svetainę live, nustatykite šiuos kintamuosius **production
 
 ## Santrauka – minimalus production set
 
-| Kintamasis                      | Būtina?                    | Pvz.                      |
-| ------------------------------- | -------------------------- | ------------------------- |
-| `NEXT_PUBLIC_SITE_URL`          | Taip                       | https://samogitiagroup.lt |
-| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Taip                       | jūsų_sanity_id            |
-| `RESEND_API_KEY`                | Taip (jei naudojate formą) | re\_...                   |
-| `CONTACT_TO_EMAIL`              | Taip (jei naudojate formą) | el@pastas.lt              |
-| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Ne                         | G-...                     |
+| Kintamasis                      | Būtina?                    | Pvz.                 |
+| ------------------------------- | -------------------------- | -------------------- |
+| `NEXT_PUBLIC_SITE_URL`          | Taip                       | https://samogitia.lt |
+| `NEXT_PUBLIC_SANITY_PROJECT_ID` | Taip                       | jūsų_sanity_id       |
+| `RESEND_API_KEY`                | Taip (jei naudojate formą) | re\_...              |
+| `CONTACT_TO_EMAIL`              | Taip (jei naudojate formą) | el@pastas.lt         |
+| `NEXT_PUBLIC_GA_MEASUREMENT_ID` | Ne                         | G-...                |
 
 Po pakeitimų padarykite **redeploy** (Vercel: Deployments → … → Redeploy), kad nauji env būtų įkelti.

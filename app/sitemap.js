@@ -3,8 +3,7 @@ import { client } from "../lib/sanity";
 import groq from "groq";
 
 export default async function sitemap() {
-  const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://samogitiagroup.lt";
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://samogitia.lt";
 
   let services = [];
   let projects = [];
