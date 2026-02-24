@@ -10,7 +10,7 @@ export default function TermsPage() {
   const updatedAt = new Date();
   return (
     <section className="page-section" aria-labelledby="taisykles-heading">
-      <div className="page-container-narrow flex flex-col gap-8 text-left animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
+      <div className="page-container-narrow flex flex-col gap-8 text-left">
         <h1 id="taisykles-heading" className="page-heading">
           Naudojimo sąlygos
         </h1>

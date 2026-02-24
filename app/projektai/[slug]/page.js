@@ -104,7 +104,7 @@ export default async function ProjectDetailPage({ params }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
-      <div className="page-container page-section-inner animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
+      <div className="page-container page-section-inner">
         <nav
           aria-label="Navigacijos kelias"
           className="w-full max-w-[960px] mb-4"

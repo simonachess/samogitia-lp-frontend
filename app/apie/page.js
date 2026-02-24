@@ -7,7 +7,7 @@ export const metadata = {
 export default function AboutPage() {
   return (
     <section className="page-section" aria-labelledby="apie-heading">
-      <div className="page-container page-section-inner flex flex-col items-center gap-8 body-regular-600 max-w-[960px] animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
+      <div className="page-container page-section-inner flex flex-col items-center gap-8 body-regular-600 max-w-[960px]">
         <h1 id="apie-heading" className="page-heading">
           Apie mus
         </h1>

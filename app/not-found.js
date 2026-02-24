@@ -6,7 +6,7 @@ export default function NotFound() {
       className="page-section min-h-[60vh]"
       aria-labelledby="not-found-heading"
     >
-      <div className="page-container flex flex-col items-center justify-center gap-6 animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
+      <div className="page-container flex flex-col items-center justify-center gap-6">
         <h1 id="not-found-heading" className="page-heading text-6xl">
           404
         </h1>

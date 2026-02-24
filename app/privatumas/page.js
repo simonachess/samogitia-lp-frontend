@@ -10,7 +10,7 @@ export default function PrivacyPage() {
   const updatedAt = new Date();
   return (
     <section className="page-section" aria-labelledby="privatumas-heading">
-      <div className="page-container-narrow flex flex-col gap-8 text-left animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
+      <div className="page-container-narrow flex flex-col gap-8 text-left">
         <h1 id="privatumas-heading" className="page-heading">
           Privatumo politika
         </h1>

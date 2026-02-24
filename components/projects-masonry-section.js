@@ -20,7 +20,7 @@ export default function ProjectsMasonrySection({ items = [] }) {
   return (
     <section className="page-section" aria-labelledby="projects-heading">
       <div className="page-container page-section-inner text-primary-800 font-body-regular-400">
-        <div className="page-heading-block animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
+        <div className="page-heading-block">
           <h2 id="projects-heading" className="page-heading">
             Atlikti darbai
           </h2>
@@ -41,11 +41,7 @@ export default function ProjectsMasonrySection({ items = [] }) {
               columnClassName="projects-masonry-grid_column"
             >
               {shown.map((it, idx) => (
-                <article
-                  key={it.id || `${it.title}-${idx}`}
-                  className="animate-fade-in-scale opacity-0 [animation-fill-mode:forwards]"
-                  style={{ animationDelay: `${Math.min(idx * 80, 400)}ms` }}
-                >
+                <article key={it.id || `${it.title}-${idx}`}>
                   <ProjectCard
                     title={it.title}
                     description={it.description}
@@ -67,7 +63,7 @@ export default function ProjectsMasonrySection({ items = [] }) {
             onClick={() =>
               setVisible((v) => Math.min(v + PAGE_SIZE, items.length))
             }
-            className="btn-primary animate-fade-in-up opacity-0 [animation-fill-mode:forwards] [animation-delay:350ms]"
+            className="btn-primary"
           >
             <span className="text-base font-medium text-gray-white">
               Užkrauti daugiau

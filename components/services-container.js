@@ -15,7 +15,7 @@ const ServicesContainer = ({ items = [] }) => {
   return (
     <section className="page-section" aria-labelledby="services-heading">
       <div className="page-container page-section-inner text-center text-primary-800 font-body-regular-400">
-        <div className="page-heading-block animate-fade-in-up opacity-0 [animation-fill-mode:forwards]">
+        <div className="page-heading-block">
           <h2 id="services-heading" className="page-heading">
             Atlikti darbai
           </h2>
@@ -35,11 +35,7 @@ const ServicesContainer = ({ items = [] }) => {
                 </div>
               ) : (
                 shown.map((it, idx) => (
-                  <article
-                    key={it.id || `${it.title}-${idx}`}
-                    className="animate-fade-in-scale opacity-0 [animation-fill-mode:forwards]"
-                    style={{ animationDelay: `${Math.min(idx * 80, 400)}ms` }}
-                  >
+                  <article key={it.id || `${it.title}-${idx}`}>
                     <ServiceCard
                       title={it.title}
                       description={it.description}
