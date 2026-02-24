@@ -8,9 +8,10 @@ import { Inter, Public_Sans } from "next/font/google";
 
 validateEnv();
 
+// Only 400 + 600 to reduce font bundle; font-medium (500) will fall back to 400
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "600"],
   variable: "--font-inter",
   display: "optional",
   preload: true,

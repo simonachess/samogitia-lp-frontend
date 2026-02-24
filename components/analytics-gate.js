@@ -4,9 +4,9 @@ import { useEffect } from "react";
 import { hasAcceptedCookies } from "../lib/cookie-consent";
 
 /**
- * Loads analytics only when user has accepted cookies.
+ * Loads analytics only when user has accepted cookies (deferred; does not block first paint).
  * Set NEXT_PUBLIC_GA_MEASUREMENT_ID in .env (e.g. G-XXXXXXXXXX) to enable Google Analytics.
- * If not set, this component does nothing.
+ * If adding Segment/Sentry, use next/script with strategy="afterInteractive" or "lazyOnload".
  */
 export default function AnalyticsGate() {
   useEffect(() => {
