@@ -20,7 +20,7 @@ validateEnv();
 
 // Single font + 400/600 only = smaller font payload. next/font self-hosts at build (already "local").
 const inter = Inter({
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
   weight: ["400", "600"],
   variable: "--font-inter",
   display: "optional",
