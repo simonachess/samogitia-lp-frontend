@@ -25,9 +25,8 @@ const publicSans = Public_Sans({
 });
 
 const siteUrl = getSiteUrl();
-// Always use production domain for og:image so Facebook gets a stable image URL
-// (avoids Vercel preview / 404 and fallback to hero _next/image)
-const ogImageOrigin = "https://samogitia.lt";
+// Use same origin as site for og:image so crawlers (Facebook, etc.) fetch from the working domain.
+// Set NEXT_PUBLIC_SITE_URL to your canonical URL in Vercel (e.g. https://www.samogitiagroup.lt).
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -57,7 +56,7 @@ export const metadata = {
     url: siteUrl,
     images: [
       {
-        url: `${ogImageOrigin}/samogitia_group_og.jpg`,
+        url: `${siteUrl}/samogitia_group_og.jpg`,
         width: 1200,
         height: 630,
         alt: "Samogitia Group – žemės gerbūvio darbai",

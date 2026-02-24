@@ -3,6 +3,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://samogitia.lt";
 export default function robots() {
   return {
     rules: [
+      // Explicitly allow Facebook's link scraper (required for OG previews / Sharing Debugger)
+      {
+        userAgent: "facebookexternalhit",
+        allow: "/",
+      },
       {
         userAgent: "*",
         allow: "/",
