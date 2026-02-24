@@ -3,6 +3,10 @@ import Image from "next/image";
 const PHONE_NUMBER = "+37064768414";
 const PHONE_DISPLAY = "+370 647 68414";
 
+/** Hero image src – single source for layout preload and hero Image. Optional mobile src for smaller LCP. */
+export const HERO_IMAGE_SRC = "/hero-v7.jpg";
+export const HERO_IMAGE_SRC_MOBILE = "/hero-mobile.jpg"; // set to "/hero-mobile.jpg" when you add a smaller mobile image
+
 // Tiny blur placeholder (gray/earth tone) – shows while hero loads, then fades to sharp
 const HERO_BLUR =
   "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQgKDBQNDAsLDBkSEw8UHRofHh0aHBwgJC4nICIsIxwcKDcpLDAxNDQ0Hyc5PTgyPC4zNDL/2wBDAQkJCQwLDBgNDRgyIRwhMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjL/wAARCAABAAEDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAv/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBEQACEQADAPwA/9k=";
@@ -15,15 +19,15 @@ const Hero = () => {
     >
       {/* Background: blur placeholder first, then sharp image when loaded */}
       <div className="absolute inset-0 z-0">
-        {/* Mobile: optimized + blur placeholder */}
-        <div className="absolute inset-0 md:hidden">
+        {/* Mobile: optimized (smaller request), blur placeholder, capped size for LCP */}
+        <div className="absolute inset-0 sm:hidden">
           <Image
-            src="/hero-v7.jpg"
+            src={HERO_IMAGE_SRC_MOBILE}
             alt="Žemės gerbūvio darbai Žemaitijoje"
             fill
             priority
             fetchPriority="high"
-            sizes="100vw"
+            sizes="(max-width: 768px) 768px, 100vw"
             quality={75}
             placeholder="blur"
             blurDataURL={HERO_BLUR}
@@ -31,9 +35,9 @@ const Hero = () => {
           />
         </div>
         {/* Desktop: unoptimized + blur placeholder */}
-        <div className="absolute inset-0 hidden md:block">
+        <div className="absolute inset-0 hidden sm:block">
           <Image
-            src="/hero-v7.jpg"
+            src={HERO_IMAGE_SRC}
             alt="Žemės gerbūvio darbai Žemaitijoje"
             fill
             priority

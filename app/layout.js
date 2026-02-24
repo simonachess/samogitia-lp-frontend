@@ -2,6 +2,7 @@ import "../styles/global.css";
 import SiteLayout from "../components/layout/layout";
 import CookieConsent from "../components/cookie-consent";
 import AnalyticsGate from "../components/analytics-gate";
+import { HERO_IMAGE_SRC } from "../components/hero";
 import { validateEnv, getSiteUrl } from "../lib/env";
 import { Inter, Public_Sans } from "next/font/google";
 
@@ -99,10 +100,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="lt" className={`${inter.variable} ${publicSans.variable}`}>
       <head>
+        {/* Preload LCP hero on desktop (unoptimized = same URL); mobile uses Next optimized URL */}
         <link
           rel="preload"
           as="image"
-          href="/hero-v7.jpg"
+          href={HERO_IMAGE_SRC}
           fetchPriority="high"
           media="(min-width: 769px)"
         />
