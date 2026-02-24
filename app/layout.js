@@ -102,6 +102,7 @@ export default function RootLayout({ children }) {
           as="image"
           href="/hero-v7.jpg"
           fetchPriority="high"
+          media="(min-width: 769px)"
         />
       </head>
       <body>
