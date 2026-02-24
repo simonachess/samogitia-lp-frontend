@@ -18,9 +18,9 @@ const Hero = () => {
             alt="Žemės gerbūvio darbai Žemaitijoje"
             fill
             priority
+            unoptimized
             fetchPriority="high"
             sizes="(max-width: 768px) 100vw, 100vw"
-            quality={75}
             className="object-cover object-top"
           />
         </div>
@@ -31,9 +31,9 @@ const Hero = () => {
             alt="Žemės gerbūvio darbai Žemaitijoje"
             fill
             priority
+            unoptimized
             fetchPriority="high"
             sizes="100vw"
-            quality={85}
             className="object-cover object-top"
           />
         </div>

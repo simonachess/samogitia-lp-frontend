@@ -96,6 +96,14 @@ export default function RootLayout({ children }) {
 
   return (
     <html lang="lt" className={`${inter.variable} ${publicSans.variable}`}>
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="/hero-v7.jpg"
+          fetchPriority="high"
+        />
+      </head>
       <body>
         {/* 🔹 LocalBusiness structured data Google'ui */}
         <script
