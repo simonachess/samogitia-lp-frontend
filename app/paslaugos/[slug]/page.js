@@ -6,7 +6,14 @@ import { client, urlFor } from "../../../lib/sanity";
 import groq from "groq";
 import { portableTextToPlainText } from "../../../lib/portable-text";
 import { getSiteUrl } from "../../../lib/env";
+import {
+  COMPANY_PHONE,
+  COMPANY_PHONE_DISPLAY,
+  OG_IMAGE_WIDTH,
+  OG_IMAGE_HEIGHT,
+} from "../../../lib/constants";
 import RichBody from "../../../components/rich-body";
+import Breadcrumb from "../../../components/breadcrumb";
 
 export const revalidate = 60;
 
@@ -17,9 +24,6 @@ export async function generateStaticParams() {
 
   return services.filter((s) => s.slug).map((s) => ({ slug: s.slug }));
 }
-
-const OG_IMAGE_WIDTH = 1200;
-const OG_IMAGE_HEIGHT = 630;
 
 export async function generateMetadata({ params }) {
   const service = await client.fetch(
@@ -77,9 +81,6 @@ export async function generateMetadata({ params }) {
   };
 }
 
-const PHONE_NUMBER = "+37064768414";
-const PHONE_DISPLAY = "+370 647 68414";
-
 export default async function ServiceDetailPage({ params }) {
   const [service, allServices] = await Promise.all([
     client.fetch(groq`*[_type == "service" && slug.current == $slug][0]`, {
@@ -114,28 +115,13 @@ export default async function ServiceDetailPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <div className="page-container page-section-inner">
-        <nav
-          aria-label="Navigacijos kelias"
-          className="w-full max-w-[960px] mb-4"
-        >
-          <ol className="flex flex-wrap gap-2 text-sm text-primary-500 list-none m-0 p-0">
-            <li>
-              <Link href="/" className="link-default no-underline">
-                Pradžia
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li>
-              <Link href="/paslaugos" className="link-default no-underline">
-                Paslaugos
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li className="text-primary-800" aria-current="page">
-              {service.title}
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumb
+          items={[
+            { href: "/", label: "Pradžia" },
+            { href: "/paslaugos", label: "Paslaugos" },
+            { label: service.title },
+          ]}
+        />
         <article>
           <div className="flex flex-col gap-6 items-center w-full">
             <div className="flex items-center gap-4 mb-6">
@@ -184,9 +170,9 @@ export default async function ServiceDetailPage({ params }) {
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
-                href={`tel:${PHONE_NUMBER}`}
+                href={`tel:${COMPANY_PHONE}`}
                 className="btn-primary inline-flex items-center justify-center gap-2"
-                aria-label={`${PHONE_DISPLAY}`}
+                aria-label={COMPANY_PHONE_DISPLAY}
               >
                 <svg
                   className="w-5 h-5 shrink-0 text-gray-white"
@@ -202,7 +188,7 @@ export default async function ServiceDetailPage({ params }) {
                     d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V21a2 2 0 01-2 2h-1C9.716 23 3 16.284 3 8V5z"
                   />
                 </svg>
-                {PHONE_DISPLAY}
+                {COMPANY_PHONE_DISPLAY}
               </a>
               <Link
                 href="/kontaktai"

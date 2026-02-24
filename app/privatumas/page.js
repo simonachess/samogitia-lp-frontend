@@ -1,4 +1,9 @@
 import Link from "next/link";
+import {
+  COMPANY_PHONE,
+  COMPANY_PHONE_DISPLAY,
+  COMPANY_EMAIL,
+} from "../../lib/constants";
 
 export const metadata = {
   title: "Privatumo politika",
@@ -35,15 +40,12 @@ export default function PrivacyPage() {
                 kontaktų formą
               </Link>
               , el. paštu{" "}
-              <a
-                href="mailto:samogitiagroup@gmail.com"
-                className="link-default"
-              >
-                samogitiagroup@gmail.com
+              <a href={`mailto:${COMPANY_EMAIL}`} className="link-default">
+                {COMPANY_EMAIL}
               </a>{" "}
               arba telefonu{" "}
-              <a href="tel:+37064768414" className="link-default">
-                +370 647 68414
+              <a href={`tel:${COMPANY_PHONE}`} className="link-default">
+                {COMPANY_PHONE_DISPLAY}
               </a>
               .
             </p>
@@ -99,15 +101,12 @@ export default function PrivacyPage() {
                 kontaktų formą
               </Link>
               , el. paštu{" "}
-              <a
-                href="mailto:samogitiagroup@gmail.com"
-                className="link-default"
-              >
-                samogitiagroup@gmail.com
+              <a href={`mailto:${COMPANY_EMAIL}`} className="link-default">
+                {COMPANY_EMAIL}
               </a>{" "}
               arba telefonu{" "}
-              <a href="tel:+37064768414" className="link-default">
-                +370 647 68414
+              <a href={`tel:${COMPANY_PHONE}`} className="link-default">
+                {COMPANY_PHONE_DISPLAY}
               </a>
               .
             </p>
@@ -128,15 +127,12 @@ export default function PrivacyPage() {
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Privatumo politiką galime atnaujinti – apie reikšmingus pakeitimus
               pranešime šioje svetainėje. Klausimams:{" "}
-              <a
-                href="mailto:samogitiagroup@gmail.com"
-                className="link-default"
-              >
-                samogitiagroup@gmail.com
+              <a href={`mailto:${COMPANY_EMAIL}`} className="link-default">
+                {COMPANY_EMAIL}
               </a>
               ,{" "}
-              <a href="tel:+37064768414" className="link-default">
-                +370 647 68414
+              <a href={`tel:${COMPANY_PHONE}`} className="link-default">
+                {COMPANY_PHONE_DISPLAY}
               </a>
               .
             </p>

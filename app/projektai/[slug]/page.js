@@ -7,6 +7,7 @@ import { portableTextToPlainText } from "../../../lib/portable-text";
 import { getSiteUrl } from "../../../lib/env";
 import ProjectGallery from "../../../components/project-gallery";
 import RichBody from "../../../components/rich-body";
+import Breadcrumb from "../../../components/breadcrumb";
 
 export const revalidate = 60;
 
@@ -105,28 +106,13 @@ export default async function ProjectDetailPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <div className="page-container page-section-inner">
-        <nav
-          aria-label="Navigacijos kelias"
-          className="w-full max-w-[960px] mb-4"
-        >
-          <ol className="flex flex-wrap gap-2 text-sm text-primary-500 list-none m-0 p-0">
-            <li>
-              <Link href="/" className="link-default no-underline">
-                Pradžia
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li>
-              <Link href="/projektai" className="link-default no-underline">
-                Atlikti darbai
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li className="text-primary-800" aria-current="page">
-              {project.title}
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumb
+          items={[
+            { href: "/", label: "Pradžia" },
+            { href: "/projektai", label: "Atlikti darbai" },
+            { label: project.title },
+          ]}
+        />
         <article>
           <div className="flex flex-col gap-6 items-center w-full">
             <h1

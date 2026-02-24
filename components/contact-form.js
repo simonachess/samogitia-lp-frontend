@@ -1,15 +1,13 @@
 "use client";
 
 import { useState } from "react";
-import PhoneInput, { isValidPhoneNumber } from "react-phone-number-input";
-import "react-phone-number-input/style.css";
+import { PHONE_COUNTRY_CODE, PHONE_DIGITS_LENGTH } from "../lib/constants";
 
 const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 export default function ContactForm() {
   const [status, setStatus] = useState("idle");
   const [errorMessage, setErrorMessage] = useState("");
-  const [phoneValue, setPhoneValue] = useState("");
 
   const onSubmit = async (e) => {
     e.preventDefault();
@@ -25,19 +23,16 @@ export default function ContactForm() {
       return;
     }
 
-    if (phoneValue && !isValidPhoneNumber(phoneValue)) {
-      setErrorMessage("Įveskite teisingą telefono numerį.");
-      setStatus("error");
-      return;
-    }
-
     setStatus("sending");
 
+    const phoneDigits = (formData.get("phone") || "")
+      .replace(/\D/g, "")
+      .slice(0, PHONE_DIGITS_LENGTH);
     const payload = {
       firstName: formData.get("firstName") || "",
       lastName: formData.get("lastName") || "",
       email: formData.get("email") || "",
-      phone: phoneValue || "",
+      phone: phoneDigits ? `${PHONE_COUNTRY_CODE}${phoneDigits}` : "",
       message: formData.get("message") || "",
       botField: formData.get("bot-field") || "",
     };
@@ -64,7 +59,6 @@ export default function ContactForm() {
       }
 
       form.reset();
-      setPhoneValue("");
       setStatus("sent");
     } catch (e2) {
       console.error(e2);
@@ -126,21 +120,26 @@ export default function ContactForm() {
         <div className="flex flex-col md:flex-row items-start justify-center gap-[10px] w-full">
           <div className="flex flex-col gap-1 w-full">
             <label htmlFor="contact-phone-number" className="sr-only">
-              Telefonas
+              Telefonas (Lietuva, 8 skaitmenys)
             </label>
-            <div className="contact-phone-input">
-              <PhoneInput
-                international
-                defaultCountry="LT"
-                value={phoneValue}
-                onChange={setPhoneValue}
+            <div className="flex rounded border border-solid border-gray focus-within:ring-1 focus-within:ring-primary-400/25 focus-within:ring-offset-1 focus-within:outline-none">
+              <span
+                className="body-regular-600 text-base text-primary-800 py-4 px-3 border-r border-gray bg-primary-50/30 shrink-0"
+                aria-hidden
+              >
+                {PHONE_COUNTRY_CODE}
+              </span>
+              <input
+                id="contact-phone-number"
+                name="phone"
+                type="tel"
+                autoComplete="tel-national"
+                inputMode="numeric"
+                pattern={`[0-9]{${PHONE_DIGITS_LENGTH}}`}
+                maxLength={PHONE_DIGITS_LENGTH}
                 placeholder="612 34567"
-                className="contact-phone-input__control"
-                numberInputProps={{
-                  id: "contact-phone-number",
-                  className:
-                    "body-regular-600 text-base bg-transparent border-0 py-4 px-3 rounded focus:outline-none focus:ring-0 w-full min-w-0",
-                }}
+                title="8 skaitmenys (pvz. 612 34567)"
+                className="body-regular-600 text-base bg-[transparent] rounded-r w-full py-4 px-3 border-0 min-w-0 focus:outline-none focus:ring-0"
               />
             </div>
           </div>

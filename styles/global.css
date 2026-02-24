@@ -96,26 +96,6 @@ body {
     @apply underline;
   }
 
-  /* Contact form: react-phone-number-input wrapper (one bordered field) */
-  .contact-phone-input {
-    @apply flex rounded border border-solid border-gray;
-    --PhoneInput-color--focus: #6e80b4;
-    --PhoneInputCountryFlag-borderColor: rgba(0, 0, 0, 0.2);
-    --PhoneInputCountryFlag-borderColor--focus: #6e80b4;
-  }
-  .contact-phone-input:focus-within {
-    @apply ring-1 ring-primary-400/25 ring-offset-1 outline-none;
-  }
-  .contact-phone-input .contact-phone-input__control {
-    @apply flex-1 min-w-0 flex;
-  }
-  .contact-phone-input .PhoneInputCountry {
-    @apply pl-3;
-  }
-  .contact-phone-input .PhoneInputInput {
-    @apply flex-1 min-w-0;
-  }
-
   .page-heading {
     font-family:
       var(--font-inter),

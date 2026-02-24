@@ -1,4 +1,9 @@
 import Link from "next/link";
+import {
+  COMPANY_PHONE,
+  COMPANY_PHONE_DISPLAY,
+  COMPANY_EMAIL,
+} from "../../lib/constants";
 
 export const metadata = {
   title: "Naudojimo sąlygos",
@@ -85,15 +90,12 @@ export default function TermsPage() {
             <h2 className="section-heading">6. Kontaktai</h2>
             <p className="font-body-regular-400 text-base text-primary-800 leading-relaxed">
               Klausimams dėl sąlygų:{" "}
-              <a
-                href="mailto:samogitiagroup@gmail.com"
-                className="link-default"
-              >
-                samogitiagroup@gmail.com
+              <a href={`mailto:${COMPANY_EMAIL}`} className="link-default">
+                {COMPANY_EMAIL}
               </a>
               ,{" "}
-              <a href="tel:+37064768414" className="link-default">
-                +370 647 68414
+              <a href={`tel:${COMPANY_PHONE}`} className="link-default">
+                {COMPANY_PHONE_DISPLAY}
               </a>
               .{" "}
               <Link href="/kontaktai" className="link-default">

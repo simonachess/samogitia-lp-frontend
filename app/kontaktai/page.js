@@ -1,24 +1,7 @@
 // app/kontaktai/page.js
 "use client";
 
-import dynamic from "next/dynamic";
-
-// Lazy-load form with react-phone-number-input so it doesn't block first paint (helps mobile Lighthouse on /kontaktai)
-const ContactForm = dynamic(
-  () => import("../../components/contact-form").then((m) => m.default),
-  {
-    ssr: false,
-    loading: () => (
-      <div
-        className="w-full rounded-xl bg-gray-white shadow-[0px_0px_24px_rgba(0,_0,_0,_0.03)] flex flex-col py-7 px-[30px] items-center justify-center gap-4 min-h-[320px] text-primary-800"
-        aria-hidden
-      >
-        <div className="h-4 w-32 bg-primary-100 rounded animate-pulse" />
-        <div className="h-4 w-48 bg-primary-50 rounded animate-pulse" />
-      </div>
-    ),
-  },
-);
+import ContactForm from "../../components/contact-form";
 
 export default function ContactPage() {
   return (

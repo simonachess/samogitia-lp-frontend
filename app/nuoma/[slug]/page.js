@@ -5,6 +5,7 @@ import Image from "next/image";
 import groq from "groq";
 import { client, urlFor } from "../../../lib/sanity";
 import { getSiteUrl } from "../../../lib/env";
+import Breadcrumb from "../../../components/breadcrumb";
 
 export const revalidate = 60;
 
@@ -78,28 +79,13 @@ export default async function RentDetailPage({ params }) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
       <div className="page-container page-section-inner">
-        <nav
-          aria-label="Navigacijos kelias"
-          className="w-full max-w-[960px] mb-4"
-        >
-          <ol className="flex flex-wrap gap-2 text-sm text-primary-500 list-none m-0 p-0">
-            <li>
-              <Link href="/" className="link-default no-underline">
-                Pradžia
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li>
-              <Link href="/nuoma" className="link-default no-underline">
-                Nuoma
-              </Link>
-            </li>
-            <li aria-hidden>/</li>
-            <li className="text-primary-800" aria-current="page">
-              {item.title}
-            </li>
-          </ol>
-        </nav>
+        <Breadcrumb
+          items={[
+            { href: "/", label: "Pradžia" },
+            { href: "/nuoma", label: "Nuoma" },
+            { label: item.title },
+          ]}
+        />
         <article>
           <div className="flex flex-col gap-6 items-center">
             <div className="flex items-center gap-4">

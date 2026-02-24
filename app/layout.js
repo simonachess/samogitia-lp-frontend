@@ -4,6 +4,7 @@ import SiteLayout from "../components/layout/layout";
 import { HERO_IMAGE_SRC } from "../components/hero";
 import { validateEnv, getSiteUrl } from "../lib/env";
 import { Inter } from "next/font/google";
+import { COMPANY_PHONE } from "../lib/constants";
 
 // Defer cookie banner and analytics so they don't block first paint (helps mobile Lighthouse)
 const CookieConsent = dynamic(
@@ -90,7 +91,7 @@ export default function RootLayout({ children }) {
       "Lietuva",
     ],
     url: siteUrl,
-    telephone: "+37064768414",
+    telephone: COMPANY_PHONE,
     address: {
       "@type": "PostalAddress",
       addressLocality: "Telšiai",

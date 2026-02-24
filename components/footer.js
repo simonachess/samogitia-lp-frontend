@@ -1,5 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import {
+  COMPANY_PHONE,
+  COMPANY_PHONE_DISPLAY,
+  COMPANY_EMAIL,
+} from "../lib/constants";
 
 const Footer = () => {
   return (
@@ -127,11 +132,11 @@ const Footer = () => {
                 </svg>
               </span>
               <a
-                href="tel:+37064768414"
+                href={`tel:${COMPANY_PHONE}`}
                 className="leading-[24px] link-default"
-                aria-label="Skambinti +370 647 68414"
+                aria-label={`Skambinti ${COMPANY_PHONE_DISPLAY}`}
               >
-                +370 647 68414
+                {COMPANY_PHONE_DISPLAY}
               </a>
             </div>
             <div className="flex items-center gap-2">
@@ -152,11 +157,11 @@ const Footer = () => {
                 </svg>
               </span>
               <a
-                href="mailto:samogitiagroup@gmail.com"
+                href={`mailto:${COMPANY_EMAIL}`}
                 className="leading-[24px] link-default"
-                aria-label="El. paštas samogitiagroup@gmail.com"
+                aria-label={`El. paštas ${COMPANY_EMAIL}`}
               >
-                samogitiagroup@gmail.com
+                {COMPANY_EMAIL}
               </a>
             </div>
           </div>
