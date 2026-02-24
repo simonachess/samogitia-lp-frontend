@@ -14,7 +14,7 @@ const Hero = () => {
         {/* Mobile: lower quality for faster decode; optionally add hero-mobile.jpg (smaller file) */}
         <div className="absolute inset-0 md:hidden">
           <Image
-            src="/hero-desktop.jpg"
+            src="/hero-v7.jpg"
             alt="Žemės gerbūvio darbai Žemaitijoje"
             fill
             priority
@@ -27,7 +27,7 @@ const Hero = () => {
         {/* Desktop */}
         <div className="absolute inset-0 hidden md:block">
           <Image
-            src="/hero-desktop.jpg"
+            src="/hero-v7.jpg"
             alt="Žemės gerbūvio darbai Žemaitijoje"
             fill
             priority
