@@ -66,9 +66,6 @@ export const metadata = {
       },
     ],
   },
-  alternates: {
-    canonical: siteUrl,
-  },
   icons: {
     icon: "/favicon.ico",
   },

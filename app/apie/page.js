@@ -1,7 +1,12 @@
+import { getSiteUrl } from "../../lib/env";
+
 export const metadata = {
   title: "Apie mus",
   description:
     "Samogitia Group – žemės gerbūvio darbai, sklypų paruošimas, technikos ir įrankių nuoma Žemaitijoje ir visoje Lietuvoje.",
+  alternates: {
+    canonical: `${getSiteUrl()}/apie`,
+  },
 };
 
 export default function AboutPage() {

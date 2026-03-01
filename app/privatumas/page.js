@@ -4,11 +4,15 @@ import {
   COMPANY_PHONE_DISPLAY,
   COMPANY_EMAIL,
 } from "../../lib/constants";
+import { getSiteUrl } from "../../lib/env";
 
 export const metadata = {
   title: "Privatumo politika",
   description:
     "Samogitia Group privatumo politika – kaip renkame, naudojame ir saugome jūsų duomenis.",
+  alternates: {
+    canonical: `${getSiteUrl()}/privatumas`,
+  },
 };
 
 export default function PrivacyPage() {

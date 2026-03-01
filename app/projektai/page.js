@@ -1,5 +1,6 @@
 import ProjectsMasonrySection from "../../components/projects-masonry-section";
 import { client, urlFor } from "../../lib/sanity";
+import { getSiteUrl } from "../../lib/env";
 import groq from "groq";
 
 export const revalidate = 60;
@@ -8,6 +9,9 @@ export const metadata = {
   title: "Atlikti darbai",
   description:
     "Mūsų atlikti žemės gerbūvio darbai, sklypų paruošimo ir aplinkos tvarkymo projektai Žemaitijoje ir kituose Lietuvos regionuose.",
+  alternates: {
+    canonical: `${getSiteUrl()}/projektai`,
+  },
 };
 
 export default async function WorksPage() {

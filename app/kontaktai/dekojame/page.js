@@ -1,8 +1,12 @@
 import Link from "next/link";
+import { getSiteUrl } from "../../../lib/env";
 
 export const metadata = {
   title: "Ačiū",
   robots: { index: false, follow: false },
+  alternates: {
+    canonical: `${getSiteUrl()}/kontaktai/dekojame`,
+  },
 };
 
 export default function ThankYouPage() {

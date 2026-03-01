@@ -4,11 +4,15 @@ import {
   COMPANY_PHONE_DISPLAY,
   COMPANY_EMAIL,
 } from "../../lib/constants";
+import { getSiteUrl } from "../../lib/env";
 
 export const metadata = {
   title: "Naudojimo sąlygos",
   description:
     "Samogitia Group svetainės naudojimo sąlygos – teisės, atsakomybė ir kontaktai.",
+  alternates: {
+    canonical: `${getSiteUrl()}/taisykles`,
+  },
 };
 
 export default function TermsPage() {

@@ -3,9 +3,16 @@ import Image from "next/image";
 import InfoCard from "../../components/info-card";
 import EmptyState from "../../components/empty-state";
 import { client, urlFor } from "../../lib/sanity";
+import { getSiteUrl } from "../../lib/env";
 import groq from "groq";
 
 export const revalidate = 60;
+
+export const metadata = {
+  alternates: {
+    canonical: `${getSiteUrl()}/nuoma`,
+  },
+};
 
 export default async function RentPage() {
   const items = await client.fetch(
