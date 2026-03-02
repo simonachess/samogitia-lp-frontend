@@ -31,7 +31,9 @@ export async function generateMetadata({ params }) {
       title,
       description,
       longDescription,
-      icon
+      metaDescription,
+      icon,
+      ogImage
     }`,
     { slug: params.slug },
   );
@@ -44,21 +46,33 @@ export async function generateMetadata({ params }) {
   }
 
   const pageTitle = service.title || "Žemės gerbūvio paslauga";
-  const rawDesc = service.longDescription ?? service.description;
-  const pageDescription = Array.isArray(rawDesc)
-    ? portableTextToPlainText(rawDesc) ||
-      "Žemės gerbūvio ir aplinkos tvarkymo paslauga."
-    : rawDesc || "Žemės gerbūvio ir aplinkos tvarkymo paslauga.";
+
+  const pageDescription =
+    service.metaDescription?.trim() ||
+    (() => {
+      const rawDesc = service.longDescription ?? service.description;
+      return Array.isArray(rawDesc)
+        ? portableTextToPlainText(rawDesc) ||
+            "Žemės gerbūvio ir aplinkos tvarkymo paslauga."
+        : rawDesc || "Žemės gerbūvio ir aplinkos tvarkymo paslauga.";
+    })();
+
   const siteUrl = getSiteUrl();
   const canonical = `${siteUrl}/paslaugos/${params.slug}`;
 
-  const ogImageUrl = service.icon
-    ? urlFor(service.icon)
+  const ogImageUrl = service.ogImage
+    ? urlFor(service.ogImage)
         .width(OG_IMAGE_WIDTH)
         .height(OG_IMAGE_HEIGHT)
         .fit("fill")
         .url()
-    : `${siteUrl}/samogitiagroup_og.jpg`;
+    : service.icon
+      ? urlFor(service.icon)
+          .width(OG_IMAGE_WIDTH)
+          .height(OG_IMAGE_HEIGHT)
+          .fit("fill")
+          .url()
+      : `${siteUrl}/samogitiagroup_og.jpg`;
 
   return {
     title: pageTitle,
@@ -165,6 +179,10 @@ export default async function ServiceDetailPage({ params }) {
 
         <div className="w-full max-w-[960px] border-t border-primary-100 flex flex-col gap-[80px]">
           <div className="flex flex-col md:flex-row items-center gap-4">
+            <p className="text-primary-800 font-medium m-0">
+              Dirbame Telšiuose, Šiauliuose, Plungėje, Mažeikiuose ir visoje
+              Žemaitijoje.
+            </p>
             <p className="text-primary-800 font-medium m-0">
               Norite užsakyti šią paslaugą? Susisiekite su mumis.
             </p>

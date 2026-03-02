@@ -57,7 +57,7 @@ body {
   .btn-primary {
     @apply inline-flex items-center justify-center py-3 px-6 font-semibold text-gray-white bg-primary-500 border-0 rounded cursor-pointer transition-all duration-200 no-underline;
     font-size: 18px;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
   }
   .btn-primary:hover {
     @apply bg-primary-700;
