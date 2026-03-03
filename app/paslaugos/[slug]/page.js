@@ -180,8 +180,8 @@ export default async function ServiceDetailPage({ params }) {
         <div className="w-full max-w-[960px] border-t border-primary-100 flex flex-col gap-[80px]">
           <div className="flex flex-col items-center md:gap-8 gap-4">
             <p className="text-primary-800 font-medium m-0">
-              Dirbame Telšiuose, Šiauliuose, Plungėje, Mažeikiuose ir visoje
-              Žemaitijoje.
+              Dirbame Telšiuose, Šiauliuose, Plungėje, Mažeikiuose, Klaipėdos
+              regione ir visoje Žemaitijoje.
             </p>
             <div className="flex flex-wrap gap-3 justify-center">
               <a
