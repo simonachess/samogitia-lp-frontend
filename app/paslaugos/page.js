@@ -58,7 +58,7 @@ export default async function ServicesPage() {
                     ) : null
                   }
                   title={service.title}
-                  href={service.slug ? `/paslaugos/${service.slug}` : undefined}
+                  href={service.slug ? `/${service.slug}` : undefined}
                 />
               </article>
             ))

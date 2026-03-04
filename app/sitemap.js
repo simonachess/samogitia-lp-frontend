@@ -52,7 +52,7 @@ export default async function sitemap() {
 
   const serviceUrls =
     services?.map((s) => ({
-      url: `${baseUrl}/paslaugos/${s.slug}`,
+      url: `${baseUrl}/${s.slug}`,
       lastModified: s._updatedAt ? new Date(s._updatedAt) : new Date(),
     })) ?? [];
 
