@@ -17,6 +17,18 @@ export default function ProjectCard({
   const aspectW = isVertical ? 2 * imageWidth : imageWidth;
   const aspectH = imageHeight;
 
+  const descriptionText =
+    typeof description === "string"
+      ? description
+      : Array.isArray(description)
+        ? description
+            .filter((block) => block._type === "block")
+            .flatMap((block) =>
+              (block.children || []).map((child) => child.text || ""),
+            )
+            .join(" ")
+        : "";
+
   return (
     <Link
       href={href}
@@ -44,12 +56,12 @@ export default function ProjectCard({
         >
           {title}
         </h2>
-        {description && (
+        {descriptionText && (
           <p
             className="text-sm text-lightslategray leading-relaxed truncate"
-            title={description}
+            title={descriptionText}
           >
-            {description}
+            {descriptionText}
           </p>
         )}
       </div>
