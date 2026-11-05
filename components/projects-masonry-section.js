@@ -38,7 +38,7 @@ export default function ProjectsMasonrySection({ items = [] }) {
             <Masonry
               breakpointCols={breakpointCols}
               className="projects-masonry-grid"
-              columnClassName="projects-masonry-grid_column"
+              columnClassName="projects-masonry-grid_column flex flex-col gap-4"
             >
               {shown.map((it, idx) => (
                 <article key={it.id || `${it.title}-${idx}`}>
