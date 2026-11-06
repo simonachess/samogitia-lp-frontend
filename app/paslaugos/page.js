@@ -1,7 +1,7 @@
-import Image from "next/image";
-import InfoCard from "../../components/info-card";
+import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import EmptyState from "../../components/empty-state";
-import { client, urlFor } from "../../lib/sanity";
+import { client } from "../../lib/sanity";
 import { getSiteUrl } from "../../lib/env";
 import groq from "groq";
 
@@ -24,44 +24,54 @@ export default async function ServicesPage() {
   );
 
   return (
-    <section className="page-section" aria-labelledby="paslaugos-heading">
-      <div className="page-container page-section-inner">
-        <div className="flex w-full flex-col gap-6 items-center">
-          <h1 id="paslaugos-heading" className="page-heading">
+    <section className="services-page" aria-labelledby="paslaugos-heading">
+      <div className="services-page-container">
+        <div className="services-page-heading">
+          <h1 id="paslaugos-heading" className="services-page-title">
             Žemės gerbūvio paslaugos
           </h1>
-          <div className="page-subheading">
+          <p>
             Paslaugos, kurias atliekame jūsų sklype, kieme ir aplinkoje – nuo
             žemės darbų iki aplinkos sutvarkymo.
-          </div>
+          </p>
         </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] w-full max-w-[960px] gap-4">
+        <div className="services-page-grid">
           {services.length === 0 ? (
             <div className="col-span-full">
               <EmptyState message="Šiuo metu neturime paslaugų. Norite sužinoti daugiau? Susisiekite su mumis." />
             </div>
           ) : (
-            services.map((service) => (
-              <article key={service._id}>
-                <InfoCard
-                  icon={
-                    service.icon ? (
-                      <Image
-                        src={urlFor(service.icon).width(64).height(64).url()}
-                        alt=""
-                        width={64}
-                        height={64}
-                        sizes="64px"
-                        className="w-16 h-16 object-contain"
-                      />
-                    ) : null
-                  }
-                  title={service.title}
-                  href={service.slug ? `/${service.slug}` : undefined}
-                />
-              </article>
-            ))
+            services.map((service) => {
+              const content = (
+                <>
+                  <span className="services-page-card-title">
+                    {service.title}
+                  </span>
+                  <span className="services-page-card-arrow" aria-hidden="true">
+                    <ArrowUpRight
+                      className="ui-icon"
+                      size={16}
+                      strokeWidth={1.8}
+                    />
+                  </span>
+                </>
+              );
+
+              return service.slug ? (
+                <Link
+                  key={service._id}
+                  href={`/${service.slug}`}
+                  className="services-page-card"
+                >
+                  {content}
+                </Link>
+              ) : (
+                <article key={service._id} className="services-page-card">
+                  {content}
+                </article>
+              );
+            })
           )}
         </div>
       </div>

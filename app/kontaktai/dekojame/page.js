@@ -19,10 +19,7 @@ export default function ThankYouPage() {
         <p className="page-subheading max-w-md">
           Užklausa išsiųsta. Susisieksime su jumis netrukus.
         </p>
-        <Link
-          href="/"
-          className="btn-primary inline-flex items-center justify-center h-12 px-6 text-base body-regular-600 text-gray-white"
-        >
+        <Link href="/" className="btn-primary">
           Grįžti į pradžią
         </Link>
       </div>

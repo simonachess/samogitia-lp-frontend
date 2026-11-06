@@ -20,11 +20,6 @@ const Header = () => {
     return pathname === href;
   };
 
-  const linkClass = (href) =>
-    `relative leading-[22px] py-1 px-3 text-primary-500 focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded ${
-      isActive(href) ? "text-primary-500 underline" : "no-underline"
-    }`;
-
   // close on ESC
   useEffect(() => {
     const onKey = (e) => {
@@ -68,32 +63,27 @@ const Header = () => {
   ];
 
   return (
-    <header className="bg-gray-white h-[76px] md:h-[98px] flex flex-row py-2 md:py-4 box-border items-center justify-between sticky w-full top-0 [background:white] z-[50] text-center text-base text-primary-500 font-body-regular-400">
-      <div className="page-container flex flex-row items-center justify-between w-full">
-        <Link
-          href="/"
-          className="flex flex-row items-center justify-center gap-[8px] focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
-        >
+    <header className="site-header">
+      <div className="site-header-inner">
+        <Link href="/" className="site-header-logo">
           <Image
             src="/logo.svg"
             alt="Samogitia Group – žemės gerbūvio darbai"
             width={204}
             height={80}
-            className="w-auto h-[60px] md:h-20"
+            className="site-header-logo-image"
             priority
           />
         </Link>
 
-        <nav
-          className="flex flex-row items-center justify-end gap-[36px] text-sm text-primary-900"
-          aria-label="Pagrindinė navigacija"
-        >
-          <ul className="nav-list hidden lg:flex flex-row items-start justify-start gap-1">
+        <nav className="site-header-nav" aria-label="Pagrindinė navigacija">
+          <ul className="site-header-links">
             {navLinks.map(({ href, label }) => (
               <li key={href}>
                 <Link
                   href={href}
-                  className={linkClass(href)}
+                  className="site-header-link"
+                  data-active={isActive(href) ? "true" : undefined}
                   aria-current={isActive(href) ? "page" : undefined}
                 >
                   {label}
@@ -101,73 +91,50 @@ const Header = () => {
               </li>
             ))}
           </ul>
-
-          {/* Mobile burger – animated */}
-          <button
-            ref={burgerRef}
-            type="button"
-            className="cursor-pointer [border:none] p-3 -m-1 bg-transparent flex lg:hidden items-center justify-center focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 rounded"
-            aria-label={open ? "Uždaryti meniu" : "Atidaryti meniu"}
-            aria-expanded={open}
-            onClick={() => setOpen(!open)}
-          >
-            <span className="flex flex-col justify-center items-center w-6 h-6 gap-1.5">
-              <span
-                className={`block w-6 h-0.5 bg-primary-700 rounded-full transition-all duration-300 ease-out origin-center ${
-                  open ? "rotate-45 translate-y-2" : ""
-                }`}
-              />
-              <span
-                className={`block w-6 h-0.5 bg-primary-700 rounded-full transition-all duration-300 ${
-                  open ? "opacity-0 scale-0" : "opacity-100 scale-100"
-                }`}
-              />
-              <span
-                className={`block w-6 h-0.5 bg-primary-700 rounded-full transition-all duration-300 ease-out origin-center ${
-                  open ? "-rotate-45 -translate-y-2" : ""
-                }`}
-              />
-            </span>
-          </button>
         </nav>
+
+        <Link
+          href="/kontaktai"
+          className="site-header-contact button button-primary"
+        >
+          Susisiekti
+          <svg
+            className="ui-icon h-4 w-4"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.8"
+            aria-hidden="true"
+          >
+            <path d="M7 17 17 7M7 7h10v10" />
+          </svg>
+        </Link>
+
+        <button
+          ref={burgerRef}
+          type="button"
+          className="site-header-menu-toggle"
+          aria-label={open ? "Uždaryti meniu" : "Atidaryti meniu"}
+          aria-expanded={open}
+          onClick={() => setOpen(!open)}
+        >
+          <span className="site-header-menu-icon" aria-hidden="true">
+            <span className={open ? "is-open" : ""} />
+            <span className={open ? "is-open" : ""} />
+            <span className={open ? "is-open" : ""} />
+          </span>
+        </button>
       </div>
 
-      {/* Full-screen mobile menu */}
       {open && (
-        <div
-          ref={menuRef}
-          className="fixed inset-0 z-[60] bg-primary-50 flex flex-col items-center justify-center animate-fade-in-menu"
-        >
-          <button
-            type="button"
-            onClick={() => setOpen(false)}
-            aria-label="Uždaryti meniu"
-            className="absolute top-4 right-4 p-2 rounded focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 text-primary-700 bg-transparent"
-          >
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden
-            >
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          </button>
-          <nav
-            className="flex flex-col items-center gap-8 text-center"
-            aria-label="Meniu"
-          >
-            <ul className="nav-list flex flex-col items-center gap-8">
+        <div ref={menuRef} className="site-mobile-menu">
+          <nav className="site-mobile-menu-nav" aria-label="Meniu">
+            <ul className="site-mobile-menu-links">
               <li>
                 <Link
                   ref={firstLinkRef}
                   href="/"
-                  className={`card-heading-sm ${linkClass("/")}`}
+                  className="site-mobile-menu-link"
                   onClick={() => setOpen(false)}
                   aria-current={pathname === "/" ? "page" : undefined}
                 >
@@ -178,7 +145,7 @@ const Header = () => {
                 <li key={href}>
                   <Link
                     href={href}
-                    className={`card-heading-sm ${linkClass(href)}`}
+                    className="site-mobile-menu-link"
                     onClick={() => setOpen(false)}
                     aria-current={isActive(href) ? "page" : undefined}
                   >

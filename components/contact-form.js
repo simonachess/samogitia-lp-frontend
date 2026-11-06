@@ -68,48 +68,32 @@ export default function ContactForm() {
   };
 
   return (
-    <form
-      name="contact"
-      onSubmit={onSubmit}
-      className="w-full rounded-xl bg-gray-white shadow-[0px_0px_24px_rgba(0,_0,_0,_0.03)] flex flex-col py-7 px-[30px] items-center justify-start gap-[17px] text-left text-base text-primary-800 font-body-regular-400"
-    >
-      <p className="hidden">
+    <form name="contact" onSubmit={onSubmit} className="contact-form">
+      <p className="contact-form-honeypot">
         <label>
           Don't fill this out: <input name="bot-field" />
         </label>
       </p>
 
-      <div className="flex flex-col items-center justify-start gap-[6px]">
-        <b className="card-heading-sm">Užklausos forma</b>
-      </div>
-
-      <div className="flex flex-col items-center justify-start gap-[10px] w-full">
-        <div className="flex flex-col md:flex-row items-start justify-center gap-[10px] w-full">
-          <div className="flex flex-col gap-1 w-full">
-            <label htmlFor="firstName" className="sr-only">
-              Vardas
-            </label>
+      <div className="contact-form-fields">
+        <div className="contact-form-row">
+          <div className="contact-form-field">
+            <label htmlFor="firstName">Vardas</label>
             <input
               id="firstName"
               name="firstName"
-              className="font-body-regular-400 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 placeholder:text-primary-800/40 placeholder:font-normal"
               type="text"
-              placeholder="Vardas"
               maxLength={100}
               minLength={2}
               required
             />
           </div>
-          <div className="flex flex-col gap-1 w-full">
-            <label htmlFor="lastName" className="sr-only">
-              Pavardė
-            </label>
+          <div className="contact-form-field">
+            <label htmlFor="lastName">Pavardė</label>
             <input
               id="lastName"
               name="lastName"
-              className="font-body-regular-400 text-base bg-[transparent] rounded w-full py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 placeholder:text-primary-800/40 placeholder:font-normal"
               type="text"
-              placeholder="Pavardė"
               maxLength={100}
               minLength={2}
               required
@@ -117,18 +101,11 @@ export default function ContactForm() {
           </div>
         </div>
 
-        <div className="flex flex-col md:flex-row items-start justify-center gap-[10px] w-full">
-          <div className="flex flex-col gap-1 w-full">
-            <label htmlFor="contact-phone-number" className="sr-only">
-              Telefonas (Lietuva, 8 skaitmenys)
-            </label>
-            <div className="flex rounded border border-solid border-gray focus-within:ring-1 focus-within:ring-primary-400/25 focus-within:ring-offset-1 focus-within:outline-none">
-              <span
-                className="font-body-regular-400 text-base text-primary-800 py-4 px-3 border-r border-gray bg-primary-50/30 shrink-0"
-                aria-hidden
-              >
-                {PHONE_COUNTRY_CODE}
-              </span>
+        <div className="contact-form-row">
+          <div className="contact-form-field">
+            <label htmlFor="contact-phone-number">Tel. numeris</label>
+            <div className="contact-form-phone">
+              <span aria-hidden="true">{PHONE_COUNTRY_CODE}</span>
               <input
                 id="contact-phone-number"
                 name="phone"
@@ -137,38 +114,23 @@ export default function ContactForm() {
                 inputMode="numeric"
                 pattern={`[0-9]{${PHONE_DIGITS_LENGTH}}`}
                 maxLength={PHONE_DIGITS_LENGTH}
-                placeholder="612 34567"
-                title="8 skaitmenys (pvz. 612 34567)"
-                className="font-body-regular-400 text-base bg-[transparent] rounded-r w-full py-4 px-3 border-0 min-w-0 focus:outline-none focus:ring-0 placeholder:text-primary-800/40 placeholder:font-normal"
+                title="8 skaitmenys"
               />
             </div>
           </div>
-          <div className="flex flex-col gap-1 w-full">
-            <label htmlFor="email" className="sr-only">
-              El. paštas
-            </label>
-            <input
-              id="email"
-              name="email"
-              className="w-full font-body-regular-400 text-base bg-[transparent] rounded py-4 px-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 placeholder:text-primary-800/40 placeholder:font-normal"
-              type="email"
-              placeholder="El. paštas"
-              required
-            />
+          <div className="contact-form-field">
+            <label htmlFor="email">El. paštas</label>
+            <input id="email" name="email" type="email" required />
           </div>
         </div>
 
-        <div className="flex flex-col gap-1 w-full">
-          <label htmlFor="message" className="sr-only">
-            Klausimas
-          </label>
+        <div className="contact-form-field">
+          <label htmlFor="message">Klausimas</label>
           <textarea
             id="message"
             name="message"
-            className="w-full bg-[transparent] h-[105px] font-body-regular-400 text-base rounded box-border p-3 border-[1px] border-solid border-gray focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1 placeholder:text-primary-800/40 placeholder:font-normal"
-            placeholder="Klausimas"
             required
-            rows={10}
+            rows={5}
             maxLength={5000}
           />
         </div>
@@ -177,7 +139,7 @@ export default function ContactForm() {
           <div
             role={status === "sent" ? "status" : "alert"}
             aria-live={status === "sent" ? "polite" : "assertive"}
-            className={`w-full py-3 px-4 rounded text-sm font-medium ${
+            className={`contact-form-status ${
               status === "sent"
                 ? "bg-green-50 text-green-800"
                 : "bg-red-50 text-red-700"
@@ -193,11 +155,9 @@ export default function ContactForm() {
           type="submit"
           disabled={status === "sending"}
           aria-busy={status === "sending"}
-          className="btn-primary w-[222px] h-[46px]"
+          className="button button-primary button-compact contact-form-submit"
         >
-          <span className="text-base body-regular-600 text-gray-white">
-            {status === "sending" ? "Siunčiama..." : "Siųsti užklausą"}
-          </span>
+          {status === "sending" ? "Siunčiama..." : "Siųsti užklausą"}
         </button>
       </div>
     </form>

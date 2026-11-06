@@ -17,7 +17,6 @@ const RESERVED_PATHS = new Set([
   "privatumas",
   "taisykles",
 ]);
-
 export const revalidate = 60;
 
 export async function generateStaticParams() {
@@ -91,12 +90,16 @@ export async function generateMetadata({ params }) {
 
 export default async function RootServicePage({ params }) {
   if (RESERVED_PATHS.has(params.slug)) notFound();
-  const [service, allServices] = await Promise.all([
+  const [service, allServices, relatedProject] = await Promise.all([
     client.fetch(groq`*[_type == "service" && slug.current == $slug][0]`, {
       slug: params.slug,
     }),
     client.fetch(
       groq`*[_type == "service"] | order(order asc) { title, "slug": slug.current }`,
+    ),
+    client.fetch(
+      groq`*[_type == "project" && slug.current == $slug][0]{ gallery }`,
+      { slug: params.slug },
     ),
   ]);
   if (!service) return notFound();
@@ -110,6 +113,11 @@ export default async function RootServicePage({ params }) {
       otherServices={otherServices}
       slug={params.slug}
       siteUrl={siteUrl}
+      relatedImage={
+        relatedProject?.gallery?.[0]
+          ? urlFor(relatedProject.gallery[0]).width(1200).height(900).url()
+          : null
+      }
     />
   );
 }

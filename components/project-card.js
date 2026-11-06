@@ -9,14 +9,7 @@ export default function ProjectCard({
   imageUrl,
   imageAlt = "Atliktas projektas",
   href = "/",
-  imageWidth = 1200,
-  imageHeight = 800,
 }) {
-  const isVertical = imageHeight > imageWidth;
-  // Vertical: 50% of natural height so the card isn’t too tall; image fills with cover (full image on click-through)
-  const aspectW = isVertical ? 2 * imageWidth : imageWidth;
-  const aspectH = imageHeight;
-
   const descriptionText =
     typeof description === "string"
       ? description
@@ -30,39 +23,21 @@ export default function ProjectCard({
         : "";
 
   return (
-    <Link
-      href={href}
-      className="block w-full rounded-xl border border-primary-100 bg-gray-white overflow-hidden text-left no-underline transition-all hover:border-primary-200 hover:shadow-md focus:outline-none focus:ring-1 focus:ring-primary-400/25 focus:ring-offset-1"
-    >
-      <div
-        className="w-full relative overflow-hidden bg-primary-100"
-        style={{ aspectRatio: `${aspectW}/${aspectH}` }}
-      >
+    <Link href={href} className="projects-page-card group">
+      <div className="projects-page-card-image">
         <Image
           src={imageUrl}
           alt={imageAlt}
           fill
-          className={
-            isVertical ? "object-cover object-center" : "object-contain"
-          }
-          sizes="(max-width: 420px) 100vw, (max-width: 960px) 50vw, 400px"
+          className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+          sizes="(max-width: 700px) 100vw, 50vw"
           quality={85}
         />
       </div>
-      <div className="p-4 flex flex-col gap-2">
-        <h2
-          className="text-lg md:text-base font-semibold text-primary-800 truncate"
-          title={title}
-        >
-          {title}
-        </h2>
+      <div className="projects-page-card-copy">
+        <h2 className="projects-page-card-title">{title}</h2>
         {descriptionText && (
-          <p
-            className="text-sm text-lightslategray leading-relaxed truncate"
-            title={descriptionText}
-          >
-            {descriptionText}
-          </p>
+          <p className="projects-page-card-description">{descriptionText}</p>
         )}
       </div>
     </Link>

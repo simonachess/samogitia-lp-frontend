@@ -1,7 +1,7 @@
 // app/nuoma/page.js
 import Image from "next/image";
 import InfoCard from "../../components/info-card";
-import EmptyState from "../../components/empty-state";
+import ContactActions from "../../components/contact-actions";
 import { client, urlFor } from "../../lib/sanity";
 import { getSiteUrl } from "../../lib/env";
 import groq from "groq";
@@ -9,6 +9,9 @@ import groq from "groq";
 export const revalidate = 60;
 
 export const metadata = {
+  title: "Technikos ir įrankių nuoma",
+  description:
+    "Informacija apie Samogitia Group technikos ir įrankių nuomos pasiūlymus Žemaitijoje.",
   alternates: {
     canonical: `${getSiteUrl()}/nuoma`,
   },
@@ -28,67 +31,77 @@ export default async function RentPage() {
   );
 
   return (
-    <section className="page-section" aria-labelledby="nuoma-heading">
-      <div className="page-container page-section-inner font-body-regular-400">
-        <div className="flex w-full flex-col gap-6 items-center">
-          <h1 id="nuoma-heading" className="page-heading">
-            Technikos ir įrankių nuoma
-          </h1>
-          <div className="page-subheading">
-            Nuomojame techniką ir įrankius sklypo, kiemo ir kitų teritorijų
-            darbams. Pasirinkite įrangą pagal savo poreikius.
+    <div className="rent-page">
+      <section className="rent-listing" aria-labelledby="nuoma-heading">
+        <div className="rent-page-container">
+          <div className="rent-heading">
+            <h1 id="nuoma-heading">Technikos ir įrankių nuoma</h1>
+            <p>
+              Informacija apie galimus nuomos pasiūlymus skelbiama šiame
+              puslapyje.
+            </p>
           </div>
-        </div>
 
-        <div className="grid grid-cols-[repeat(auto-fit,minmax(230px,1fr))] w-full max-w-[960px] gap-4">
           {items.length === 0 ? (
-            <div className="col-span-full">
-              <EmptyState message="Šiuo metu neturime nuomos pasiūlymų. Norite sužinoti daugiau? Susisiekite su mumis." />
+            <div className="rent-empty-state" role="status">
+              <p>
+                Šiuo metu nuomojamos technikos ar įrankių neturime. Kai
+                pasiūlymai bus prieinami, informacija atsiras čia.
+              </p>
             </div>
           ) : (
-            items.map((item) => {
-              let priceText = "";
-              if (item.pricePerDay || item.pricePerHour) {
-                const parts = [];
-                if (item.pricePerDay) {
-                  parts.push(`Nuo ${item.pricePerDay} €/diena`);
+            <div className="rent-grid">
+              {items.map((item) => {
+                let priceText = "";
+                if (item.pricePerDay || item.pricePerHour) {
+                  const parts = [];
+                  if (item.pricePerDay) {
+                    parts.push(`Nuo ${item.pricePerDay} €/diena`);
+                  }
+                  if (item.pricePerHour) {
+                    parts.push(`nuo ${item.pricePerHour} €/val.`);
+                  }
+                  priceText = parts.join(" · ");
                 }
-                if (item.pricePerHour) {
-                  parts.push(`nuo ${item.pricePerHour} €/val.`);
-                }
-                priceText = parts.join(" · ");
-              }
 
-              return (
-                <article key={item._id}>
-                  <InfoCard
-                    icon={
-                      item.icon ? (
-                        <Image
-                          src={urlFor(item.icon).width(64).height(64).url()}
-                          alt=""
-                          width={64}
-                          height={64}
-                          sizes="64px"
-                          className="w-16 h-16 object-contain"
-                        />
-                      ) : null
-                    }
-                    title={item.title}
-                    // Show description, and if empty, show price text instead
-                    description={
-                      item.description ||
-                      priceText ||
-                      "Plačiau apie nuomos sąlygas..."
-                    }
-                    href={`/nuoma/${item.slug}`}
-                  />
-                </article>
-              );
-            })
+                return (
+                  <article key={item._id}>
+                    <InfoCard
+                      icon={
+                        item.icon ? (
+                          <Image
+                            src={urlFor(item.icon).width(64).height(64).url()}
+                            alt=""
+                            width={64}
+                            height={64}
+                            sizes="64px"
+                            className="w-16 h-16 object-contain"
+                          />
+                        ) : null
+                      }
+                      title={item.title}
+                      description={
+                        item.description ||
+                        priceText ||
+                        "Plačiau apie nuomos sąlygas..."
+                      }
+                      href={`/nuoma/${item.slug}`}
+                    />
+                  </article>
+                );
+              })}
+            </div>
           )}
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section className="rent-contact" aria-labelledby="rent-contact-heading">
+        <h2 id="rent-contact-heading">Susisiekite</h2>
+        <p>
+          Turite klausimų apie nuomą ar kitus mūsų darbus? Susisiekite su mumis.
+        </p>
+        <ContactActions className="rent-contact-actions" />
+      </section>
+    </div>
   );
 }

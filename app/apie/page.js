@@ -1,4 +1,16 @@
+import Image from "next/image";
+import { Check } from "lucide-react";
 import { getSiteUrl } from "../../lib/env";
+import ContactActions from "../../components/contact-actions";
+import ServiceAreaSection from "../../components/service-area-section";
+
+const services = [
+  "Žemės gerbūvio darbai ir sklypo paruošimas",
+  "Reljefo formavimas ir žemės lyginimas",
+  "Komunikacijų tiesimas ir kasimas",
+  "Aplinkos tvarkymas",
+  "Technikos ir įrankių nuoma",
+];
 
 export const metadata = {
   title: "Apie mus",
@@ -11,48 +23,88 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <section className="page-section" aria-labelledby="apie-heading">
-      <div className="page-container page-section-inner flex flex-col items-center gap-8 body-regular-600 max-w-[960px]">
-        <h1 id="apie-heading" className="page-heading">
-          Apie mus
-        </h1>
-        <div className="page-subheading">
-          Teikiame profesionalius žemės gerbūvio darbus, sklypų paruošimą,
-          technikos ir įrankių nuomą visoje Žemaitijoje ir Lietuvoje.
+    <div className="apie-page">
+      <section className="apie-hero" aria-labelledby="apie-heading">
+        <Image
+          src="/hero-v7.jpg"
+          alt=""
+          fill
+          priority
+          unoptimized
+          sizes="100vw"
+          className="apie-hero-image"
+        />
+        <div className="apie-hero-overlay" />
+        <div className="apie-hero-content">
+          <h1 id="apie-heading">Apie mus</h1>
+          <p>
+            Teikiame profesionalius žemės gerbūvio darbus, sklypų paruošimą,
+            technikos ir įrankių nuomą visoje Žemaitijoje ir Lietuvoje.
+          </p>
+          <ContactActions
+            className="apie-hero-actions"
+            secondaryVariant="light"
+          />
         </div>
+      </section>
 
-        <div className="flex flex-col gap-6 text-left w-full">
-          <div>
-            <h2 className="section-heading">Kas mes esame</h2>
-            <p className="font-body-regular-400 text-base leading-[28px]">
+      <div className="apie-main">
+        <section className="apie-intro" aria-labelledby="apie-company-heading">
+          <div className="apie-intro-image">
+            <Image
+              src="/hero-v7.jpg"
+              alt="Samogitia Group technika ir žemės darbai"
+              fill
+              sizes="(max-width: 700px) 100vw, 50vw"
+              className="object-cover"
+            />
+          </div>
+          <div className="apie-intro-copy">
+            <h2 id="apie-company-heading">Kas mes esame?</h2>
+            <p>
               Samogitia Group – įmonė, specializuojanti žemės gerbūvio darbuose.
               Atliekame sklypų paruošimą, reljefo formavimą, komunikacijų
               tiesimą ir aplinkos tvarkymą. Taip pat siūlome technikos ir
               įrankių nuomą privatiems ir verslo klientams.
             </p>
           </div>
+        </section>
 
-          <div>
-            <h2 className="section-heading">Mūsų paslaugos</h2>
-            <ul className="font-body-regular-400 list-none list-inside text-base leading-[28px] space-y-2 p-0">
-              <li>✔ Žemės gerbūvio darbai ir sklypo paruošimas</li>
-              <li>✔ Reljefo formavimas ir žemės lyginimas</li>
-              <li>✔ Komunikacijų tiesimas ir kasimas</li>
-              <li>✔ Aplinkos tvarkymas</li>
-              <li>✔ Technikos ir įrankių nuoma</li>
-            </ul>
-          </div>
+        <section
+          className="apie-services"
+          aria-labelledby="apie-services-heading"
+        >
+          <h2 id="apie-services-heading">Mūsų paslaugos</h2>
+          <ul>
+            {services.map((service) => (
+              <li key={service}>
+                <span className="apie-service-icon">
+                  <Check
+                    className="ui-icon"
+                    size={16}
+                    strokeWidth={1.8}
+                    aria-hidden="true"
+                  />
+                </span>
+                <span>{service}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-          <div>
-            <h2 className="section-heading">Aptarnaujame</h2>
-            <p className="font-body-regular-400 text-base leading-[28px]">
-              Dirbame Telšiuose, Plungėje, Mažeikiuose, Šiauliuose, Klaipėdoje
-              ir visame Žemaitijos regione. Susisiekite su mumis – paruošime
-              individualų pasiūlymą jūsų projektui.
-            </p>
-          </div>
-        </div>
+        <ServiceAreaSection
+          title="Aptarnaujame"
+          areas={[
+            "Telšiuose",
+            "Plungėje",
+            "Mažeikiuose",
+            "Šiauliuose",
+            "Klaipėdos regione",
+            "Visoje Žemaitijoje",
+          ]}
+          message="Susisiekite su mumis – paruošime individualų pasiūlymą jūsų projektui."
+        />
       </div>
-    </section>
+    </div>
   );
 }

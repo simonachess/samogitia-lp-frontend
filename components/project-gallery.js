@@ -90,7 +90,7 @@ export default function ProjectGallery({ images = [], projectTitle = "" }) {
             className="absolute top-4 right-4 z-10 p-2 rounded-full text-white bg-white/10 hover:bg-white/20 cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50"
             aria-label="Uždaryti"
           >
-            <X className="w-6 h-6" />
+            <X className="ui-icon w-6 h-6" />
           </button>
 
           {hasMultiple && (
@@ -104,7 +104,7 @@ export default function ProjectGallery({ images = [], projectTitle = "" }) {
                 className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50"
                 aria-label="Ankstesnė nuotrauka"
               >
-                <ChevronLeft className="w-8 h-8" />
+                <ChevronLeft className="ui-icon w-8 h-8" strokeWidth={1.8} />
               </button>
               <button
                 type="button"
@@ -115,7 +115,7 @@ export default function ProjectGallery({ images = [], projectTitle = "" }) {
                 className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 p-2 rounded-full text-white hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/50"
                 aria-label="Kita nuotrauka"
               >
-                <ChevronRight className="w-8 h-8" />
+                <ChevronRight className="ui-icon w-8 h-8" strokeWidth={1.8} />
               </button>
             </>
           )}

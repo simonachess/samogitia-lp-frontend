@@ -14,7 +14,7 @@ export default function InfoCard({ icon, title, description, href }) {
             </h3>
             {href && (
               <ChevronRight
-                className="w-4 h-4 flex-shrink-0 text-primary-500 group-hover:text-primary-600 group-hover:translate-x-0.5 transition-all"
+                className="ui-icon w-4 h-4 text-primary-500 group-hover:text-primary-600 group-hover:translate-x-0.5 transition-all"
                 aria-hidden
               />
             )}
